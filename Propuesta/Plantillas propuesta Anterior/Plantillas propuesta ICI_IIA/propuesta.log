@@ -1,0 +1,17 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdftex 2012.4.11)  11 APR 2012 16:36
+entering extended mode
+**C:/Users/Felipe/Desktop/Plantillas*propuesta*ICI_IIA*(1)/Plantillas*propuesta
+*ICI_IIA/propuesta.bib
+
+("C:/Users/Felipe/Desktop/Plantillas propuesta ICI_IIA (1)/Plantillas propuesta
+ ICI_IIA/propuesta.bib"
+! Undefined control sequence.
+l.5   howpublished = "\url
+                          {http://buscon.rae.es}",
+? 
+! Emergency stop.
+l.5   howpublished = "\url
+                          {http://buscon.rae.es}",
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

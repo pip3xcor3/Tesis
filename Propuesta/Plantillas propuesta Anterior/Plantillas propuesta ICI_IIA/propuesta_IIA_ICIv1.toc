@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\'on}{2}
+\contentsline {section}{\numberline {2}Definici\'on del Problema}{3}
+\contentsline {section}{\numberline {3}Objetivos}{4}
+\contentsline {section}{\numberline {4}Metodolog\IeC {\'\i }a}{5}
+\contentsline {section}{\numberline {5}Planificaci\'on}{6}
+\contentsline {section}{\numberline {6}Recursos}{8}

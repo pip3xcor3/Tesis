@@ -1,0 +1,16 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\'on}{4}
+\contentsline {section}{\numberline {2}Definici\'on del Problema}{5}
+\contentsline {subsection}{\numberline {2.1}Problema}{5}
+\contentsline {subsection}{\numberline {2.2}Soluci\'on Propuesta}{6}
+\contentsline {subsection}{\numberline {2.3}Importancia del trabajo}{6}
+\contentsline {section}{\numberline {3}Objetivos}{7}
+\contentsline {subsection}{\numberline {3.1}Objetivo General}{7}
+\contentsline {subsection}{\numberline {3.2}Objetivos Espec\IeC {\'\i }ficos}{7}
+\contentsline {section}{\numberline {4}Metodolog\IeC {\'\i }a}{8}
+\contentsline {section}{\numberline {5}Planificaci\'on}{9}
+\contentsline {section}{\numberline {6}Recursos}{12}
+\contentsline {subsection}{\numberline {6.1}Recursos Humanos}{12}
+\contentsline {subsection}{\numberline {6.2}Recursos Materiales}{12}
+\contentsline {subsection}{\numberline {6.3}Recursos del Desarrollador}{12}
+\contentsline {section}{Bibliograf\'{\i }a}{13}

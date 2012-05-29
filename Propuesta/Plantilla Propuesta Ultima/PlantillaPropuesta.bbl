@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{REF02}
+{Ian Sommerville}.
+\newblock {\em Ingenier\'{\i}a del Software}.
+\newblock PEARSON EDUCACI\'{O}N, S.A., MADRID, 2005.
+\newblock S\'{e}ptima Edici\'{o}n.
+
+\bibitem{REF05}
+{OCS Inventory Team}.
+\newblock Ocs inventory.
+\newblock \url{http://www.ocsinventory-ng.org}.
+\newblock Última vez visitado, \today.
+
+\bibitem{REF01}
+{Real Academia Espa\~{n}ola}.
+\newblock Definici\'{o}n de inventario.
+\newblock \url{http://buscon.rae.es}.
+\newblock Última vez visitado, \today.
+
+\bibitem{REF06}
+{Softinventive Lab Inc}.
+\newblock Remote asset tracker 1.7.
+\newblock \url{http://www.hardwareinventory.org/es/}.
+\newblock Última vez visitado, \today.
+
+\bibitem{REF04}
+{Spiceworks, Inc}.
+\newblock Spiceworks.
+\newblock \url{http://www.spiceworks.com}.
+\newblock Última vez visitado, \today.
+
+\bibitem{REF03}
+{Universidad de Valpara\'{i}so}.
+\newblock Funciones de disico, 1993.
+\newblock Decreto 427.
+
+\end{thebibliography}

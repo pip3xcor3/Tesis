@@ -1,0 +1,340 @@
+\documentclass[12pt,a4paper]{report}
+
+\marginparsep 0pt \textwidth 6in \topmargin 0pt \headsep .5in
+\textheight 9.2in \voffset = 0pt \hoffset = 0pt \marginparwidth =
+0pt \oddsidemargin = 0pt \sloppy
+
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage[dvips]{epsfig}
+\usepackage[dvips]{graphicx}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{tabbing}
+\usepackage{multirow}
+
+\renewcommand*\thesection{\arabic{section}}
+
+\begin{document}
+\begin{center}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=2cm]{logoUV.png}
+\end{center}
+\end{figure}
+UNIVERSIDAD DE VALPARAÍSO \\
+Facultad de Ingeniería \\
+Escuela de Ingeniería Civil en Informática \\
+Ingeniería Civil en Informática \\
+%Ingeniería en Informática Aplicada
+
+
+\vspace{1cm} \Large
+\textbf{Sistema de Inventarios de Aplicaciones y Servidores } \\
+\large \textbf{
+Propuesta de Trabajo de Título} \\
+Felipe Guillermo Aguayo Cortés\\
+\normalsize
+%\emph{e-mail} \\
+Profesor Guía: Marco Aravena\\
+%Profesor Co-referente:\\
+\vspace{1cm}
+\today{} \\
+
+\end{center}
+
+\begin{abstract}
+Este artículo presenta la propuesta de desarrollo de un sistema de inventario para servidores y aplicaciones 
+a ser implementado en DISICO (Dirección de Servicios de Información y Comunicación) de la Universidad 
+de Valparaíso, con el fin de que sea posible mejorar el proceso actual de inventariado realizado a los servidores 
+pertenecientes a dicha dirección. El objetivo es entregar una herramienta que sea de fácil manipulación para 
+cada uno de los perfiles de Usuarios que interactúan con el proceso de inventariado de servidores y sus 
+aplicaciones asociadas, con la finalidad de poseer orden, claridad y registro de la información almacenada.
+La aplicación a desarrollar, a diferencia de las ya existentes, será de fácil manipulación y adecuada a las 
+necesidades planteadas por DISICO, mejorando de esta manera el proceso actual de inventario.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introducción}
+\label{intr}
+
+Hoy en día es muy importante para una empresa mantener un registro ordenado y claro de los bienes y servicios 
+que pertenecen a la empresa. Esto es porque, al tener la posibilidad de conocer todo lo que se tiene como empresa, 
+se genera una ventaja al momento de tomar decisiones sobre la finalidad de sus bienes. Por lo tanto es aconsejable que en una 
+empresa exista algún proceso que tenga por finalidad otorgar un inventariado de los bienes y servicios de la empresa.\newline 
+
+Según la rae, se define inventario como\textsl{ ''Asiento de los bienes y demás cosas pertenecientes a una persona o 
+comunidad, hecho con orden y precisión"}\cite{REF01}. Por lo tanto, además de poseer la información de mis bienes, 
+es necesario que dicha información sea presentada de forma ordenada y con lujo detalle, para 
+que en el caso de que la empresa desee realizar alguna decisión sobre los bienes que posee, esta información sea la 
+justificación de una buena decisión. Por lo tanto, podríamos decir que\textsl{ "Saber que es lo que tengo determina 
+que es lo que soy y ayuda de gran manera a decir que es lo que puedo ser y hacer"}.\newline
+
+Ahora bien, la tarea de realizar un proceso de inventario no es para nada sencillo, inclusive, al momento de disponer de 
+muchos bienes y servicios se hace complicado obtener un registro de todo de manera clara, ordenada y precisa, y casi 
+imposible asegurar además la disponibilidad y confiabilidad de la información. Por lo mismo, a medida que avanza
+el tiempo, las empresas sienten la necesidad de adquirir tecnología para el mejoramiento de sus sistemas y de sus procedimientos,
+con el fin de garantizar un eficaz funcionamiento.\newline
+
+Controlar la información de los diferentes bienes y servicios a través de un sistema computarizado, puede asegurar la disponibilidad, 
+la confiabilidad, el orden y la claridad que se requiera en un momento determinado. Es por esto que se ha pensado en 
+el diseño de un sistema computarizado para el inventario de aplicaciones y servidores para la Dirección de Servicios de Información y Comunicación
+(DISICO) de la Universidad de Valparaíso, la cual permitirá controlar de manera eficiente dicho proceso, estableciendo la mayor
+calidad de las actividades relacionadas con el inventariado de los servidores y sus aplicaciones instaladas, evitando de esta manera problemas como
+la redundancia de la información o falta de información.\newline
+
+En el presente documento se plasmará la propuesta de trabajo para este sistema el cual se encuentra estructurado en 5
+capítulos donde se detalla lo siguiente:
+
+\begin{enumerate} \item{Definición del Problema}
+			 	   \item{Objetivos} 
+				   \item{Metodología}
+				   \item{Planificación}
+				   \item{Recursos}
+\end{enumerate}
+
+\section{Definición del Problema}
+\label{def}
+
+Actualmente la Dirección de Servicios de Información y Comunicación (DISICO) de la Universidad de Valparaíso consta de un
+proceso de inventario para el control de sus servidores y las aplicaciones asociadas a éstos basado en documentación administrativa 
+(manejo de formularios en papel), en donde se plasma toda la información perteneciente a cada uno de sus equipos (técnico y 
+administrativo), proceso el cual trae muchas complicaciones al momento de su normal funcionamiento, las cuales serán presentadas 
+a continuación:
+
+\begin{itemize}      \item{La sala de servidores a aumentado el numero de equipos en gran cantidad en este ultimo tiempo, lo cual 
+						hace cada vez mas complejo tener toda la información de los servidores en un registro ordenado, claro y 
+						preciso.}
+			 	   \item{Al ser un proceso netamente basado en documentación de formularios en papel resta capacidad de disponibilidad 
+						de la información almacenada.} 
+				   \item{El proceso actual depende mucho de si la persona responsable escribe con detalle la información, por lo cual
+						se resta confiabilidad de la información.}
+				   \item{Es necesario conocer en detalle que actividades fueron, son y serán realizadas en el equipo (por ejemplo instalación 
+						de sistema operativo, actualización, etc) esto debido a que hoy se opera sin tener un historial de acciones.}
+				   \item{Es necesario también conocer en detalle las incidencias ocurridas en los servidores (ataques, problemas de CPU, 
+						cambios hardware/software, etc) para que puedan ser conocidas en un tiempo oportuno y no descubiertas como 
+						actualmente se hace, después de que un cambio drástico ocurre.}
+				   \item{También se necesita un detalle de las aplicaciones instaladas, ya que no tenerlo genera riesgos en la instalación 
+						de aplicaciones y por ende en los procesos que requieren los sistemas en producción.}
+				   \item{También se produce una problemática con el desconocimiento de la interdependencia de aplicaciones instaladas 
+						en los servidores.}
+				   \item{Se desconoce actualmente (si no es por una revisión visual en el lugar) del estado del equipo, esto es si se encuentra 
+						apagado, encendido, uso/sin uso.}
+				   \item{Ademas también se desconoce actualmente (si no es también por una revisión visual en el lugar) de la ubicación en 
+						los racks (posición física) en la sala de servidores.}
+				   \item{Otro dificultad que se genera con el sistema actual es la complejidad que tiene el realizar Estadísticas y la utilización 
+						de totalizadores con la información actualmente en papel.}
+				   \item{El hecho también de que sean formularios administrativos en papel el proceso por el cual se almacena la información, 
+						genera un procedimiento engorroso el agregar un nuevo servidor o modificar alguna información.}
+\end{itemize}
+
+Es por estas problemáticas que se ha decidido implementar un sistema en DISICO, el cual consistirá en un sistema de inventario 
+de aplicaciones y servidores indicando la relación entre ellos. Será implementado con una Interfaz WEB con perfiles de usuario 
+que permitan la visualización y administración de la información. También contendrá un registro de las aplicaciones instaladas 
+implementando un sistema de bitácoras para conocer las modificaciones de estas en detalle en los servidores, así como también 
+para las características técnicas de ambos y el respectivo personal responsable a cargo.\newline
+
+Por lo tanto en la solución planteada se hace posible visualizar la importancia de este trabajo ya que presenta muchas ventajas que, 
+a diferencia de los sistemas ya existentes en el mercado, lo hace una idea mucho mas provechosa, puesto que posee como finalidad 
+automatizar el proceso de inventario de DISICO facilitando la labor de registrar la información debido a que se adecua notoriamente 
+a las necesidades planteadas por este Departamento (situación no lograda por los sistemas evaluados) y entregando, de esta manera, 
+una herramienta de trabajo enfocada en el orden, la claridad y registro de la información con una confiabilidad y disponibilidad muy alta. 
+
+
+\section{Objetivos}
+\label{obj}
+
+Para poder obtener la solución presentada en el Capítulo \ref{def} es necesario establecer los siguientes Objetivos a cumplir:
+
+	\begin{itemize}
+		\item{Desarrollar un sistema WEB de inventario de aplicaciones y servidores que cumpla con las necesidades establecidas por la Dirección de 
+			 Servicios de Información y Comunicación (DISICO) de la Universidad de Valparaíso.}
+	\end{itemize}
+	\begin{itemize}
+		\item{Estudio de aplicaciones de inventario ya existentes en el mercado.}
+		\item{Analizar de forma exhaustiva el proceso actual de inventario para entender como funciona en la actualidad.}
+		\item{Investigación sobre los temas y conceptos básicos para la obtención de información de servidores de forma remota.}
+		\item{Automatizar el ingreso de información de los servidores.}
+		\item{Automatizar el proceso de inventariado actual.}
+		\item{Realizar pruebas con el sistema en un entorno similar al que ocupará el sistema final.}
+		\item{Implementación en la Dirección de Servicios de Información y Comunicación (DISICO) de la Universidad de Valparaíso el sistema propuesto.}
+	\end{itemize}
+\newpage
+
+\section{Metodología}
+\label{met}
+
+Para lograr el cumplimiento de los objetivos establecidos en el Capítulo \ref{obj} se utilizará una metodología de trabajo de tipo incremental\cite{REF02}, esto debido a que el problema a
+solucionar requiere conocer diversas situaciones en donde el sistema debe de desarrollarse, ya que posee diversas funcionalidades y muchas de ellas dependen mucho
+de otras, por lo tanto es de vital importancia que cada incremento sea una base estable para el siguiente. \newline
+
+Otra justificación es que además se conoce a priori que por lo menos existen 3 tipos distintos de Sistemas Operativos que se utilizan comúnmente en los servidores, esto es, Windows, Linux y Mac OS, por lo que da a entender que es necesario implementar de forma replicada las funcionalidades en por lo menos esos 3 tipos de Sistemas Operativos, lo que da a entender que sera necesario iterar de a un Sistema Operativo a la vez.\newline
+
+Además una metodología incremental me da la oportunidad de solucionar los errores que se presentaron en el incremento anterior en la iteración actual, siendo así posible
+arrastrar menos errores al sistema final, lo que me permite realizar un menor esfuerzo en eliminarlos.\newline
+
+Y como última ventaja, me permite tener un prototipo al final de cada incremento, por lo cual es posible satisfacer al cliente en un tiempo oportuno, asumiendo también como
+ventaja la recolección de nuevas correcciones las cuales no deberán ser arrastradas al final de la implementación del Sistema.
+\newpage
+
+\section{Planificación}
+\label{plan}
+
+   \begin{center}
+    \begin{tabular}[t]{rrcrr}
+    \multicolumn{5}{c}{Planificación: " Sistema de Inventario de Servidores y Aplicaciones"}  \\
+    \midrule
+    \multicolumn{1}{c}{\textbf{Id}} & \multicolumn{1}{c}{\textbf{Etapa}} & \textbf{DIAS} & \multicolumn{1}{c}{\textbf{Fecha Inicio}} & \multicolumn{1}{c}{\textbf{Fecha Término}} \\
+    \multicolumn{1}{l}{0.0} & \multicolumn{1}{l}{Presentacion Propuesta de Proyecto} & 1     & \multicolumn{1}{l}{20-04-2012} & \multicolumn{1}{l}{20-04-2012} \\
+    \multicolumn{1}{l}{1.0} & \multicolumn{1}{l}{Análisis y especificación de requerimientos} & 10    & \multicolumn{1}{l}{\textbf{23-04-2012}} & \multicolumn{1}{l}{\textbf{03-05-2012}} \\
+    \multicolumn{1}{l}{1.1} & \multicolumn{1}{l}{Recolección de Requerimientos} & 2     & \multicolumn{1}{l}{\textbf{23-04-2012}} & \multicolumn{1}{l}{\textbf{24-04-2012}} \\
+    \multicolumn{1}{l}{1.1.1} & \multicolumn{1}{l}{Reunion con Stakeholder} & 1     & \multicolumn{1}{l}{23-04-2012} & \multicolumn{1}{l}{23-04-2012} \\
+    \multicolumn{1}{l}{1.1.2} & \multicolumn{1}{l}{Revisión de documentación existente} & 1     & \multicolumn{1}{l}{24-04-2012} & \multicolumn{1}{l}{24-04-2012} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.2}} & \multicolumn{1}{l}{Realización documento de Definición} & \multirow{2}[4]{*}{4} & \multicolumn{1}{l}{\multirow{2}[4]{*}{\textbf{25-04-2012}}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{\textbf{28-04-2012}}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{de Requerimientos} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.2.1}} & \multicolumn{1}{l}{Identificación de requerimientos} & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{25-04-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{25-04-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{ en lenguaje natural} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{1.2.2} & \multicolumn{1}{l}{Clasificación de requerimientos} & 1     & \multicolumn{1}{l}{26-04-2012} & \multicolumn{1}{l}{26-04-2012} \\
+    \multicolumn{1}{l}{1.2.3} & \multicolumn{1}{l}{Priorización  de requerimientos} & 1     & \multicolumn{1}{l}{27-04-2012} & \multicolumn{1}{l}{27-04-2012} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.2.4}} & \multicolumn{1}{l}{Resolución de conflictos } & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{28-04-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{28-04-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{entre requerimientos} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{1.3} & \multicolumn{1}{l}{Validación de requerimientos} & 1     & \multicolumn{1}{l}{30-04-2012} & \multicolumn{1}{l}{30-04-2012} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.4}} & \multicolumn{1}{l}{Realizar documento de Especificación} & \multirow{2}[4]{*}{4} & \multicolumn{1}{l}{\multirow{2}[4]{*}{\textbf{01-05-2012}}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{\textbf{04-05-2012}}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{de Requerimientos} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.4.1}} & \multicolumn{1}{l}{Identificación de requerimientos } & \multirow{2}[4]{*}{4} & \multicolumn{1}{l}{\multirow{2}[4]{*}{\textbf{01-05-2012}}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{\textbf{04-05-2012}}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{en lenguaje técnico} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.4.1.1}} & \multicolumn{1}{l}{Identificación Requerimientos } & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{01-05-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{01-05-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{funcionales} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.4.1.2}} & \multicolumn{1}{l}{Identificación Requerimientos } & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{02-05-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{02-05-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{no funcionales} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.4.1.3}} & \multicolumn{1}{l}{Identificación de los Requerimientos } & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{03-05-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{03-05-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{de Dominio} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{1.4.1.4}} & \multicolumn{1}{l}{Asignacion de los Requerimientos } & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{04-05-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{04-05-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{a los incrementos} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{2.0} & \multicolumn{1}{l}{Presentacion 2} & 1     & \multicolumn{1}{l}{25-05-2012} & \multicolumn{1}{l}{25-05-2012} \\
+    \multicolumn{1}{l}{3.0} & \multicolumn{1}{l}{Diseño general del sistema} & 20    & \multicolumn{1}{l}{\textbf{05-05-2012}} & \multicolumn{1}{l}{\textbf{28-05-2012}} \\
+    \multicolumn{1}{l}{3.1} & \multicolumn{1}{l}{Diseño de Arquitectura del Sistema} & 4     & \multicolumn{1}{l}{\textbf{05-05-2012}} & \multicolumn{1}{l}{\textbf{09-05-2012}} \\
+    \multicolumn{1}{l}{3.1.1} & \multicolumn{1}{l}{Descripción de la Arquitectura} & 1     & \multicolumn{1}{l}{05-05-2012} & \multicolumn{1}{l}{05-05-2012} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{3.1.2}} & \multicolumn{1}{l}{Realizar matriz de trazabilidad de } & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{07-05-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{07-05-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{componentes vs requerimientos} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{3.1.3} & \multicolumn{1}{l}{Descripción de la Arquitectura} & 1     & \multicolumn{1}{l}{08-05-2012} & \multicolumn{1}{l}{08-05-2012} \\
+    \multicolumn{1}{l}{3.1.4} & \multicolumn{1}{l}{Diagrama de la Arquitectura} & 1     & \multicolumn{1}{l}{09-05-2012} & \multicolumn{1}{l}{09-05-2012} \\
+    \multicolumn{1}{l}{3.2} & \multicolumn{1}{l}{Diseño de Base de Datos} & 5     & \multicolumn{1}{l}{\textbf{10-05-2012}} & \multicolumn{1}{l}{\textbf{15-05-2012}} \\
+    \multicolumn{1}{l}{3.2.1} & \multicolumn{1}{l}{Modelo de Entidad Relación} & 1     & \multicolumn{1}{l}{10-05-2012} & \multicolumn{1}{l}{10-05-2012} \\
+    \multicolumn{1}{l}{3.2.2} & \multicolumn{1}{l}{Normalización} & 1     & \multicolumn{1}{l}{11-05-2012} & \multicolumn{1}{l}{11-05-2012} \\
+    \multicolumn{1}{l}{3.2.3} & \multicolumn{1}{l}{Diseño Lógico} & 1     & \multicolumn{1}{l}{12-05-2012} & \multicolumn{1}{l}{12-05-2012} \\
+    \multicolumn{1}{l}{3.2.4} & \multicolumn{1}{l}{Diseño Físico} & 1     & \multicolumn{1}{l}{14-05-2012} & \multicolumn{1}{l}{14-05-2012} \\
+    \multicolumn{1}{l}{3.2.5} & \multicolumn{1}{l}{Diccionario de Datos} & 1     & \multicolumn{1}{l}{15-05-2012} & \multicolumn{1}{l}{15-05-2012} \\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \begin{center}
+    \begin{tabular}[t]{rrcrr}
+    \multicolumn{5}{c}{Planificación: " Sistema de Inventario de Servidores y Aplicaciones"} \\
+    \midrule
+    \multicolumn{1}{c}{\textbf{Id}} & \multicolumn{1}{c}{\textbf{Etapa}} & \textbf{DIAS} & \multicolumn{1}{c}{\textbf{Fecha Inicio}} & \multicolumn{1}{c}{\textbf{Fecha Término}} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{3.3}} & \multicolumn{1}{l}{Diseño de Plantilla de interfaz } & \multirow{2}[4]{*}{1} & \multicolumn{1}{l}{\multirow{2}[4]{*}{16-05-2012}} & \multicolumn{1}{l}{\multirow{2}[4]{*}{16-05-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{general del proyecto} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{3.4} & \multicolumn{1}{l}{Diseño de Pruebas} & 3     & \multicolumn{1}{l}{\textbf{17-05-2012}} & \multicolumn{1}{l}{\textbf{19-05-2012}} \\
+    \multicolumn{1}{l}{3.4.1} & \multicolumn{1}{l}{Diseño de Pruebas de Sistema} & 1     & \multicolumn{1}{l}{17-05-2012} & \multicolumn{1}{l}{17-05-2012} \\
+    \multicolumn{1}{l}{3.4.2} & \multicolumn{1}{l}{Diseño de Pruebas de Integracion} & 1     & \multicolumn{1}{l}{18-05-2012} & \multicolumn{1}{l}{18-05-2012} \\
+    \multicolumn{1}{l}{3.4.3} & \multicolumn{1}{l}{Diseño de Pruebas de Aceptación} & 1     & \multicolumn{1}{l}{19-05-2012} & \multicolumn{1}{l}{19-05-2012} \\
+    \multicolumn{1}{l}{3.5} & \multicolumn{1}{l}{Modelamiento} & 4     & \multicolumn{1}{l}{\textbf{21-05-2012}} & \multicolumn{1}{l}{\textbf{24-05-2012}} \\
+    \multicolumn{1}{l}{3.5.1} & \multicolumn{1}{l}{Diagramas de casos de Uso} & 1     & \multicolumn{1}{l}{21-05-2012} & \multicolumn{1}{l}{21-05-2012} \\
+    \multicolumn{1}{l}{3.5.2} & \multicolumn{1}{l}{Diagrama de secuencias} & 1     & \multicolumn{1}{l}{22-05-2012} & \multicolumn{1}{l}{22-05-2012} \\
+    \multicolumn{1}{l}{3.5.3} & \multicolumn{1}{l}{Diagrama de estados} & 1     & \multicolumn{1}{l}{23-05-2012} & \multicolumn{1}{l}{23-05-2012} \\
+    \multicolumn{1}{l}{3.5.4} & \multicolumn{1}{l}{Modelo Conceptual} & 1     & \multicolumn{1}{l}{24-05-2012} & \multicolumn{1}{l}{24-05-2012} \\
+    \multicolumn{1}{l}{3.6} & \multicolumn{1}{l}{Diseño} & 3     & \multicolumn{1}{l}{\textbf{25-05-2012}} & \multicolumn{1}{l}{\textbf{28-05-2012}} \\
+    \multicolumn{1}{l}{3.6.1} & \multicolumn{1}{l}{Diagrama de clases} & 1     & \multicolumn{1}{l}{25-05-2012} & \multicolumn{1}{l}{25-05-2012} \\
+    \multicolumn{1}{l}{3.6.2} & \multicolumn{1}{l}{Diagrama de paquetes} & 1     & \multicolumn{1}{l}{26-05-2012} & \multicolumn{1}{l}{26-05-2012} \\
+    \multicolumn{1}{l}{3.6.3} & \multicolumn{1}{l}{Diagrama de Despliegue} & 1     & \multicolumn{1}{l}{28-05-2012} & \multicolumn{1}{l}{28-05-2012} \\
+    \multicolumn{1}{l}{3.0} & \multicolumn{1}{l}{Presentacion 3} & 1     & \multicolumn{1}{l}{29-06-2012} & \multicolumn{1}{l}{29-06-2012} \\
+    \multicolumn{1}{l}{4.0} & \multicolumn{1}{l}{Desarrollo} & 5     & \multicolumn{1}{l}{\textbf{30-05-2012}} & \multicolumn{1}{l}{\textbf{03-06-2012}} \\
+    \multicolumn{1}{l}{4.1} & \multicolumn{1}{l}{Desarrollo de la Base de Datos} & 3     & \multicolumn{1}{l}{\textbf{30-05-2012}} & \multicolumn{1}{l}{\textbf{01-06-2012}} \\
+    \multicolumn{1}{l}{4.1.1} & \multicolumn{1}{l}{Creación} & 1     & \multicolumn{1}{l}{30-05-2012} & \multicolumn{1}{l}{30-05-2012} \\
+    \multicolumn{1}{l}{4.1.2} & \multicolumn{1}{l}{Configuración} & 1     & \multicolumn{1}{l}{31-05-2012} & \multicolumn{1}{l}{31-05-2012} \\
+    \multicolumn{1}{l}{4.1.3} & \multicolumn{1}{l}{Poblamiento de datos de prueba} & 1     & \multicolumn{1}{l}{01-06-2012} & \multicolumn{1}{l}{01-06-2012} \\
+    \multicolumn{1}{l}{\multirow{2}[4]{*}{4.2}} & \multicolumn{1}{l}{Desarrollo de la plantilla la interfaz } & \multirow{2}[4]{*}{2} & \multicolumn{1}{c}{\multirow{2}[4]{*}{02-06-2012}} & \multicolumn{1}{c}{\multirow{2}[4]{*}{03-06-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{base del Sistema} &       & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+    \multicolumn{2}{c}{Incremento Linux OS} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{5.0} & \multicolumn{1}{l}{Desarrollo Aplicacíon para Linux OS} & 12    & \multicolumn{1}{l}{\textbf{04-06-2012}} & \multicolumn{1}{l}{\textbf{15-06-2012}} \\
+    \multicolumn{1}{l}{5.1} & \multicolumn{1}{l}{Codificacion} & 8     & \multicolumn{1}{l}{\textbf{04-06-2012}} & \multicolumn{1}{l}{\textbf{11-06-2012}} \\
+    \multicolumn{1}{l}{5.1.1} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[3]{*}{3} & \multicolumn{1}{l}{\multirow{2}[3]{*}{04-06-2012}} & \multicolumn{1}{l}{\multirow{2}[3]{*}{06-06-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{funcionales Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{5.1.2} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[2]{*}{3} & \multicolumn{1}{l}{\multirow{2}[2]{*}{07-06-2012}} & \multicolumn{1}{l}{\multirow{2}[2]{*}{09-06-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{no funcionales Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{5.1.3} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[2]{*}{2} & \multicolumn{1}{l}{\multirow{2}[2]{*}{10-06-2012}} & \multicolumn{1}{l}{\multirow{2}[2]{*}{11-06-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{del Dominio Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{5.2} & \multicolumn{1}{l}{Pruebas} & 2     & \multicolumn{1}{l}{\textbf{12-06-2012}} & \multicolumn{1}{l}{\textbf{13-06-2012}} \\
+    \multicolumn{1}{l}{5.2.1} & \multicolumn{1}{l}{Pruebas de Unidad} & 1     & \multicolumn{1}{l}{12-06-2012} & \multicolumn{1}{l}{12-06-2012} \\
+    \multicolumn{1}{l}{5.2.2} & \multicolumn{1}{l}{Pruebas de Sistema} & 1     & \multicolumn{1}{l}{13-06-2012} & \multicolumn{1}{l}{13-06-2012} \\
+    \multicolumn{1}{l}{5.3} & \multicolumn{1}{l}{Integracion } & 2     & \multicolumn{1}{l}{14-06-2012} & \multicolumn{1}{l}{15-06-2012} \\
+    \multicolumn{2}{c}{Fin Etapa Incremental} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{2}{c}{Incremento Windows OS} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{6.0} & \multicolumn{1}{l}{Desarrollo Aplicacíon para Windows OS} & 12    & \multicolumn{1}{l}{\textbf{16-06-2012}} & \multicolumn{1}{l}{\textbf{27-06-2012}} \\
+    \multicolumn{1}{l}{6.1} & \multicolumn{1}{l}{Codificacion} & 8     & \multicolumn{1}{l}{\textbf{16-06-2012}} & \multicolumn{1}{l}{\textbf{23-06-2012}} \\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+
+\begin{center}
+    \begin{tabular}[t]{rrcrr}
+    \multicolumn{5}{c}{Planificación: " Sistema de Inventario de Servidores y Aplicaciones"} \\
+    \midrule
+    \multicolumn{1}{c}{\textbf{Id}} & \multicolumn{1}{c}{\textbf{Etapa}} & \textbf{DIAS} & \multicolumn{1}{c}{\textbf{Fecha Inicio}} & \multicolumn{1}{c}{\textbf{Fecha Término}} \\
+    \multicolumn{1}{l}{6.1.1} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[3]{*}{3} & \multicolumn{1}{l}{\multirow{2}[3]{*}{16-06-2012}} & \multicolumn{1}{l}{\multirow{2}[3]{*}{18-06-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{funcionales Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{6.1.2} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[3]{*}{3} & \multicolumn{1}{l}{\multirow{2}[3]{*}{19-06-2012}} & \multicolumn{1}{l}{\multirow{2}[3]{*}{21-06-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{no funcionales Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{6.1.3} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[2]{*}{2} & \multicolumn{1}{l}{\multirow{2}[2]{*}{22-06-2012}} & \multicolumn{1}{l}{\multirow{2}[2]{*}{23-06-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{del Dominio Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{6.2} & \multicolumn{1}{l}{Pruebas} & 2     & \multicolumn{1}{l}{\textbf{24-06-2012}} & \multicolumn{1}{l}{\textbf{25-06-2012}} \\
+    \multicolumn{1}{l}{6.2.1} & \multicolumn{1}{l}{Pruebas de Unidad} & 1     & \multicolumn{1}{l}{24-06-2012} & \multicolumn{1}{l}{24-06-2012} \\
+    \multicolumn{1}{l}{6.2.2} & \multicolumn{1}{l}{Pruebas de Sistema} & 1     & \multicolumn{1}{l}{25-06-2012} & \multicolumn{1}{l}{25-06-2012} \\
+    \multicolumn{1}{l}{6.3} & \multicolumn{1}{l}{Integracion} & 2     & \multicolumn{1}{l}{26-06-2012} & \multicolumn{1}{l}{27-06-2012} \\
+    \multicolumn{2}{c}{Fin Etapa Incremental} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{2}{c}{Incremento Mac OS} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{7.0} & \multicolumn{1}{l}{Desarrollo Aplicacíon para Mac OS} & 12    & \multicolumn{1}{l}{\textbf{28-06-2012}} & \multicolumn{1}{l}{\textbf{10-07-2012}} \\
+    \multicolumn{1}{l}{7.1} & \multicolumn{1}{l}{Codificacion} & 8     & \multicolumn{1}{l}{\textbf{28-06-2012}} & \multicolumn{1}{l}{\textbf{06-07-2012}} \\
+    \multicolumn{1}{l}{7.1.1} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[3]{*}{3} & \multicolumn{1}{l}{\multirow{2}[3]{*}{28-06-2012}} & \multicolumn{1}{l}{\multirow{2}[3]{*}{01-07-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{funcionales Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{7.1.2} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[2]{*}{3} & \multicolumn{1}{l}{\multirow{2}[2]{*}{02-07-2012}} & \multicolumn{1}{l}{\multirow{2}[2]{*}{04-07-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{no funcionales Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{7.1.3} & \multicolumn{1}{l}{Implementación de los requisitos } & \multirow{2}[2]{*}{2} & \multicolumn{1}{l}{\multirow{2}[2]{*}{05-07-2012}} & \multicolumn{1}{l}{\multirow{2}[2]{*}{06-07-2012}} \\
+    \multicolumn{1}{l}{} & \multicolumn{1}{l}{del Dominio Asignados} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{7.2} & \multicolumn{1}{l}{Pruebas} & 2     & \multicolumn{1}{l}{\textbf{07-07-2012}} & \multicolumn{1}{l}{\textbf{10-07-2012}} \\
+    \multicolumn{1}{l}{7.2.1} & \multicolumn{1}{l}{Pruebas de Unidad} & 1     & \multicolumn{1}{l}{07-07-2012} & \multicolumn{1}{l}{07-07-2012} \\
+    \multicolumn{1}{l}{7.2.2} & \multicolumn{1}{l}{Pruebas de Sistema} & 1     & \multicolumn{1}{l}{08-07-2012} & \multicolumn{1}{l}{08-07-2012} \\
+    \multicolumn{1}{l}{7.3} & \multicolumn{1}{l}{Integracion} & 2     & \multicolumn{1}{l}{09-07-2012} & \multicolumn{1}{l}{10-07-2012} \\
+    \multicolumn{2}{c}{Fin Etapa Incremental} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{8.0} & \multicolumn{1}{l}{Presentacion Final} & 1     & \multicolumn{1}{l}{13-07-2012} & \multicolumn{1}{l}{13-07-2012} \\
+    \multicolumn{1}{l}{9.0} & \multicolumn{1}{l}{Pruebas del Sistema} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{9.1} & \multicolumn{1}{l}{Pruebas de Integración} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{9.2} & \multicolumn{1}{l}{Pruebas de Aceptación} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{9.3} & \multicolumn{1}{l}{Corrección de errores} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \multicolumn{1}{l}{10.0} & \multicolumn{1}{l}{Liberación del Sistema} &       & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+    \bottomrule
+    \end{tabular}
+\end{center}
+
+
+\section{Recursos}
+\label{rec}
+
+Diga de que recursos dispone para realizar su trabajo. En esta
+sección debe determinar si efectivamente su trabajo es viable, es
+decir, si dispone de los recursos básicos para realizar las
+actividades que planteó en \ref{plan}. \textbf{Media página}.
+
+\bibliographystyle{plain}
+\bibliography{propuesta}
+
+\end{document}
