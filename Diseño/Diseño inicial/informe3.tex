@@ -1678,16 +1678,96 @@ La figura \ref{img33} muestra el modelo conceptual del sistema de Inventarios pa
 \section{Diseño}
 \label{diseno}
 
-A continuación se procederá a describir las decisiones que se tomaron y los modelos que se realizaron para el sistema propuesto en la fase de diseño, presentando en cada uno de éstos una justificación y un resguardo de la trazabilidad y consistencia entre los modelos.\newline
+A continuación se procederá a describir las decisiones que se tomaron y los modelos
+ que se realizaron para el sistema propuesto en la fase de diseño, presentando en
+ cada uno de éstos una justificación y un resguardo de la trazabilidad y consistencia
+ entre dichos modelos.
 
 \subsection{Diseño Arquitectónico}
 \label{arq}
 
-El diseño de la arquitectura del sistema es una parte importante al momento de definir el funcionamiento del sistema, ya que define nociones de abstracción y múltiples vistas.\newline
+El diseño de la arquitectura del sistema es una parte importante al momento de
+ definir el funcionamiento del sistema, ya que define nociones de abstracción y
+ múltiples vistas.\newline
 
-Por lo tanto entenderemos el concepto de arquitectura de un programa o sistema computacional como \textsl{``la estructura o estructuras del sistema, la cual comprende elementos de software, las propiedades de estos elementos visibles externamente y las relaciones entre ellos"}\cite{REF16}.\newline
+Es por esto que entenderemos el concepto de arquitectura de un programa o sistema
+ computacional como \textsl{``la estructura o estructuras del sistema, la cual
+ comprende elementos de software, las propiedades de estos elementos visibles
+ externamente y las relaciones entre ellos"}\cite{REF16}.\newline
+
+Para definir el diseño arquitectónico del sistema se realizarán las siguientes 
+actividades:
+
+\begin{itemize}
+	\item{Estructuración del Sistema (Modelo de Estructura).}
+	\item{Modelado de Control.}
+	\item{Descomposición modular.}
+\end{itemize}
+
+\subsubsection{Estructuración del Sistema}
+\label{estruc}
+
+La arquitectura seleccionada para la implementación del sistema es una arquitectura 
+de tipo Cliente-Servidor compuesta por 3 capas (capa de presentación, capa de 
+negocio y capa de datos) localizadas en una misma máquina, esto se debe a que el 
+sistema no posee una mayor complejidad como para distribuirlo en mas equipos. a 
+continuación se presentará un modelo que muestra como se estructura una 
+arquitectura Cliente-Servidor.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=6cm]{ClienteServidor.png}
+\caption{Modelo Cliente-Servidor.}
+\label{img34}
+\end{center}
+\end{figure}
+
+La arquitectura cliente-servidor es un modelo de aplicación distribuida, en la cual, las 
+tareas se reparten entre los proveedores de recursos o servicios, determinados como 
+servidores, y los demandantes, establecidos como clientes. En otras palabras, un 
+cliente solicita un servicio y un servidor se lo proporciona. La definición otorgada por 
+IBM sobre Cliente-Servidor es la siguiente:\newline
+
+\textsl{``Es la tecnología que proporciona al usuario final el acceso transparente a 
+las aplicaciones, datos, servicios de cómputo o cualquier otro recurso del grupo de 
+trabajo y/o, a través de la organización, en múltiples plataformas. El modelo soporta 
+un medio ambiente distribuido en el cual los requerimientos de servicio hechos por 
+estaciones de trabajo inteligentes o clientes, resultan en un trabajo realizado por 
+otros computadores llamados servidores"}.\newline
+
+Ahora bien, los componentes de la arquitectura cliente-servidor los entenderemos como se presenta a continuación:\newline
+
+\begin{itemize}
+	\item{\textbf{Cliente:} Es el componente encargado de solicitar servicios de 
+internet o intranet. Una aplicación consta de una parte determinada como cliente, los 
+cuales pueden ser ejecutados en diferentes sistemas. Los usuarios finales invocan la 
+parte cliente de la aplicación, que construye una solicitud, y se la envía al servidor.\newline
+
+Las funciones que lleva a cabo el cliente se resumen en lo siguiente:
+		\begin{itemize}
+			\item{Administrar la interfaz de usuario.}
+			\item{Interactuar con el usuario.}
+			\item{Generar requerimientos de Bases de Datos.}
+			\item{Interpretar los resultados del servidor.}
+			\item{validar datos a nivel local.}
+		\end{itemize}}
+	\item{\textbf{Servidor:} Es el componente que ofrece los servicios solicitados 
+por los clientes. El servidor es un programa que recibe una solicitud, realiza la acción 
+requerida y devuelve los resultados en forma de una respuesta. Generalmente un 
+servidor puede tratar múltiples peticiones (múltiples clientes) al mismo tiempo.\newline
+
+Las funciones que lleva a cabo el servidor se resumen en lo siguiente:
+		\begin{itemize}
+			\item{Gestionar los requerimientos de Bases de Datos que hacen los 
+clientes.}
+			\item{Formatear datos para transmitirlos a los clientes}
+			\item{Procesar la lógica de la aplicación y realizar validaciones a nivel 
+de bases de datos.}
+		\end{itemize}}
+\end{itemize}
 
 
+\newpage
 
 \bibliography{propuesta}
 \bibliographystyle{plain}
