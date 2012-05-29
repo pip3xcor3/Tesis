@@ -1,0 +1,32 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\'on}{5}
+\contentsline {section}{\numberline {2}Marco Conceptual}{7}
+\contentsline {subsection}{\numberline {2.1}Definici\'on del \'area del problema}{7}
+\contentsline {subsubsection}{\numberline {2.1.1}Conceptos Fundamentales}{8}
+\contentsline {subsection}{\numberline {2.2}T\'ecnicas y herramientas existentes}{9}
+\contentsline {subsubsection}{\numberline {2.2.1}Est\'andares de Inventario de los Activos de Informaci\'on}{9}
+\contentsline {subsubsection}{\numberline {2.2.2}Herramientas existentes}{11}
+\contentsline {subsubsection}{\numberline {2.2.3}Comparaci\'on entre Herramientas}{14}
+\contentsline {section}{\numberline {3}Definici\'on del Problema}{18}
+\contentsline {subsection}{\numberline {3.1}Formulaci\'on del Problema}{18}
+\contentsline {subsection}{\numberline {3.2}Situaci\'on Actual}{19}
+\contentsline {subsection}{\numberline {3.3}Soluci\'on Propuesta}{22}
+\contentsline {subsection}{\numberline {3.4}Objetivos}{25}
+\contentsline {subsubsection}{\numberline {3.4.1}Objetivo General}{25}
+\contentsline {subsubsection}{\numberline {3.4.2}Objetivos Espec\IeC {\'\i }ficos}{25}
+\contentsline {section}{\numberline {4}An\'alisis}{26}
+\contentsline {subsection}{\numberline {4.1}Actores del Sistema}{26}
+\contentsline {subsection}{\numberline {4.2}Especificaci\'on de Requerimientos}{27}
+\contentsline {subsubsection}{\numberline {4.2.1}Requerimientos Funcionales}{27}
+\contentsline {subsubsection}{\numberline {4.2.2}Requerimientos No Funcionales}{30}
+\contentsline {subsubsection}{\numberline {4.2.3}Requerimientos Tecnologicos}{32}
+\contentsline {subsubsection}{\numberline {4.2.4}Asignaci\'on de los Requerimientos a los Incrementos}{33}
+\contentsline {subsection}{\numberline {4.3}Definici\'on de Funcionalidades del Sistema}{36}
+\contentsline {subsection}{\numberline {4.4}Casos de Uso}{39}
+\contentsline {subsubsection}{\numberline {4.4.1}Casos de Usos Extendidos}{40}
+\contentsline {subsubsection}{\numberline {4.4.2}Diagramas de Secuencia de Casos de Uso Extendidos}{50}
+\contentsline {subsubsection}{\numberline {4.4.3}Diagramas de Estados de los Casos de Uso Extendidos}{63}
+\contentsline {subsection}{\numberline {4.5}Modelo Conceptual del Sistema}{67}
+\contentsline {section}{\numberline {5}Dise\~no}{68}
+\contentsline {subsection}{\numberline {5.1}Dise\~no Arquitect\'onico}{68}
+\contentsline {section}{Bibliograf\'{\i }a}{68}

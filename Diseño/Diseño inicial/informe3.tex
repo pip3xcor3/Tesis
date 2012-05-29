@@ -1,0 +1,1694 @@
+\documentclass[12pt,letterpaper]{article}
+
+\marginparsep 0pt
+\textwidth 6in
+\topmargin 0pt
+\headsep .5in
+\textheight 8.7in
+\voffset = 0pt
+\hoffset = 0pt
+\marginparwidth = 0pt
+\oddsidemargin = 0pt
+
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage[dvips]{epsfig}
+\usepackage[dvips]{graphicx}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[]{fontenc}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{tabbing}
+\usepackage{float}
+
+\renewcommand*\thesection{\arabic{section}}
+
+\addto\captionsspanish{
+\def\listtablename{Índice de tablas}
+\def\tablename{Tabla}
+}
+
+\begin{document}
+\begin{center}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=4cm]{logoUV.png}
+\end{center}
+\end{figure}
+\thispagestyle{empty}
+
+UNIVERSIDAD DE VALPARAÍSO \\
+Facultad de Ingeniería \\
+Escuela de Ingeniería Civil en Informática \\
+Ingeniería Civil Informática\\
+\vspace{1cm}
+\Large
+\textbf{Sistema de Inventarios de Aplicaciones y Servidores } \\
+\large
+Informe 3\\
+Felipe Guillermo Aguayo Cortés\\
+\normalsize
+\emph{felipe.aguayoc@alumnos.uv.cl} \\
+\today \\
+\vspace{1cm}
+Profesor Guía: Marco Aravena\\
+%Profesor Coreferente:
+\end{center}
+
+\begin{abstract}
+Este artículo presenta el desarrollo del marco conceptual, la fase de analisis y la fase de Diseño para la implementación de un sistema de inventario para servidores y aplicaciones en DISICO de la Universidad de Valparaíso, con la finalidad de complementar de mejor manera el registro actual de inventario realizado a los servidores pertenecientes a dicha dirección. El objetivo es entregar una herramienta que sea de fácil manipulación para cada uno de los perfiles de Usuarios que interactúan con el proceso de inventario de servidores y sus aplicaciones asociadas, con la finalidad de poseer orden, claridad y registro de la información almacenada. La aplicación a desarrollar, a diferencia de las ya existentes, será de fácil manipulación y adecuada a las necesidades planteadas por DISICO, mejorando de esta manera el proceso actual de inventario.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\listoftables
+\listoffigures
+
+\newpage
+\section{Introducción}
+\label{intr}
+Hoy en día es muy importante para una empresa mantener un registro ordenado y claro de los bienes y servicios 
+que pertenecen a la empresa. Esto es porque, al tener la posibilidad de conocer todo lo que se tiene como empresa, 
+se genera una ventaja al momento de tomar decisiones sobre la finalidad de sus bienes. Por lo tanto es aconsejable que en una 
+empresa exista algún proceso que tenga por finalidad otorgar un inventariado de los bienes y servicios que posea.\newline 
+
+Según la rae, se define inventario como\textsl{ ''Asiento de los bienes y demás cosas pertenecientes a una persona o 
+comunidad, hecho con orden y precisión"}\cite{REF01}. Por lo tanto, además de poseer la información de mis bienes, 
+es necesario que dicha información sea presentada de forma ordenada y con lujo detalle, para 
+que en el caso de que la empresa desee realizar alguna decisión sobre los bienes que posee, esta información sea la 
+justificación de una buena decisión. Por lo tanto, podríamos decir que\textsl{ "Saber que es lo que tengo determina 
+que es lo que soy y ayuda de gran manera a decir que es lo que puedo ser y hacer"}.\newline
+
+Ahora bien, la tarea de realizar un proceso de inventario no es para nada sencillo, inclusive, al momento de disponer de 
+muchos bienes y servicios se hace complicado obtener un registro de todo de manera clara, ordenada y precisa, y casi 
+imposible asegurar además la disponibilidad y confiabilidad de la información. Por lo mismo, a medida que avanza
+el tiempo, las empresas sienten la necesidad de adquirir tecnología para el mejoramiento de sus sistemas y de sus procedimientos,
+con el fin de garantizar un eficaz funcionamiento.\newline
+
+Controlar la información de los diferentes bienes y servicios a través de un sistema computarizado, puede asegurar la disponibilidad, 
+la confiabilidad, el orden y la claridad que se requiera en un momento determinado. Es por esto que se ha pensado en 
+el diseño de un sistema computarizado para el inventario de aplicaciones y servidores para la Dirección de Servicios de Información y Comunicación
+(DISICO) de la Universidad de Valparaíso, la cual permitirá controlar de manera eficiente dicho proceso, estableciendo la mayor
+calidad de las actividades relacionadas con el inventariado de los servidores y sus aplicaciones instaladas, evitando de esta manera problemas como
+la redundancia de la información o falta de información.\newline
+
+Es por esto que se a planificado realizar distintas fases en el ciclo de vida del desarrollo de este sistema, primero la fase de Definición de Requerimientos y análisis,
+ luego la fase de Diseño de la solución propuesta, posteriormente la implementación y finalmente la prueba e implantación del sistema.\newline
+
+Para poder llevar acabo dicha planificación, es que se optó por trabajar con una metodología incremental, determinando con esto, la forma de ejecutar
+dichas fases del ciclo de vida de este sistema. Con respecto a la fase que se completará en el documento a continuación, se encuentra la fase de Definición 
+de Requerimientos y Análisis, detallando con esto, el Marco conceptual y la definición del problema.\newline
+
+Para exponer las temáticas que se definen en este documento, es que se a decidido estructurarlo en 4 capítulos que se definirán a continuación y el detalle 
+de la Bibliografía utilizada para el trabajo. Por lo tanto la estructura se compone de la manera siguiente:
+
+\begin{itemize}
+	\item{Introducción.}
+	\item{Marco Conceptual.
+		\begin{itemize}
+			\item{Definición del Área del Problema.}
+			\item{Técnicas y Herramientas existentes.}
+		\end{itemize}}
+	\item{Definición del Problema.
+		\begin{itemize}
+			\item{Formulación del problema.}
+			\item{Situación Actual.}
+			\item{Solución Propuesta.}
+			\item{Objetivos.}
+		\end{itemize}}
+	\item{Análisis.
+		\begin{itemize}
+			\item{Actores del Sistema.}
+			\item{Especificación de Requerimientos.}
+			\item{Definición de las Funcionalidades del Sistema.}
+			\item{Casos de Uso.}
+			\item{Modelo Conceptual del Sistema.}
+		\end{itemize}}
+	\item{Bibliografía.}
+\end{itemize}
+
+\newpage
+
+\section{Marco Conceptual}
+\label{marco}
+
+\subsection{Definición del área del problema}
+\label{area}
+
+Para la definición del área del problema necesitamos entender primero que es \textbf{(1)}\textsl{``lo que realmente se necesita"} y \textbf{(2)}\textsl{``en que entorno se desenvuelve el trabajo"}. Comprendiendo estos dos ámbitos será posible determinar el área del conocimiento que se necesitará para el desarrollo de este trabajo.\newline
+
+\textbf{(1)}Para el primer caso se establece que la Dirección de Sistemas de Información y Comunicación (DISICO), de la Universidad de Valparaíso, requiere de una herramienta tecnológica con la que se pueda realizar el registro de servidores y aplicaciones, es decir, un inventario. Ahora bien, entonces \textsl{¿qué entendemos nosotros como inventario?}. Pues, según la real academia española, inventario se define como \textsl{``Asiento de los bienes y demás cosas pertenecientes a una persona o comunidad, hecho con orden y precisión"}\cite{REF01}, lo que nos da a entender que se necesita de una herramienta tecnológica que sea capaz de aportar una mejora para el registro actual de los bienes (servidores) que posee DISICO, almacenando todo esto con un estricto orden y con un alto detalle.\newline
+
+Ahora, conociendo la información que nos entrega la real academia española, podemos establecer que conocemos la definición de que es un inventario y que es lo que se desea hacer, el problema es que ahora, junto con esto, se genera una nueva interrogante \textsl{¿que tipo de inventario realmente es el que se requiere?}.\newline
+
+\textbf{(2)}Existen mucho tipos de inventarios para el registro de los bienes y demás cosas pertenecientes a la empresa, por ejemplo, inventario de productos, inventarios de materias primas, inventarios de insumos, etc. En el caso de este trabajo, se requiere de un inventario informático, ya que este consiste en la realización de un registro detallado de todos los activos de hardware y de software como servidores, programas, licencias y demás elementos tecnológicos con el objetivo de tener esta información centralizada en documentos. la definición planteada anteriormente nos da a entender que el entorno donde se desenvuelve el problema planteado para este trabajo es con respecto a activos tecnológicos, que para este caso, serán los servidores y las aplicaciones de DISICO, determinando con esto el segundo ámbito necesario para comprender el área de este trabajo.\newline
+
+En resumen, para definir el área del problema de este trabajo, tomamos como elementos principales las \textbf{definiciones y características} desde \textbf{(1)} y \textbf{el entorno, los conceptos y los elementos tecnológicos} desde \textbf{(2)}. Estos elementos serán una base estable conceptual para el entendimiento y creación del área total del problema, la cual será mencionada en el capitulo \ref{def}, tomando de esta manera un conocimiento básico del trabajo en sí, para con esto poder entender que estamos realizando y en que entorno nos encontramos situados.
+
+\subsubsection{Conceptos Fundamentales}
+\label{conceptos}
+
+Para un mejor entendimiento con el lector de este documento, se procederá a definir conceptos que serán utilizados a lo largo de este trabajo, los cuales son:
+
+\begin{itemize}
+	\item{\textbf{Registro:}Para la informática, existen distintos tipos de registros, pero en todos los casos hay una referencia al concepto de almacenar datos o información sobre el estado, procesos o uso de ésta en una computadora.}
+	\item{\textbf{Activo Informático:} Recurso del sistema de información o relacionado con éste, necesario para que la organización funcione correctamente y alcance los objetivos propuestos.}
+	\item{\textbf{Servidor:}En informática, un servidor es un tipo de software que realiza ciertas tareas en nombre de los usuarios. El término servidor ahora también se utiliza para referirse al ordenador físico en el cual funciona ese software, una máquina
+cuyo propósito es proveer datos de modo que otras máquinas puedan utilizar esos datos.}
+	\item{\textbf{Aplicación:}Las aplicaciones son software que forman parte de la computadora, ya que son una serie de programas que han sido desarrollados para facilitarle al usuario la utilización de la máquina para una acción o fin determinado.}
+	\item{\textbf{UPS (Uninterrumpible Power Supply):}Fuente de alimentación ininterrumpible. En sí, es la energía de seguridad que se emplea cuando la energía eléctrica de la línea se interrumpe o baja a un nivel de voltaje inaceptable.}
+	\item{\textbf{Rack:}Un rack es un soporte metálico destinado a alojar equipamiento electrónico, informático y de comunicaciones. Las medidas para la anchura están normalizadas para que sean compatibles con equipamiento de cualquier fabricante. También son llamados bastidores, gabinetes o armarios.}
+	\item{\textbf{DataCenter (área de Servidores):}Un Datacenter (centro de cómputos, centro de proceso de datos), es una instalación empleada para albergar los sistemas de información y sus componentes asociados, como las telecomunicaciones y los sistemas de almacenamiento. Generalmente incluye fuentes de alimentación redundantes o de respaldo, conexiones redundantes de comunicaciones, controles de ambiente (por ejemplo, aire acondicionado) y otros dispositivos de seguridad.}
+	\item{\textbf{Interoperabilidad:}Característica de los equipos informáticos que les permite interconectarse y funcionar de manera conjunta, trabajando a nivel de hardware o de software.}
+\end{itemize}
+
+\subsection{Técnicas y herramientas existentes}
+\label{herramientas}
+
+\subsubsection{Estándares de Inventario de los Activos de Información}
+\label{stand}
+
+Comúnmente existen formas de como hacer las cosas y formas, según algunas entidades, de como hacer las cosas de un modo correcto o recomendable. Para el segundo caso existen empresas que se encargan de crear pasos a seguir y buenas prácticas orientadas a aportar un conocimiento sobre como hacer las cosas con una directriz o reglas para las actividades a realizar, a esto se le denomina estándar y/o norma. En el ámbito de la tecnología conocemos como estándar, según la RAE\cite{REF08}, como \textsl{``algo que sirve como tipo, modelo, norma, patrón o referencia"} y como norma, también según la RAE\cite{REF09}, como \textsl{``Regla que se debe seguir o a que se deben ajustar las conductas, tareas, actividades, etc."}, de esta manera y en base a lo anterior, se puede establecer que una norma o estándar es una especificación que reglamenta los procesos y productos para garantizar la interoperabilidad de éstos, o mas específicamente, como una regla o directriz para las actividades, diseñada con el fin de conseguir un grado óptimo de orden en el contexto de la calidad.\newline
+
+Con respecto a esto, el proceso de registro de la información de los activos de Información también posee entidades que han establecido estándares y normas para dicho proceso. A continuación se hará mención a los mas relevantes:
+
+\begin{itemize}
+	\item{\textbf{ISO/IEC 19770:2006 :\cite{REF07}} Es un estándar internacional iniciado en el año 2006, creado con el objetivo de presentar a las organizaciones una ayuda para que éstas puedan poner en práctica procesos y procedimientos para la efectiva gestión de activos de software (SAM). la norma fue creada con la finalidad de presentar una guía para la gestión del riesgo, presentar el conocimiento de los requisitos de gobernanza de TI dentro de la empresa y finalmente mejorar en general la relación coste-eficacia y disponibilidad de software de negocios en toda la empresa.\newline
+
+Esta norma tiene tres secciones:
+	\begin{itemize}
+		\item{\textbf{ISO/IEC 19770-1:} Se centra en la importancia de la gestión eficaz de los activos de software, permitiendo que la organización demuestre que se está llevando a cabo a un nivel suficiente para la gestión de servicios de TI en general.}
+		\item{\textbf{ISO/IEC 19770-2:} Se encarga de definir los requisitos de datos para apoyar a la norma \textbf{ISO/IEC 19770-1}. Proporciona una gestión de datos estándar para la gestión de activos de software (SAM).}
+		\item{\textbf{ISO/IEC 19770-3:}: Proporciona un sistema de gestión de datos estándar para la gestión de activos de software(SAM) para la titularidad de las licencias.}
+	\end{itemize}
+
+En total existen 27 procesos distintos que componen la norma ISO 19770-1 los cuales establecen un marco de trabajo para la gestión eficaz de los actuales activos de software en una empresa.}
+	\item{\textbf{ISO/IEC 27000-series:\cite{REF10}} Es un estándar internacional iniciado en mayo del 2009, creado con el objetivo de entregar las mejores prácticas que se recomiendan con respecto a la Seguridad de la Información para desarrollar, implementar y mantener los sistemas de gestión de la seguridad de la Información (SGSI). Contiene la descripción general y vocabulario a ser empleado en toda la serie 27000. También se puede utilizar con el objetivo de tener un entendimiento mejor de la serie de normas 27000 y la relación entre los diferentes documentos que la conforman.\newline
+
+Esta norma esta compuesta por 14 secciones, de las cuales las que tienen que ver con el proceso de inventario informático de forma general son las siguientes:
+	\begin{itemize}
+		\item{\textbf{UNE-ISO/IEC 27001:2007:} : Esta norma esta orientada a presentar los requisitos necesarios para un Sistema de Gestión de Seguridad de la Información (SGSI). En este caso los SGSIs deberán ser certificados por auditores externos a las organizaciones. Es la norma mas importante de la serie, ya que adopta un enfoque de la gestión de riesgos y promueve la mejora continua de los procesos. En su Anexo A, contempla una lista con los objetivos de control y controles que desarrolla la \textbf{ISO 27002}. Sustituye a la norma \textbf{BS 7799-2:2002}. Tiene un anexo informativo con una tabla de correspondencia de cláusulas con ISO 9001 e ISO 14001.}
+		\item{\textbf{ISO 27002:2005 (ex ISO 17799:2005):} Esta norma presenta una guía de buenas prácticas para la gestión de la información, la cual describe los objetivos de control y los controles recomendables en cuanto a la seguridad de la información con 11 dominios, 39 objetivos de control y 133 controles. Corresponde a la ex norma \textbf{BS 7799-1} y la norma \textbf{ISO 17799}.}
+	\end{itemize}
+
+Para una correcta aplicación de estas normas con respecto a la implementación de un Sistema de Gestión de Seguridad de la Información, es necesario poseer un correcto control de activos informáticos, estableciendo que todos éstos deberán estar claramente identificados, por lo tanto es necesario confeccionar y mantener un inventario lo mas detallado posible. Si no es posible de realizar un inventario detallado, se puede trabajar con un inventario \textsl{``suficientemente bueno por ahora"} pero obligatoriamente se debe incluir siempre la revisión y la actualización de procesos como parte de la mejora continua en el SGSI.}
+	\item{\textbf{ITIL: \cite{REF11}} Es una guía compuesta por un conjunto de conceptos y buenas prácticas orientada a la gestión de servicios de tecnologías de la información, el desarrollo de tecnologías de la información y para las operaciones relacionadas con la misma. ITIL entrega descripciones detalladas de un extenso conjunto de procedimientos de gestión ideados para entregar una ayuda a las organizaciones para que éstas puedan lograr calidad y eficiencia en las operaciones con respecto a las tecnologías de la información(TI). Esta compuesto por un conjunto de libros, de los cuales, cada se uno se encuentra orientado a una práctica específica dentro de la gestión de TI. Con respecto a inventario, ITIL nos entrega lo siguiente:
+	\begin{itemize}
+		\item{\textbf{Gestión de activos de Software:} Este libro fue escrito con el fin de presentar las buenas prácticas que se deben de emplear para el proceso de control de activos de software. Éste consta de una serie de procesos necesarios para administrar, controlar y proteger de manera efectiva todo el software de una empresa a lo largo de las diferentes etapas del ciclo de vida de los activos. Esta guía establece que el control del software empleado en una empresa ayudará a evitar posibles sanciones legales, mejorará el control de activos digitales y sus respectivas licencias, además facilitará el mantenimiento y reparación del hardware, reduciendo de esta manera costes innecesarios.}
+	\end{itemize}
+
+El resto de los libros que componen ITIL abarcan otras áreas sobre las Tecnologías de la Información, que si bien es cierto contribuyen de manera muy positiva a las gestiones, procesos y actividades de una empresa, no aportan mucho para el tema de este trabajo.
+}
+\end{itemize}
+
+\subsubsection{Herramientas existentes}
+\label{herr}
+
+Hoy en día en el mercado existen un sin número de herramientas tecnológicas desarrolladas por distintas organizaciones, éstas han sido implementadas con el fin de poder otorgar una ayuda a las empresas para poder mejorar muchos de los procesos que las componen. Entre las que ya se encuentran circulando en el mercado, encontramos herramientas que aportan al proceso de registro de activos informáticos para las empresas, de las cuales se pueden destacar las que se presentan a continuación:
+
+\begin{itemize}
+	\item{\textbf{Belarc Advisor:\cite{REF12}} Es una herramienta con interfaz WEB perteneciente a la empresa \textbf{Belarc, Inc.} basada en una arquitectura WAN la cual permite a los usuarios poder simplificar y automatizar la administración de sus equipos de escritorio, servidores y equipos portátiles en cualquier lugar del mundo, centralizando toda la información en una base de datos implementada en un servidor de Intranet. El objetivo de esta herramienta es otorgar un sencillo control de inventario y monitoreo de activos informáticos a través de una sencilla administración. Además se encuentra diseñada para poder ser implementada tanto para usuarios pequeños como para grandes corporaciones.
+	\begin{itemize}
+		\item{\textbf{Sistemas Operativos:} Compatible con Windows 7, 2008 R2, Vista, 2008, 2003, XP, 2000, NT 4, Me, 98 y 95.}
+		\item{\textbf{Navegador:} Compatible con Chrome, IE, Firebird, Safari y Opera.}
+		\item{\textbf{Licencia:} La licencia asociada a esta herramienta es gratuita sólo para uso personal. En redes corporativas, públicas, instancias de gobierno, o de cualquier otro tipo, se encuentra prohibida su instalación y uso.}
+	\end{itemize}}
+	\item{\textbf{GMF:\cite{REF13}} Es una herramienta open source con interfaz WEB desarrollada por \textbf{Genos} para la gestión de incidencias, gestión del cambio y gestión de activos informáticos. Se basa en las recomendaciones presentadas por ITIL. GMF crea los recurso que almacenan información y siguen unos flujos determinados, con el objetivo de representar y administrar eficientemente procesos empresariales, de gestión o de soporte técnico. GMF se beneficia de su condición de código abierto pudiendo incorporarle cualquier workflow, report, módulo o elemento a medida de las necesidades. Además posee un módulo para el inventario, el cual es recolectado automáticamente, al cual se le hace referencia con cada incidencia, proceso o ítem y un módulo general de gestión del cambio en la organización.
+	\begin{itemize}
+		\item{\textbf{Sistemas Operativos:} Compatible con Windows MS 32-bit (95/ 98/ NT/ 2000/ XP), POSIX (Linux/ BSD/ UNIX-like OSes) y Solaris.}
+		\item{\textbf{Navegador:} Compatible con IE y FireFox.}
+		\item{\textbf{Licencia:} Esta herramienta es gratuita distribuida bajo licencia GPL.}
+	\end{itemize}}
+	\item{\textbf{GesConsultor:\cite{REF14}} Es una herramienta WEB de pago desarrollada por la empresa GesDatos, la cual proporciona una solución integral para consultores y empresas a la hora de implementar y gestionar un SG (Sistema de Gestión) facilitando las dificultades anteriormente expuestas. Es una herramienta para implantación y seguimiento del ciclo completo de Sistemas de Gestión. Trabaja bajo la norma ISO 27001, ISO 9001, ISO 14001, UNE 166002 incluyendo un gestor centralizado de activos TI que permite el mapeo con un módulo de análisis de riesgos.
+	\begin{itemize}
+		\item{\textbf{Sistemas Operativos:} Se encuentra implementado en JSF, por lo tanto funciona en sistemas operativos que lo soporten.}
+		\item{\textbf{Navegador:} Compatible con cualquier Navegador que respete los estándares, como Chrome, IE, etc.}
+		\item{\textbf{Licencia:} Esta herramienta es de pago mensual.}
+	\end{itemize}}
+	\item{\textbf{GLPI:\cite{REF15}} Es una herramienta WEB con gestión de ticket para problemas de Software desarrollada por la empresa INDEPNET, la cual es de fácil uso y con funcionalidades que le dan la posibilidad a los usuarios de construir una potente Base de Datos sobre activos de Software de su empresa, y módulos para la gestión de éstos. El inventario que se genera registra ordenadores, periféricos, impresoras de red y los componentes asociados a través de una interfaz con sistemas como OCS Inventory.
+	\begin{itemize}
+		\item{\textbf{Sistemas Operativos:} Se encuentra implementado en PHP, por lo tanto funciona en sistemas operativos con Servidores WEB Apache o equivalentes.}
+		\item{\textbf{Navegador:} Compatible con cualquier Navegador que respete los estándares, como Chrome, IE, etc.}
+		\item{\textbf{Licencia:} Esta herramienta es de Código Libre y distribuida bajo licencia GNU/GPL.}
+	\end{itemize}}
+	\item{\textbf{OCS Inventory NG:\cite{REF05}} Es una herramienta WEB de distribución gratuita desarrollada por OCS Inventory Team para la creación automática de Inventarios de Hardware y Software, escaneo de red y distribución de paquetes de software. se basa en los estándares vigentes y su funcionamiento es a través de agentes. El diálogo entre los equipos clientes y el servidor se basa en HTTP y el formato de los datos se realiza en XML.
+	\begin{itemize}
+		\item{\textbf{Sistemas Operativos: Compatible con:}
+			\begin{itemize}
+				\item{\textbf{Servidor:} GNU/Linux (Ubuntu, Debian, Suse, RedHat, Gentoo, Knoppix, Slackware, Mandriva, Fedora y Centos), FreeBSD, Windows (XP, 2000, server 2003) y Sun Solaris.}
+				\item{\textbf{Agentes:} GNU/Linux (Ubuntu, Debian, Suse, RedHat, Gentoo, Knoppix, Slackware, Mandriva, Fedora y Centos), Windows (95, 98, NT4, 2000, XP, server 2003, Vista), Mac OS X, Sun Solaris, IBM AIX.}
+			\end{itemize}}
+		\item{\textbf{Navegador:} Compatible con cualquier Navegador que respete los estándares, como Chrome, IE, etc.}
+		\item{\textbf{Licencia:} Es un software libre que se publica bajo licencia GNU GPLv2.}
+	\end{itemize}}
+	\item{\textbf{SpiceWorks:\cite{REF04}} Es una herramienta WEB gratuita desarrollada por SpiceWorks, Inc. y está orientada para la gestión, monitorización y resolución de problemas en la red de la empresa. Posee módulos implementados para la creación automática de mapas de la red de la empresa, helpdesk (gestión de tickets), Inventario de activos Informáticos automáticos sin agentes (detallando Hardware y Software) y gestión de compras de Tecnologías de la Información, entre otras funcionalidades. Esta herramienta se encuentra orientada a pequeñas y medianas empresas.
+	\begin{itemize}
+		\item{\textbf{Sistemas Operativos:} Funciona en sistemas operativos Windows, pero reconoce equipos de Windows, Unix, Linux y Mac OS X.}
+		\item{\textbf{Navegador:} Compatible con cualquier Navegador que respete los estándares, como Chrome, IE, etc.}
+		\item{\textbf{Licencia:} Esta herramienta es de Código Libre y distribuida bajo licencia GNU/GPL.}
+	\end{itemize}}
+	\item{\textbf{Remote Asset Tracker:\cite{REF06}} ] Es una herramienta de escritorio desarrollada por Softinventive Lab Inc. para el control de activos informáticos e inventario. Se encuentra diseñado para compañías medianas y grandes. Remote Asset Tracker permite a los administradores de activos un control total de los dispositivos en la red junto con el inventario del hardware y el software, auditorias de dichos dispositivos, administración de éstos y gestión de las licencias asociadas. El enfoque de la herramienta no es demasiado complicado para no confundir a los principiantes, ni tampoco parece demasiado simplista para los usuarios experimentados. El inventario de PC se efectúa sin instalar ningún software cliente en los equipos remotos.
+	\begin{itemize}
+		\item{\textbf{Sistemas Operativos:} Funciona en sistemas operativos Windows (7, Vista, XP, 2000, Server 2000, Server 2003, Server 2008), pero reconoce equipos de Windows, Unix, Linux y Mac OS X.}
+		\item{\textbf{Navegador:} No es compatible con navegadores debido a que es una herramienta de escritorio.}
+		\item{\textbf{Licencia:} Esta herramienta es de pago.}
+	\end{itemize}}
+\end{itemize}
+
+\subsubsection{Comparación entre Herramientas}
+\label{comparacion}
+
+A continuación se realizará una comparación entre las herramientas presentadas en la sección \ref{herr}. Éstas comparativas son realizadas a través de criterios que son de interés para el trabajo, las cuales serán presentadas a continuación:\newline
+
+\large{\textbf{Cumplimiento de estándares por las herramientas.}}
+\normalsize
+\newline
+\begin{table}[H]
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\cline{1-2}
+Herramientas & Estándares \\ \cline{1-2}
+Belarc Advisor & Basado en ISO/IEC 19770:2006 e ISO/IEC 27000-series \\ \cline{1-2}
+GMF   & Basado en ISO/IEC 19770:2006 e ISO/IEC 27000-series y las recomendaciones de ITIL \\ \cline{1-2}
+GesConsultor & Basado en ISO/IEC 19770:2006 e ISO/IEC 27000-series \\ \cline{1-2}
+GLPI  & Basado en ISO/IEC 19770:2006 e ISO/IEC 27000-series y las recomendaciones de ITIL \\ \cline{1-2}
+OCS Inventory NG & Basado en ISO/IEC 19770:2006 e ISO/IEC 27000-series \\ \cline{1-2}
+SpiceWorks & Basado en ISO/IEC 19770:2006 e ISO/IEC 27000-series \\ \cline{1-2}
+Remote Asset Tracker & Basado en ISO/IEC 19770:2006 \\ \cline{1-2}
+\cline{1-2}
+\end{tabular}
+\caption{Comparativa de las herramientas según Estándares.}
+\label{tab01}
+\end{table}
+
+Analizando la información presentada en la tabla \ref{tab01}, es posible visualizar que cada una de las herramientas estudiadas implementan, en distintas cantidades, alguna o todas las buenas prácticas que son planteadas por los estándares o guías presentadas en la sección \ref{stand}. Esto nos da a entender que para obtener un buen producto, será necesario tomar en cuenta las observaciones y correcciones que entregan dichas normas, tanto como para desarrollar una herramienta de control de activos informáticos, como también la forma de realizar dicho control.\newline
+
+\large{\textbf{Objetivo principal de las herramientas.}}
+\normalsize
+\newline
+\begin{table}[H]
+\begin{tabular}{|p{4cm}|p{8cm}|}
+\cline{1-2}
+Herramientas & Objetivos \\ \cline{1-2}
+Belarc Advisor & Construye un perfil detallado de activos TI, detalla el estado del software instalado y presenta puntos de referencia de seguridad. \\ \cline{1-2}
+GMF   & Gestiona las incidencias, gestiona el inventario de activos TI, gestiona el cambio, Gestiona el "service level agreement" y realiza reporting. \\ \cline{1-2}
+GesConsultor & Gestión de SGSIs, que incluye un gestor  centralizado de activos TI que permite el mapeo con su módulo de análisis de riesgos. \\ \cline{1-2}
+GLPI  & Inventario de activos TI, con funcionalidades de gestión de los mismos \\ \cline{1-2}
+OCS Inventory NG & Creación de Inventarios de Hardware y Software, escaneo de red y distribución de paquetes de software \\ \cline{1-2}
+SpiceWorks & Gestion, monitorización y resolución de problemas de red. Posee inventario de activos y helpdesk. \\ \cline{1-2}
+Remote Asset Tracker & Inventario detallado de activos TI y alertas de incidencias. \\ \cline{1-2}
+\end{tabular}
+\caption{Comparativa de las herramientas según Objetivos.}
+\label{tab02}
+\end{table}
+
+Al contrastar los Objetivos principales de las herramientas evaluadas, es posible visualizar que todas poseen un modulo de inventario de activos, pero algunas se encuentran orientadas a otras áreas ademas de registrar información de bienes informáticos (como SpiceWorks por ejemplo), lo cual puede ser desfavorable al momento de dar solución a las necesidades que se desean cubrir, pues puede que no se ajusten perfectamente a la situación de este trabajo, al ser inventarios muy genéricos. También salta a la vista que ninguna de estas herramienta está orientada a encontrar o establecer una relación (interoperabilidad) entre los activos registrados (tanto de software, como de hardware), lo cual puede presentar un problema al momento de existir alguna incidencia, siendo otra diferencia importante, ya que no muchas de las herramientas presentadas tienen un modulo de registro y control de incidencias entre la información almacenada de los activos.\newline
+
+\large{\textbf{Fortalezas y Debilidades de las herramientas.}}
+\normalsize
+\newline
+
+\begin{table}[H]
+\begin{tabular}{| p{2,5cm} |p{5.5cm} |p{5.5cm} |}
+\cline{1-3}
+Herramientas & Fortalezas & Debilidades \\ \cline{1-3}
+Belarc Advisor & Interfaz WEB simple, posee buen detalle de la información y no es complicado para la instalación. Compatible con muchos navegadores. & Funciona solo en Windows. Es gratuito solo para uso personal. Presenta toda la información amontonada y hace difícil el monitoreo de los activos. \\ \cline{1-3}
+GMF   & Gratuito. Interfaz WEB sencilla. Compatible con muchos sistemas operativos. Puede incorporar workflows, reports, módulos o elementos a la medida. & Es compatible solo con Internet Explorer y Mozilla Firefox. No posee mucho detalle de información técnica de los activos. \\ \cline{1-3}
+GesConsultor & Posee una interfaz web intuitiva. Presenta muchas funcionalidades basadas en ISO 27000. estandarizado también para ISO 9001 e ISO 14001. & No es gratuito. De difícil adquisición. Es muy genérico y al poseer muchas funcionalidades, se hace complicado monitorear los activos TI. \\ \cline{1-3}
+GLPI  & Es gratuito. Interfaz web simple. Posee seguimiento de problemas y registro de activos IT. Se puede asociar a otros sistemas. Disponible en 41 lenguajes. & Cualquier perfil de usuario puede modificar información, que en algunos casos, es de vital importancia. Requiere de tiempo mantener un registro actualizado de los activos. \\ \cline{1-3}
+OCS Inventory NG & Es gratuito. Interfaz web simple. Detecta activos automáticamente. Instala software de forma remota. Integrable a GLPI. Funciona en muchos sistemas operativos. & Funciona a través de agentes instalados en los equipos a ser inventariados. \\ \cline{1-3}
+SpiceWorks & Gratuito. Fácil de instalar. Iterfaz web simple. Compatible con móviles. Identifica automáticamente los activos conectados. Registro de actividades. & Funciona solo en Windows. Algunos problemas detectando activos. Algunos antivirus lo detectan como virus. Tiene mucha propaganda o anuncios en el sistema. \\ \cline{1-3}
+Remote Asset Tracker & Fácil instalación. Interfaz intuitiva. Gran detalle de la información. Reconoce automáticamente los activos. & Es pagado. Funciona en windows. Interfaz de escritorio. \\ \cline{1-3}
+\end{tabular}
+\caption{Comparativa de las herramientas según Fortalezas y Debilidades.}
+\label{tab03}
+\end{table}
+
+Según la comparativa presentada en la tabla \ref{tab03} se puede visualizar que las herramientas presentadas anteriormente poseen muchas ventajas, en alguna de ellas por ejemplo que son gratuitas o que funcionan en muchos Sistemas Operativos, lo cual entrega un gran valor a cada una de ellas. Ahora como también éstas herramientas poseen fortalezas, también presentan muchas debilidades que pueden afectar la funcionalidad de su uso, ya que pueden presentar complicaciones al momento de implementarlas o utilizarlas. Lo provechoso de esta comparación es que nos entrega información para ser tomada en cuenta al momento de implementar nuestro sistema de Inventarios, ya que podemos tomar sus ventajas y aplicarlas a nuestro sistema, como también, tomar las dificultades que poseen y solucionarlas para que así nuestro sistema se adapte mejor a las necesidades de DISICO. Siempre y cuando todo esto pertenezca a las descripciones que se solicitan para nuestro sistema de inventarios de activos.\newline
+
+Por lo tanto, se puede concluir que si bien es cierto las herramientas estudiadas son una buena solución para el registro y control de activos informáticos, puede ser que estas posean características o funcionalidades que no se adapten en un 100\% a las necesidades que presenta DISICO, o simplemente sean innecesarias para el proceso de Inventario, las cuales pueden traer un cierto grado de dificultad para el funcionamiento normal del registro de activos.
+
+\newpage
+
+\section{Definición del Problema}
+\label{def}
+
+\subsection{Formulación del Problema}
+\label{problema}
+
+Actualmente la Dirección de Servicios de Información y Comunicación (DISICO) de la Universidad de Valparaíso consta de un proceso de inventario para el control de sus servidores y las aplicaciones asociadas a éstos basado en documentación administrativa (manejo de formularios en papel), en donde se plasma toda la información perteneciente a cada uno de sus equipos (técnico y administrativo), proceso el cual trae muchas complicaciones al momento de su normal funcionamiento, las cuales serán presentadas  a continuación:
+
+\begin{itemize}      \item{La sala de servidores a aumentado el numero de equipos en gran cantidad en este ultimo tiempo, y es muy probable que esto siga en aumento, lo cual, a medida que pasa el tiempo, hace cada vez mas complejo tener toda la información de los servidores en un registro ordenado, claro y preciso.}
+			 	   \item{Al ser un proceso netamente basado en documentación de formularios en papel, resta capacidad de disponibilidad de la información almacenada, tanto en un tiempo oportuno, como también en la existencia de ésta.} 
+				   \item{El proceso actual depende mucho de si la persona responsable escribe con detalle la información técnica y administrativa de los equipos que van ingresando, como también si éste la registra(ya que puede omitir información), por lo cual se resta confiabilidad de la información.}
+				   \item{Es necesario conocer en detalle que actividades fueron, son y serán realizadas en el equipo (por ejemplo instalación de sistema operativo, actualización, etc) ya que el desconocimiento de ésto puede perjudicar el funcionamiento normal de una máquina o provocar otro tipo de incidencias en ellas.}
+				   \item{Producto de lo anterior, es necesario también conocer en detalle las incidencias ocurridas en los servidores (ataques, problemas de CPU, cambios hardware/software, etc) para que puedan ser conocidas en un tiempo oportuno y no descubiertas como actualmente se hace, después de que un cambio drástico ocurre.}
+				   \item{También se necesita un detalle de las aplicaciones instaladas, ya que no tenerlo genera riesgos en la instalación de aplicaciones y por ende en los procesos que requieren los sistemas en producción.}
+				   \item{También se produce una problemática con el desconocimiento de la interdependencia de aplicaciones instaladas en los servidores, esto es, como se relacionan y que tan importante es esta relación.}
+				   \item{Se desconoce actualmente (si no es por una revisión visual en el lugar) del estado del equipo, esto es si se encuentra apagado, encendido, uso/sin uso.}
+				   \item{Ademas también se desconoce actualmente (si no es también por una revisión visual en el lugar o si es que llegase a existir el registro) de la ubicación en los racks (posición física) de los equipos en la sala de servidores.}
+				   \item{Otra dificultad que se genera con el sistema actual es la complejidad que tiene el realizar Estadísticas con la información actualmente en papel.}
+				   \item{El hecho también de que sean formularios administrativos en papel el proceso por el cual se almacena la información de los activos, genera un procedimiento engorroso el registrar un nuevo servidor o modificar alguna información de los que ya se encuentran registrados.}
+\end{itemize}
+
+\subsection{Situación Actual}
+\label{act}
+
+Actualmente la Universidad de Valparaíso cuenta con la Dirección de Servicios de Información y Computación (DISICO), que depende directamente de la Prorrectoría de la Universidad de Valparaíso, y que se encuentra destinada para toda la creación, mantención y gestión de tecnologías de la información, como también para dar soporte tecnológico a los diversos departamentos y facultades que conforman la Universidad. La creación de ésta dirección y sus funciones se encuentran descritas en el Decreto 427 de 1993\cite{REF03}.\newline
+
+DISICO tiene como misión la de velar por el correcto funcionamiento de los servicios de redes y comunicaciones, como también la automatización y mantención del funcionamiento ininterrumpido de los procesos que llevan la Dirección de Administración y Finanzas, Dirección de Recursos Humanos, Unidad de Aranceles, División Académica y facultades correspondientes a la Universidad de Valparaíso.\newline
+
+Además es también la encargada de entregar el soporte de hardware para los sistemas computacionales, para los usuarios y para el desarrollo de los sistemas informáticos que permitan mejorar la calidad de los servicios brindados a alumnos, profesores y funcionarios, y con esto aumentar y asegurar la calidad, rapidez, seguridad y alta disponibilidad de la información y los servicios.\newline
+
+Con el objetivo de entregar una mejor calidad de servicio y un mejor cumplimiento de sus funcionalidades, actualmente DISICO se compone por 3 áreas, las cuales son el Área de Sistemas Financiero-Contables (FINCON), Área de Desarrollo y Área de Redes, Comunicaciones y Soporte.\newline
+
+Cada una de éstas áreas constituye un pilar fundamental para DISICO, ya que
+cada una de ellas está orientada al cumplimiento en específico de las funciones que debe de cumplir DISICO.\newline
+
+Por un lado el Área de Sistemas Financiero-Contables (FINCON) se encuentra
+encargada de la labor de automatizar los diferentes procesos que llevan a cabo las Direcciones de Administración y Finanzas, Recursos Humanos y la Unidad de Aranceles de la Universidad, garantizando además el funcionamiento de manera ininterrumpida y eficiente de los sistemas que apoyan estos procesos.\newline
+
+El Área de Desarrollo de Sistemas de Información, por su parte, es la encargada del desarrollo de sistemas informáticos que permitan mejorar la calidad de los servicios y procesos que se brindan a alumnos, profesores y funcionarios de la Universidad. Logrando de esta manera que la comunidad universitaria tenga acceso a estos servicios con una calidad, rapidez, seguridad y alta disponibilidad asegurada por ésta área, lo que contribuye al cumplimiento de la misión de la universidad.\newline
+
+Y finalmente el Área de Redes, Telecomunicaciones y Soporte, que es la encargada del correcto funcionamiento de los servicios de redes y comunicaciones pertenecientes a la Universidad, como también del soporte de hardware y software de los sistemas computacionales y usuarios de la universidad.\newline
+
+Para que éstas áreas de DISICO puedan cumplir sus funcionalidades de una manera óptima, correcta y con calidad, es que se cuenta con un Datacenter el cual almacena
+todos los equipos informáticos, electrónicos y de red que son necesarios para el funcionamiento correcto de los servicios que entrega DISICO a la Universidad.\newline
+
+Éste Datacenter se encuentra administrado y gestionado por el encargado del área de Servidores, el cual tiene como labor la de gestionar el correcto funcionamiento, la mantención, la monitorización y el control de los activos informáticos que pertenecen
+a ésta Área de DISICO (Datacenter). Cabe destacar que dichos activos pertenecen a cada una de las áreas mencionadas anteriormente, como también a Direcciones que son agenas a DISICO, lo cual justifica el control de activos informáticos, registrando
+con esto la información administrativa y técnica.\newline
+
+Como se ha mencionado, entre todas las labores realizadas por el encargado del área de Servidores, existe la tarea de registrar la información administrativa y técnica de cada uno de los activos Informáticos, que desde ahora los identificamos como Servidores, que conforman el Datacenter. Ésta labor cuenta de diversas Tareas, de las
+cuales se identifican:
+
+\begin{itemize}
+	\item{Recepcionar servidores nuevos y registrarlos.}
+	\item{Determinar información técnica y administrativa de los servidores.}
+	\item{Actualizar la información que existe a lo mas cercano a la realidad.}
+	\item{Determinar que equipos se dan de baja para posterior traslado o venta.}
+	\item{Presentar información del estado actual de los equipos, esto es si se encuentran funcionando.}
+	\item{Reconocer, destinar o modificar ubicación en el datacenter de los servidores.}
+	\item{Generar informes con detalle de la información registrada. Responder a las Auditorias que se le realicen al Datacenter.}
+\end{itemize}
+
+Las labores que se encuentran descritas anteriormente responden al proceso de control de activos informáticos del Datacenter de DISICO, a este proceso se le conoce como Inventario de Activos Informáticos. El funcionamiento de dicho proceso se encuentra ilustrado en la figura \ref{img01} que se presenta a continuación:\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{EstadoActual.png}
+\caption{Diagrama del proceso actual de registro de Activos.}
+\label{img01}
+\end{center}
+\end{figure}
+
+En la figura \ref{img01} se muestra como se relaciona en el proceso el administrador del Datacenter (encargado) con sus actividades y la interacción que existe entre el encargado del servidor, que puede ser una persona perteneciente a las áreas de DISICO o de un ente externo, con éste encargado. Además se puede visualizar que el funcionamiento del registro de la información de los servidores es realizada a través de documentación física (papel), la cual posteriormente es almacenada en archivadores, de entre las cuales hoy en día se manejan:
+\begin{itemize}
+	\item{Planilla con datos técnicos de servidores.}
+	\item{Planilla con datos administrativos de servidores.}
+	\item{Planilla con resumen de función de servidores.}
+	\item{Alta de inventario de un servidor.}
+	\item{Acta de recepción (que incluye Orden de Compra, Factura y Comprobantes presupuestarios).}
+	\item{Informe de Baja de un Bien.}
+	\item{Resolución de Baja de un Bien.}
+	\item{Documento de Traslado de un Bien.}
+	\item{Ficha (o hoja de vida) de un Servidor.}
+\end{itemize}
+
+Documentos que deben ser entregados por los encargados de los Servidores al Administrador del Datacenter, para que este luego proceda a registrar y almacenar dicha información en los documentos que le corresponden.\newline
+
+En el funcionamiento de este proceso es donde se puede determinar la problemática presentada en la sección \ref{problema}, situación que se propone solucionar con lo que se presenta en la sección \ref{sol} que se presenta a continuación.
+
+\subsection{Solución Propuesta}
+\label{sol}
+
+En base a la situación actual, la cual fue detallada en la sección \ref{act}, y la problemática presentada en en la sección \ref{problema}, es que se plantea la idea de implementar una herramienta que sirva como apoyo al proceso de inventario de activos actual para el registro de la información de los servidores y sus aplicaciones asociadas para la Dirección de Servicios de Información y Comunicación (DISICO). La cual debe consistir en una implementación WEB con una Interfaz de fácil manipulación y con perfiles de usuario que permitan la visualización y administración de la información.\newline
+
+La información almacenada será centralizada en una base de datos que contendrá toda la documentación que se realiza actualmente de forma ordenada, con facilidad para la manipulación de ésta, logrando así una mejor gestión de la información.\newline
+
+Además tomará en cuenta las buenas prácticas, los consejos y las normas que fueron identificadas y explicadas en la sección \ref{stand}, para que el sistema posea un buen control de la información de los activos registrados sobre el Datacenter, otorgando de esta manera una mejor calidad del sistema y asegurando que el producto final sea el deseado.\newline
+
+También mantendrá un registro fiel a la realidad (o muy cercano), de los datos administrativos y técnicos, como también de las aplicaciones instaladas por Servidor, detallando su estado actual y ubicación en el Datacenter, para poder mejorar así la incertidumbre de que la información sea exacta.\newline
+
+Además se implementará un sistema de bitácoras para registrar y conocer las modificaciones o actualizaciones en detalle que se realicen en los servidores, obteniendo así un registro del cambio detallado, claro y confiable.\newline
+
+Agregando a lo anterior, el sistema incluirá las siguientes características y/o funcionalidades:
+
+\begin{itemize}
+	\item{Gestión de Usuarios.}
+	\item{Detalle de la relación que existe entre Servidores, entre un Servidor y una Aplicación y entre Aplicaciones.}
+	\item{Visualización del estado e incidencias de los equipos.}
+	\item{Gestión de la información (estadísticas).}
+	\item{Clasificación por módulo de la información registrada (por departamento, encargado, etc).}
+	\item{Contará con los estándares de programación establecidos en DISICO.}
+	\item{Se incluirán además de los Servidores, los dispositivos de alimentación eléctrica ininterrumpida (UPS).}
+\end{itemize}
+
+Además de las características presentadas anteriormente, el sistema contemplará los siguientes perfiles de Usuario:
+
+\begin{itemize}
+	\item{Administrador: Perfil de Usuario encargado de gestionar la aplicación con totalidad de permisos.}
+	\item{Responsable de Sala de Servidores: Perfil de Usuario que simula la labor actual del Encargado de la Sala de Servidores.}
+	\item{Responsable de Área: Perfil de usuario que gestiona la información registrada en la aplicación, que corresponde a su Área en DISICO.}
+	\item{Responsable de Servidor: Perfil de usuario que gestiona la información registrada en la aplicación que corresponde a los Servidores en que se encuentra responsable.}
+	\item{Responsable de Aplicación: Perfil de usuario que gestiona la información registrada en la aplicación que corresponde a las Aplicaciones en que se encuentra responsable.}
+\end{itemize}
+
+Por lo tanto, el diagrama presentado en la figura \ref{img01} de la sección \ref{act} será adaptado a la solución presentada, resultando de esta manera el diagrama presentado a continuación, en donde se visualiza el funcionamiento del proceso de inventario luego de implementar la solución:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{Solucion.png}
+\caption{Diagrama de solución propuesta.}
+\label{img02}
+\end{center}
+\end{figure}
+
+En el diagrama de la figura \ref{img02}, a diferencia del presentado en la sección \ref{act}, se puede observar los cambios correspondiente a la digitalización de la información, en donde se reemplaza al encargado del área de Servidores como centro de gestión de la información, por la herramienta a implementar, siendo esta la encargada de administrar la información, como también de generar estadísticas e informes y de responder a las auditorias. También es posible visualizar que se encargará de definir las relaciones entre la información de los servidores y el datacenter con respecto al sistema, esto quiere decir que el sistema registrará cualquier tipo de interoperabilidad que exista dentro de los activos informáticos, esto es, relación entre Servidores, entre una aplicación y un servidor y entre aplicaciones.\newline
+
+Por lo tanto es posible establecer que la herramienta a desarrollar presenta una solución viable para la problemática planteada en la sección \ref{problema}.
+
+\subsection{Objetivos}
+\label{obj}
+
+Para poder obtener la solución presentada en la sección \ref{sol} es necesario establecer los siguientes Objetivos a cumplir:
+
+\subsubsection{Objetivo General}
+
+Implementación de un sistema WEB de inventario de aplicaciones y servidores para la Dirección de Servicios de Información y Comunicación (DISICO) de la Universidad de Valparaíso.
+	
+\subsubsection{Objetivos Específicos}
+
+\begin{itemize}
+		\item{Estudio de aplicaciones de inventario ya existentes en el mercado.}
+		\item{Analizar de forma exhaustiva el proceso actual de inventario.}
+		\item{Comparar proceso actual y aplicaciones investigadas.}
+		\item{Mejorar el registro actual de inventario.}
+		\item{Codificación de la solución presentada.}
+		\item{Pruebas e implantación en DISICO.}
+\end{itemize}
+
+\newpage
+
+\section{Análisis}
+\label{analss}
+
+\subsection{Actores del Sistema}
+\label{actor}
+
+Dentro del Sistema propuesto se pueden encontrar diversos actores, los cuales serán definidos a continuación:
+
+\begin{itemize}
+	\item{Administrador: Usuario encargado de gestionar la aplicación con totalidad de permisos, conoce el funcionamiento completo del Sistema.}
+	\item{Responsable Datacenter: Usuario que simula la labor actual del Encargado de la Sala de Servidores.}
+	\item{Responsable de Área: Usuario que gestiona la información registrada en la aplicación que corresponde a su Área en DISICO o fuera de DISICO.}
+	\item{Responsable de Servidor: Usuario que gestiona la información registrada en la aplicación que corresponde a los Servidores en que se encuentra responsable.}
+	\item{Responsable de Aplicación: Usuario que gestiona la información registrada en la aplicación que corresponde a las Aplicaciones en que se encuentra responsable.}
+\end{itemize}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{Actores.png}
+\caption{Actores de la herramienta propuesta.}
+\label{img03}
+\end{center}
+\end{figure}
+
+\subsection{Especificación de Requerimientos}
+\label{req}
+
+A continuación se especificarán los requerimientos funcionales (RF), los requerimientos no funcionales (RNF) y los requerimientos Tecnológicos (RT) los cuales indican lo necesario para la implementación de la herramienta propuesta, posteriormente serán asignados a los incrementos de la etapa de Desarrollo.
+
+\subsubsection{Requerimientos Funcionales}
+\label{rf}
+
+Estos requerimientos definen el comportamiento interno del sistema. Incluye detalles técnicos, manipulación de datos y otras funcionalidades específicas que muestran cómo las operaciones del sistema serán llevadas a la práctica. A continuación se procederá a describir cada uno de ellos, en donde se definirá si son \textbf{O (Obligatorio)} o \textbf{D (Deseable)}.\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF01 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La herramienta debe de ser capaz de registrar información de Servidores, Aplicaciones y UPS.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF02 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se deben implementar los siguientes perfiles de Usuarios: Administrador, Usuario Responsable Datacenter, Usuario Responsable de Área, Usuario Responsable de servidor, Usuario responsable de aplicación.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF03 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe poder agregar o modificar un servidor al registro.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF04 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La información del equipo debe contener: detalle técnico y administrativo.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF05 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de poder adjuntar a la información del servidor como por ejemplo la captura digital de la factura, la orden de compra, la guía de despacho, uso en producción para reemplazo o cualquier otra información importante.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF06 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de poder registrar las actividades realizadas en el Servidor.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF07 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de poder registrar en la herramienta las incidencias que ocurren en el equipo, esto es por ejemplo problemas de CPU, cambios de hardware/software.	} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF08 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Debe de existir algún detalle de las aplicaciones instaladas, incluyendo su información técnica y administrativa.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF09 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de representar en algún módulo del sistema, la relación que existe entre los Servidores registrados.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF10 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de representar en algún módulo del sistema, la relación que existe entre las aplicaciones registradas.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF11 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de representar en algún módulo del sistema, la relación que existe entre las aplicaciones y servidores registrados.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF12 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe detallar en algún módulo del sistema el estado del equipo, por ejemplo si éste se encuentra encendido, apagado, uso/sin uso.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF13 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de representar en algún módulo del sistema la ubicación física de los servidores en el datacenter,(como se encuentra instalado en los rack).} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF14 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de poder hacer uso de la información almacenada para poder generar estadísticas de la información.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF15 & Alcance: Todo El Sistema & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{No se debe de poder eliminar ningún registro del sistema, para mantener la consistencia de la información.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF16 & Alcance: Perfil Administrador & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El administrador podrá agregar, buscar, modificar y desactivar cuentas de usuario correspondiente a los distintos perfiles. Se entiende por desactivar como el bloqueo del uso de la cuenta y la utilización de los datos asociados a esta para la generación de nuevos registros, sin embargo los documentos que ya se encuentran generados con estos datos deben de seguir siendo visibles.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF17 & Alcance: Perfil Administrador & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El administrador podrá agregar, buscar y modificar cualquier tipo de registro en el sistema.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF18 & Alcance: Perfil Responsable Datacenter & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Deberá poder agregar, buscar y modificar cualquier tipo de registro en el sistema.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF19 & Alcance: Perfil Responsable Datacenter & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El perfil responsable del Datacenter tiene acceso a todos los registros en todos los módulos del sistema a excepción de la sección de administración.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF20 & Alcance: Perfil Responsable de Área & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El responsable de Área deberá poder agregar, buscar y modificar los registros en el sistema que correspondan al Área en que pertenece.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF21 & Alcance: Perfil Responsable de Área & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El perfil responsable de Área tiene acceso a todos los registros que pertenecen a su área en todos los módulos, a excepción de la sección de administración.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF22 & Alcance: Perfil Responsable de Servidor & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El responsable de Servidor deberá poder agregar, buscar y modificar los registros en el sistema que correspondan a los servidores en que se encuentra responsable.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF23 & Alcance: Perfil Responsable de Servidor & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El perfil responsable de Servidor tiene acceso a todos los registros que pertenecen a los servidores en que éste se encuentra responsable, esto en todos los módulos de información, a excepción de la sección de administración.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF24 & Alcance: Perfil Responsable de Aplicación & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El responsable de Aplicación deberá poder agregar, buscar y modificar las Aplicaciones en el sistema que correspondan a los servidores en que se encuentra responsable.} \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+ID: RF25 & Alcance: Perfil Responsable de Aplicación & Prioridad: O \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El perfil responsable de Aplicación tiene acceso a todos los registros que pertenecen a las aplicaciones en que éste se encuentra responsable, esto en todos los módulos de información, a excepción de la sección de administración.} \\ \cline{1-3}
+\end{tabular}\newline \newline
+
+\subsubsection{Requerimientos No Funcionales}
+\label{rnf}
+
+Éstos requerimientos son complementarios a los funcionales, los cuales fueron descritos anteriormente. Se enfocan en aspectos de diseño o implementación. Éstos criterios se pueden utilizar para juzgar la operación de un sistema en lugar de sus comportamientos específicos. A continuación se procederá a describir cada uno de ellos, en donde se definirá si son \textbf{O (Obligatorio)} o \textbf{D (Deseable)}.\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RNF01} & \textbf{Nombre: Seguridad} & \textbf{Prioridad: O} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Un usuario no puede confiar en los datos de un sistema que no le ayude a controlar el acceso de personas no autorizadas o a detectar errores de operación en los que se introducen y generan datos erróneos.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Restricción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Sólo podrán ingresar al Sistema las personas que estén registradas, utilizando un usuario y contraseña. El control de acceso debe permitir asignar los perfiles correspondientes para a cada uno de los usuarios identificados. La cantidad de acceso a funcionalidades no autorizadas para un perfil debe ser cero.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Limite Frontera:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La cantidad de acceso a funcionalidades no autorizadas para un perfil debe seguir siendo cero.} \\ \cline{1-3}
+\end{tabular}\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RNF02} & \textbf{Nombre: Disponibilidad} & \textbf{Prioridad: O} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La disponibilidad de un sistema es una medida que nos indica cuanto tiempo está ese sistema operativo respecto de la duración total durante la que se hubiese deseado que funcionase. Típicamente se expresa en porcentaje.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Restricción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El sistema debe de estar disponible en un 99\% de las veces que sea requerida su utilización.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Limite Frontera:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Como límite frontera deberá estar disponible un 95\% de las veces que sea requerida su utilización.} \\ \cline{1-3}
+\end{tabular}\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RNF03} & \textbf{Nombre: Confiabilidad} & \textbf{Prioridad: O} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El software es confiable si el usuario puede depender de él. Es la probabilidad que el software opere adecuadamente por un periodo de tiempo establecido. Se requiere: Madurez, tolerancia a fallas, recuperación de fallas.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Restricción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El sistema deberá recuperarse de un fallo en no más de 10 minutos.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Limite Frontera:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El sistema deberá recuperarse de un fallo en no más de 15 minutos.} \\ \cline{1-3}
+\end{tabular}\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RNF04} & \textbf{Nombre: Desempeño} & \textbf{Prioridad: O} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El desempeño es el grado en el cual un sistema o componente cumple sus funciones dentro de restricciones dadas tales como velocidad, exactitud, o uso de memoria. Es el tiempo requerido para responder a un evento específico. También se considera el número de eventos procesados en un intervalo dado de tiempo.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Restricción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La información almacenada podrá ser consultada y actualizada permanentemente, sin que se afecte el tiempo de respuesta establecido. El tiempo de respuesta deberá de ser de 5 segundos para completar una transacción.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Limite Frontera:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El tiempo de respuesta deberá ser a lo más de 8 segundos en completar la transacción.} \\ \cline{1-3}
+\end{tabular}\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RNF05} & \textbf{Nombre: Usabilidad} & \textbf{Prioridad: O} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La usabilidad representa el grado en que el software es usable, sin esfuerzos innecesarios por parte del usuario para el cual está diseñado. Implica una interfaz de usuario apropiada y documentación adecuada. Se requiere facilidad de comprensión, aprendizaje y operación.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Restricción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El tiempo en realizar una acción en el sistema debe ser menor a realizar la misma acción de forma manual (papel). Tiempo en llegar a una función por primera vez: 5 minutos. Tiempo en llegar por segunda vez : 1 minuto.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Limite Frontera:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El tiempo en realizar una acción en el sistema debe ser igual a realizar la misma acción de forma manual (papel). Tiempo en llegar a una función por primera vez debe ser a lo más 7 minutos. Tiempo en llegar por segunda vez debe ser a lo más de 2 minutos.} \\ \cline{1-3}
+\end{tabular}\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RNF06} & \textbf{Nombre: Robustez} & \textbf{Prioridad: O} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se refiere a la capacidad del software de defenderse de las acciones anormales que llevan al sistema a un estado no deseado o por lo menos no previsto, causando un comportamiento inesperado, indeseado y posiblemente erróneo.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Restricción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{El sistema debe validar la información contenida en los formularios de ingreso. Se puede tomar en cuenta aspectos como campos obligatorios, manejo de tipos de datos, etc. Cantidad de campos obligatorios no ingresado debe ser cero.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Limite Frontera:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Cantidad de campos obligatorios no ingresado debe seguir siendo cero.} \\ \cline{1-3}
+\end{tabular}\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RNF07} & \textbf{Nombre: Mantenibilidad} & \textbf{Prioridad: O} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La facilidad con la que un sistema o componente de software puede ser modificado para corregir fallos, mejorar su funcionamiento u otros atributos o adaptarse a cambios en el entorno. Este aspecto de calidad involucra los elementos que simplifican la labor de prevención, corrección o ampliación del código del programa. Retomar un código escrito meses antes es un trabajo dispendioso y agobiante, en especial cuando las aplicaciones no cuentan con la característica a la cual aquí se hace referencia.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Restricción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Todos los métodos deben estar debidamente documentados (código), con excepción de los mutadores y accesadores.} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{\textbf{Limite Frontera:}} \\ \cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se aceptará un 80\% de los métodos documentados, éstos deberán ser los más importantes.} \\ \cline{1-3}
+\end{tabular}
+
+\subsubsection{Requerimientos Tecnologicos}
+\label{rt}
+
+Requerimientos que son complementarios a los funcionales y no funcionales. Éstos se encuentran destinados para determinar las características Tecnológicas que debe de cumplir la herramienta final. A continuación se procederá a describir cada uno de ellos, en donde se definirá si son \textbf{O (Obligatorio)} o \textbf{D (Deseable)}.\newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RT01} & \textbf{Alcance: Para Todo el Sistema} & \textbf{Prioridad: O} \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La solución debe ser 100\% implementada en un entorno WEB.} \\ \cline{1-3}
+\end{tabular}\newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RT02} & \textbf{Alcance: Para Todo el Sistema} & \textbf{Prioridad: O} \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La implementación de la Base de Datos del Sistema debe de ser en MySQL.} \\ \cline{1-3}
+\end{tabular}\newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RT03} & \textbf{Alcance: Para Todo el Sistema} & \textbf{Prioridad: O} \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{La herramienta debe Cumplir con los estándares de Desarrollo de DISICO.} \\ \cline{1-3}
+\end{tabular}\newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RT04} & \textbf{Alcance: Para Todo el Sistema} & \textbf{Prioridad: O} \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de implementar la herramienta en un Servidor (máquina) sin grandes características, con la restricción de que se encuentre configurado con Sistemas Open Source.} \\ \cline{1-3}
+\end{tabular}\newline \newline
+
+\begin{tabular}{|p{2.5cm}|p{8cm}|p{3cm}|}
+\cline{1-3}
+\textbf{ID: RT05} & \textbf{Alcance: Para Todo el Sistema} & \textbf{Prioridad: O} \\
+\cline{1-3}
+\multicolumn{3}{|p{13.5cm}|}{Se debe de utilizar un servidor (software) que permita el uso del lenguaje de programación web para implementar la solución, además que éste sea Open Source.} \\ \cline{1-3}
+\end{tabular}
+
+\subsubsection{Asignación de los Requerimientos a los Incrementos}
+\label{asignacion}
+
+Según la metodología incremental\cite{REF02} escogida para la gestión de las fases del ciclo de vida de este sistema, se determinó que en la etapa de desarrollo se deberá trabajar de forma iterativa, esto es, generando incrementos, que a medida que avanza la implementación, agregan nuevas características a la herramienta, para que al finalizar el ciclo iterativo de desarrollo se logre el sistema completo.\newline
+
+Se a decidido definir cada incremento como cada uno de los perfiles que constituyen el sistema, abarcando de esta manera en las primeras iteraciones, los perfiles de usuarios mas simples, para luego terminar con los mas complejos. Esto se decidió así ya que los perfiles de usuario comparten muchas funcionalidades, siendo los últimos quienes agregan un mayor número de funcionalidades, por lo tanto, se pretende trabajar con re-utilización de funcionalidades implementadas en las iteraciones anteriores.\newline
+
+Por lo anterior es que se a decidido asignar los requerimientos a dichos incrementos de la manera que se presenta a continuación, definiendo con esto también el número de incrementos a ejecutar en la fase de desarrollo:\newline \newline
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\cline{1-3}
+\textbf{ID: IT01} & \multicolumn{2}{p{8cm}|}{\textbf{Perfil Responsable de Servidor}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{Esta iteración esta destinada netamente a implementar el módulo con las funcionalidades y características que debe de poseer el usuario encargado de los Servidores existentes en el Datacenter.}  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Funcionales:}} \\ \cline{1-3}
+RF01  & RF02  & RF03 \\ \cline{1-3}
+RF04  & RF05  & RF06 \\ \cline{1-3}
+RF07  & RF08  & RF09 \\ \cline{1-3}
+RF10  & RF11  & RF12 \\ \cline{1-3}
+RF13  & RF14  & RF15 \\ \cline{1-3}
+RF22  & RF23  &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos no Funcionales:}} \\ \cline{1-3}
+RNF01 & RNF02 & RNF03 \\ \cline{1-3}
+RNF04 & RNF05 & RNF06 \\ \cline{1-3}
+RNF07 &       &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Tecnológicos:}} \\ \cline{1-3}
+RT01  & RT02  & RT03 \\ \cline{1-3}
+RT04  & RT05  &  \\ \cline{1-3}
+\end{tabular}
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\cline{1-3}
+\textbf{ID: IT02} & \multicolumn{2}{p{8cm}|}{\textbf{Perfil Responsable de Aplicación}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{Esta iteración esta destinada netamente a implementar el módulo con las funcionalidades y características que debe de poseer el usuario encargado de las Aplicaciones existentes en los servidores del Datacenter.}  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Funcionales:}} \\ \cline{1-3}
+RF01  & RF02  & RF03 \\ \cline{1-3}
+RF04  & RF05  & RF06 \\ \cline{1-3}
+RF07  & RF08  & RF09 \\ \cline{1-3}
+RF10  & RF11  & RF12 \\ \cline{1-3}
+RF13  & RF14  & RF15 \\ \cline{1-3}
+RF24  & RF25  &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos no Funcionales:}} \\ \cline{1-3}
+RNF01 & RNF02 & RNF03 \\ \cline{1-3}
+RNF04 & RNF05 & RNF06 \\ \cline{1-3}
+RNF07 &       &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Tecnológicos:}} \\ \cline{1-3}
+RT01  & RT02  & RT03 \\ \cline{1-3}
+RT04  & RT05  &  \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\cline{1-3}
+\textbf{ID: IT03} & \multicolumn{2}{p{8cm}|}{\textbf{Perfil Responsable de Área}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{Ésta iteración esta destinada netamente a implementar el módulo con las funcionalidades y características que debe de poseer el usuario encargado de Área de los servidores y aplicaciones existentes en éstos en el Datacenter.}  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Funcionales:}} \\ \cline{1-3}
+RF01  & RF02  & RF03 \\ \cline{1-3}
+RF04  & RF05  & RF06 \\ \cline{1-3}
+RF07  & RF08  & RF09 \\ \cline{1-3}
+RF10  & RF11  & RF12 \\ \cline{1-3}
+RF13  & RF14  & RF15 \\ \cline{1-3}
+RF20  & RF21  &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos no Funcionales:}} \\ \cline{1-3}
+RNF01 & RNF02 & RNF03 \\ \cline{1-3}
+RNF04 & RNF05 & RNF06 \\ \cline{1-3}
+RNF07 &       &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Tecnológicos:}} \\ \cline{1-3}
+RT01  & RT02  & RT03 \\ \cline{1-3}
+RT04  & RT05  &  \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\cline{1-3}
+\textbf{ID: IT04} & \multicolumn{2}{p{8cm}|}{\textbf{Perfil Responsable de Datacenter}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{Ésta iteración esta destinada netamente a implementar el módulo con las funcionalidades y características que debe de poseer el usuario encargado del Datacenter.}  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Funcionales:}} \\ \cline{1-3}
+RF01  & RF02  & RF03 \\ \cline{1-3}
+RF04  & RF05  & RF06 \\ \cline{1-3}
+RF07  & RF08  & RF09 \\ \cline{1-3}
+RF10  & RF11  & RF12 \\ \cline{1-3}
+RF13  & RF14  & RF15 \\ \cline{1-3}
+RF18  & RF19  &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos no Funcionales:}} \\ \cline{1-3}
+RNF01 & RNF02 & RNF03 \\ \cline{1-3}
+RNF04 & RNF05 & RNF06 \\ \cline{1-3}
+RNF07 &       &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Tecnológicos:}} \\ \cline{1-3}
+RT01  & RT02  & RT03 \\ \cline{1-3}
+RT04  & RT05  &  \\ \cline{1-3}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\cline{1-3}
+\textbf{ID: IT05} & \multicolumn{2}{p{8cm}|}{\textbf{Perfil Administrador}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Descripción:}} \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{Ésta iteración esta destinada netamente a implementar el módulo con las funcionalidades y características que debe de poseer el usuario Administrador del Sistema.}  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Funcionales:}} \\ \cline{1-3}
+RF01  & RF02  & RF03 \\ \cline{1-3}
+RF04  & RF05  & RF06 \\ \cline{1-3}
+RF07  & RF08  & RF09 \\ \cline{1-3}
+RF10  & RF11  & RF12 \\ \cline{1-3}
+RF13  & RF14  & RF15 \\ \cline{1-3}
+RF16  & RF17  &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos no Funcionales:}} \\ \cline{1-3}
+RNF01 & RNF02 & RNF03 \\ \cline{1-3}
+RNF04 & RNF05 & RNF06 \\ \cline{1-3}
+RNF07 &       &  \\ \cline{1-3}
+\multicolumn{3}{|p{12cm}|}{\textbf{Requerimientos Tecnológicos:}} \\ \cline{1-3}
+RT01  & RT02  & RT03 \\ \cline{1-3}
+RT04  & RT05  &  \\ \cline{1-3}
+\end{tabular}
+
+\subsection{Definición de Funcionalidades del Sistema}
+\label{funcionalidades}
+
+En esta sección se definirán las principales funcionalidades que deberá cumplir la
+herramienta al momento de ser implementada, se detallará por cada una, el nombre
+de la función, su identificador, una breve descripción, clasificación (esto es Obligato-
+rio o Deseable) y luego un listado con los atributos del sistema que deberá cumplir
+agregando a esto su clasificación (Obligatorio o Deseable). \newline \newline
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\cline{1-4}
+\textbf{Función:} & \multicolumn{2}{p{5cm}|}{\textbf{Gestionar Servidor}} & \textbf{ID: FUNC01} \\ \cline{1-4}
+\textbf{Descripción:} & \multicolumn{3}{p{8cm}|}{Esta función consiste en la acción de agregar, listar, buscar y modificar Registros de servidores en el Sistema} \\ \cline{1-4}
+\textbf{Clasificación:} & \multicolumn{3}{p{8cm}|}{Obligatorio} \\ \cline{1-4}
+\multicolumn{4}{|p{11cm}|}{\textbf{Atributos del Sistema}} \\ \cline{1-4}
+\textbf{Atributo:} & RNF01 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF02 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF03 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF04 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF05 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF06 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF07 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\end{tabular} \newline \newline
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\cline{1-4}
+\textbf{Función:} & \multicolumn{2}{p{5cm}|}{\textbf{Gestionar Aplicación}} & \textbf{ID: FUNC02} \\ \cline{1-4}
+\textbf{Descripción:} & \multicolumn{3}{p{8cm}|}{Esta función consiste en la acción de agregar, listar, buscar y modificar Registros de las Aplicaciones en el Sistema.} \\ \cline{1-4}
+\textbf{Clasificación:} & \multicolumn{3}{p{8cm}|}{Obligatorio} \\ \cline{1-4}
+\multicolumn{4}{|p{11cm}|}{\textbf{Atributos del Sistema}} \\ \cline{1-4}
+\textbf{Atributo:} & RNF01 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF02 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF03 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF04 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF05 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF06 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF07 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\end{tabular} \newline
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\cline{1-4}
+\textbf{Función:} & \multicolumn{2}{p{5cm}|}{\textbf{Gestionar UPS}} & \textbf{ID: FUNC03} \\ \cline{1-4}
+\textbf{Descripción:} & \multicolumn{3}{p{8cm}|}{Esta función consiste en agregar, listar y modificar Registros de las UPS en el Sistema.} \\ \cline{1-4}
+\textbf{Clasificación:} & \multicolumn{3}{p{8cm}|}{Obligatorio} \\ \cline{1-4}
+\multicolumn{4}{|p{11cm}|}{\textbf{Atributos del Sistema}} \\ \cline{1-4}
+\textbf{Atributo:} & RNF01 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF02 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF03 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF04 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF05 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF06 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF07 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\end{tabular}\newline
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\cline{1-4}
+\textbf{Función:} & \multicolumn{2}{p{5cm}|}{\textbf{Gestionar Usuarios del Sistema}} & \textbf{ID: FUNC04} \\ \cline{1-4}
+\textbf{Descripción:} & \multicolumn{3}{p{8cm}|}{Esta función consiste en la acción de agregar, listar, buscar, modificar y desactivar cualquier tipo de cuenta de usuario en el sistema.} \\ \cline{1-4}
+\textbf{Clasificación:} & \multicolumn{3}{p{8cm}|}{Obligatorio} \\ \cline{1-4}
+\multicolumn{4}{|p{11cm}|}{\textbf{Atributos del Sistema}} \\ \cline{1-4}
+\textbf{Atributo:} & RNF01 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF02 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF04 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF05 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF07 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\end{tabular}\newline
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\cline{1-4}
+\textbf{Función:} & \multicolumn{2}{p{5cm}|}{\textbf{Gestionar Sesión}} & \textbf{ID: FUNC05} \\ \cline{1-4}
+\textbf{Descripción:} & \multicolumn{3}{p{8cm}|}{Esta función consiste en la acción de poder iniciar, validar o cerrar la sesión de un usuario en el sistema.} \\ \cline{1-4}
+\textbf{Clasificación:} & \multicolumn{3}{p{8cm}|}{Obligatorio} \\ \cline{1-4}
+\multicolumn{4}{|p{11cm}|}{\textbf{Atributos del Sistema}} \\ \cline{1-4}
+\textbf{Atributo:} & RNF01 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF05 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF06 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\end{tabular}\newline
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\cline{1-4}
+\textbf{Función:} & \multicolumn{2}{p{5cm}|}{\textbf{Recuperar cuenta de Usuario}} & \textbf{ID: FUNC06} \\ \cline{1-4}
+\textbf{Descripción:} & \multicolumn{3}{p{8cm}|}{Esta función consiste en la acción de poder reactivar o recuperar contraseña de alguna cuenta de usuario} \\ \cline{1-4}
+\textbf{Clasificación:} & \multicolumn{3}{p{8cm}|}{Obligatorio} \\ \cline{1-4}
+\multicolumn{4}{|p{11cm}|}{\textbf{Atributos del Sistema}} \\ \cline{1-4}
+\textbf{Atributo:} & RNF01 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF05 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF06 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\end{tabular}\newline
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\cline{1-4}
+\textbf{Función:} & \multicolumn{2}{p{5cm}|}{\textbf{Gestionar Información}} & \textbf{ID: FUNC07} \\ \cline{1-4}
+\textbf{Descripción:} & \multicolumn{3}{p{8cm}|}{Esta función consiste en la acción de generar Estadísticas o Informes sobre la información almacenada en el Sistema} \\ \cline{1-4}
+\textbf{Clasificación:} & \multicolumn{3}{p{8cm}|}{Obligatorio} \\ \cline{1-4}
+\multicolumn{4}{|p{11cm}|}{\textbf{Atributos del Sistema}} \\ \cline{1-4}
+\textbf{Atributo:} & RNF01 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF02 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF03 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF04 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF05 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF06 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\textbf{Atributo:} & RNF07 & \textbf{Clasificación:} & Obligatoria \\ \cline{1-4}
+\end{tabular} \newline \newline
+
+
+\newpage
+
+\subsection{Casos de Uso}
+\label{uso}
+
+La figura \ref{img04} muestra los respectivos casos de uso por cada actor del sistema propuesto, se observa que los usuarios pueden realizar tareas que son parte de un caso de uso general, como por ejemplo \textsl{``modificar"} del caso de uso \textsl{``Gestionar Servidor"}. El conjunto de casos de uso descritos nos da los lineamientos necesarios para saber que hará el sistema una vez construido, esto se debe a que se encuentran basados en las funciones del sistema que fueron determinadas en la sección \ref{funcionalidades}. El diagrama de Casos de uso del sistema es el que se visualiza en la imagen que se presenta a continuación:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{CasosDeUso.png}
+\caption{Casos de Uso del Sistema.}
+\label{img04}
+\end{center}
+\end{figure}
+
+A continuación se procederá a mostrar los caso de uso mas relevantes del sistema (los cuales se encuentran remarcados en la figura \ref{img04}), en donde se detallará la información de éstos en su formato extendido, agregando además para cada uno de ellos sus respectivos diagramas de secuencia y sus diagramas de estado.\newline
+
+Con el propósito de explicar el contenido que viene a continuación, es válido mencionar que en el diagrama de Casos de Uso, los actores definidos en la sección \ref{actor} fueron generalizados en el actor \textsl{``Usuario"}, por lo tanto en la situación de los usuarios específicos (Usuario Responsable Datacenter, Usuario Responsable de Área, Usuario Responsable de Servidor, Usuario Responsable de Aplicación) se deberá tomar en cuenta las limitaciones que tiene cada uno con respecto al uso de las funcionalidades del sistema en cada uno de los Casos de Uso Extendidos del Sistema.
+
+\subsubsection{Casos de Usos Extendidos}
+\label{extendidos}
+
+\small
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Nombre del Caso de Uso} & Gestionar Sesión \\ \cline{1-2}
+\textbf{Actores} & Administrador y Usuario \\ \cline{1-2}
+\textbf{Propósito} & Este Caso de Uso le permite al Administrador y al Usuario iniciar Sesión, modificar sus datos, ir a su perfil y cerrar sesión dentro del sistema. \\ \cline{1-2}
+\textbf{Resumen} & Este Caso de Uso Empieza cuando el Administrador o el Usuario desean iniciar sesión, para luego tener las facultades de modificar los datos asociados a su cuenta, ir a su perfil para ver las distintas tareas que pueden realizar y finalmente cerrar sesión para salir del sistema. \\ \cline{1-2}
+\textbf{Tipo}  & Primario y esencial \\ \cline{1-2}
+\textbf{Referencias Cruzadas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+1. El usuario accede a la opción de inicio de sesión.\newline \newline\newline \newline
+3. El usuario dentro del sistema posee las siguientes opciones:
+(a) Ir a perfil: \textsl{Consulte la sección Modificar Datos.}\newline
+(b) Modificar Datos: \textsl{Consulte la sección Modificar Datos.}\newline
+(c) Cerrar sesión: \textsl{Consulte la sección Cerrar Sesión.} & 
+~\newline \newline 
+2. El sistema valida si el usuario y contraseña es correcto y despliega las opciones. \\ \cline{1-2}
+\textbf{Curso Alternativo(Usuario)} & \textbf{Curso Alternativo (Sistema)} \\ \cline{1-2}
+      & 2. Datos Inválidos. El sistema no permitirá el ingreso. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Ir a Perfil} & Perfil Administrador \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline    5. El administrador dentro de su perfil posee las siguientes opciones:\newline
+(a) Gestionar Usuarios del Sistema: \textsl{Consulte la sección Gestionar Usuarios del Sistema.}\newline
+(b) Gestionar Sesión: \textsl{Consulte la sección Gestionar Sesión.}\newline
+(c) Recuperar Cuenta de Usuario: \textsl{Consulte la sección Recuperar Cuenta de Usuario.}\newline
+(d) Gestionar Servidor: \textsl{Consulte la sección Gestionar Servidor.}\newline
+(e) Gestionar Aplicaciones: \textsl{Consulte la sección Gestionar Aplicaciones.}\newline
+(f) Gestionar UPS: \textsl{Consulte la sección Gestionar UPS.}   &  4. El sistema muestra el menú que corresponde al perfil del administrador.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Ir a Perfil} & Perfil Usuario \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline   5. El usuario dentro de su perfil posee las siguientes opciones:\newline
+(a) Gestionar Sesión: \textsl{Consulte la sección Gestionar Sesión.}\newline
+(b) Gestionar Servidor: \textsl{Consulte la sección Gestionar Servidor.}\newline
+(c) Gestionar Aplicaciones: \textsl{Consulte la sección Gestionar Aplicaciones.}\newline
+(d) Gestionar UPS: \textsl{Consulte la sección Gestionar UPS.}   &  4. El sistema muestra el menú que corresponde al perfil del usuario.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Modificar Datos} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline   5. El usuario modifica los dato de Usuario y guarda. &  4. El sistema entrega el formulario de modificación de datos de usuario.\newline \newline
+6. El Sistema almacena los datos. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Cerrar Sesión} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+4. El usuario decide cerrar sesión. & ~\newline 5. El sistema cierra sesión. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Nombre del Caso de Uso} & Gestionar Usuarios del Sistema \\ \cline{1-2}
+\textbf{Actores} & Administrador \\ \cline{1-2}
+\textbf{Propósito} & Este Caso de Uso le permite al Administrador poder agregar, modificar, listar, buscar y desactivar usuarios que pertenecen al sistema. \\ \cline{1-2}
+\textbf{Resumen} & Este Caso de Uso Empieza cuando el Administrador desea agregar o modificar o listar o buscar o desactivar alguno de los usuarios que pertenecen al sistema. \\ \cline{1-2}
+\textbf{Tipo}  & Primario y esencial \\ \cline{1-2}
+\textbf{Referencias Cruzadas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+1. El usuario accede a la opción de gestionar Usuarios del Sistema.\newline \newline\newline 
+3. El usuario escoge una de las siguientes opciones:
+(a) Agregar Usuario: \textsl{Consulte la sección Agregar Usuario.}\newline
+(b) Modificar Usuario: \textsl{Consulte la sección Modificar Usuario.}\newline
+(c) Listar Usuario: \textsl{Consulte la sección Listar Usuario.}\newline
+(d) Buscar Usuario: \textsl{Consulte la sección Buscar Usuario.}\newline
+(e) Desactivar Usuario: \textsl{Consulte la sección Desactivar Usuario.}& 
+~\newline \newline 
+2. El sistema entrega las opciones que posee el administrador. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Agregar Usuario} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline  \newline 5. El usuario completa el formulario con las características del nuevo usuario y guarda la información. & 4. El sistema Entrega el formulario de agregar Usuario. \newline \newline \newline \newline \newline 6. El sistema almacena los datos del nuevo Usuario.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Listar Usuario} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+  & 4. El sistema Entrega un listado con todos los usuarios existentes en el sistema. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Buscar Usuario} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline 5. El usuario completa la información requerida y envía los datos. & 4. El sistema Entrega los campos de Búsqueda de Usuario. \newline \newline \newline 6. El sistema entrega los resultados obtenidos.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Modificar Usuario} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline 5. El usuario modifica los datos y guarda la información. & 4. El sistema Entrega el formulario de modificación de Usuario. \newline \newline \newline 6. El sistema almacena los datos nuevos del Usuario.\\ \cline{1-2}
+\textbf{Curso Alternativo(Usuario)} & \textbf{Curso Alternativo (Sistema)} \\ \cline{1-2}
+5. El usuario cancela la acción. & ~\newline 6. El sistema cancela la modificación y retorna a la página anterior. \\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{\textbf{Observación:}}\\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{Para modificar, es necesario antes haber buscado algún usuario a través de buscar. ver sección \textsl{``Buscar Usuario"}}\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Desactivar Usuario} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline 5. El usuario responde que si lo desea. & 4. El sistema consulta si desea desactivar usuario. \newline \newline \newline 6. El sistema desactiva a un usuario.\\ \cline{1-2}
+\textbf{Curso Alternativo(Usuario)} & \textbf{Curso Alternativo (Sistema)} \\ \cline{1-2}
+5. El usuario responde que no lo desea. & ~\newline \newline 6. El sistema cancela la desactivación y retorna a la página anterior. \\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{\textbf{Observación:}}\\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{Para desactivar, es necesario antes haber buscado algún usuario a través de listar o buscar. ver sección \textsl{``Buscar Usuario"} y \textsl{``Listar Usuario"}}\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Nombre del Caso de Uso} & Recuperar Cuenta de Usuario \\ \cline{1-2}
+\textbf{Actores} & Administrador \\ \cline{1-2}
+\textbf{Propósito} & Este Caso de Uso le permite al Administrador poder reactivar algún usuario que pueda haber existido en el sistema o recuperar la contraseña de algún usuario que pertenecen al sistema. \\ \cline{1-2}
+\textbf{Resumen} & Este Caso de Uso Empieza Cuando el administrador desea reactivar alguna cuenta de usuario ya desactivada o desea recuperar la contraseña de algún usuario. \\ \cline{1-2}
+\textbf{Tipo}  & Primario y esencial \\ \cline{1-2}
+\textbf{Referencias Cruzadas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+1. El usuario accede a la opción de Recuperar cuenta de Usuario.\newline \newline\newline 
+3. El usuario escoge una de las siguientes opciones:\newline
+(a) Reactivar Usuario: \textsl{Consulte la sección Reactivar Usuario.}\newline
+(b) Recuperar Contraseña: \textsl{Consulte la sección Recuperar Contraseña.}& 
+~\newline \newline 
+2. El sistema entrega las opciones que posee el administrador. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Reactivar Usuario} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline 5. El usuario selecciona al usuario a reactivar y envía la información. & 4. El sistema Entrega los campos de Búsqueda de Usuario. \newline \newline \newline 6. El sistema reactiva un usuario.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Recuperar Contraseña} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline 5. El usuario ingresa los datos del usuario a quien le recuperará la contraseña. & 4. El Sistema presenta el formulario para recuperar contraseña. \newline \newline \newline \newline 6. El sistema actualiza la contraseña del usuario.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Nombre del Caso de Uso} & Gestionar Servidor \\ \cline{1-2}
+\textbf{Actores} & Administrador, Usuario \\ \cline{1-2}
+\textbf{Propósito} & Este Caso de Uso le permite al Administrador y al Usuario poder agregar, buscar, listar o modificar algún registro de los Servidores en el Sistema. \\ \cline{1-2}
+\textbf{Resumen} & Este Caso de Uso Empieza cuando el Administrador o el Usuario desea agregar o modificar o listar o buscar algún registro de los Servidores nuevos o ya existentes en el Sistema. \\ \cline{1-2}
+\textbf{Tipo}  & Primario y esencial \\ \cline{1-2}
+\textbf{Referencias Cruzadas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+1. El usuario accede a la opción de gestionar Servidor.\newline \newline\newline 
+3. El usuario escoge una de las siguientes opciones:\newline
+(a) Agregar Registro: \textsl{Consulte la sección Agregar Registro.}\newline
+(b) Modificar Registro: \textsl{Consulte la sección Modificar Registro.}\newline
+(c) Listar Registro: \textsl{Consulte la sección Listar Registro.}\newline
+(d) Buscar Registro: \textsl{Consulte la sección Buscar Registro.}& 
+~\newline \newline 
+2. El sistema entrega las opciones que posee el usuario. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Agregar Registro} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline  \newline 5. El usuario ingresa los datos del Registro a agregar. & 4. El sistema presenta el formulario para Agregar Registro. \newline \newline \newline \newline \newline 6. El sistema almacena el nuevo registro en el sistema.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Listar Usuario} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+  & 4. El sistema Entrega un listado con todos los registros (servidores o aplicaciones) existentes en el sistema. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Buscar Registro} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline 5. El usuario completa la información requerida y envía los datos. & 4. El sistema Entrega los campos de Búsqueda de registro. \newline \newline \newline 6. El sistema entrega los resultados obtenidos.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección Modificar Registro} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline \newline 5. El usuario modifica los datos del registro y guarda la información. & 4. El sistema presenta el formulario de modificación de Registro. \newline \newline \newline 6. El sistema almacena los datos nuevos del registro.\\ \cline{1-2}
+\textbf{Curso Alternativo(Usuario)} & \textbf{Curso Alternativo (Sistema)} \\ \cline{1-2}
+5. El usuario cancela la acción. & ~\newline 6. El sistema cancela la modificación y retorna a la página anterior. \\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{\textbf{Observación:}}\\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{Para modificar, es necesario antes haber buscado algún registro a través de buscar. ver sección \textsl{``Buscar Registro"}}\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Nombre del Caso de Uso} & Gestionar Aplicación \\ \cline{1-2}
+\textbf{Actores} & Administrador, Usuario \\ \cline{1-2}
+\textbf{Propósito} & Este Caso de Uso le permite al Administrador y al Usuario poder agregar, buscar, listar o modificar algún registro de las Aplicaciones en el Sistema. \\ \cline{1-2}
+\textbf{Resumen} & Este Caso de Uso Empieza cuando el Administrador o el Usuario desea agregar o modificar o listar o buscar algún registro de las Aplicaciones nuevas o ya existentes en el Sistema. \\ \cline{1-2}
+\textbf{Tipo}  & Primario y esencial \\ \cline{1-2}
+\textbf{Referencias Cruzadas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+1. El usuario accede a la opción de gestionar Aplicación.\newline \newline\newline 
+3. El usuario escoge una de las siguientes opciones:\newline
+(a) Agregar Registro: \textsl{Consulte la sección Agregar Registro.}\newline
+(b) Modificar Registro: \textsl{Consulte la sección Modificar Registro.}\newline
+(c) Listar Registro: \textsl{Consulte la sección Listar Registro.}\newline
+(d) Buscar Registro: \textsl{Consulte la sección Buscar Registro.}& 
+~\newline \newline 
+2. El sistema entrega las opciones que posee el usuario. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\cline{1-2}
+\textbf{Nombre del Caso de Uso} & Gestionar UPS \\ \cline{1-2}
+\textbf{Actores} & Administrador, Usuario \\ \cline{1-2}
+\textbf{Propósito} & Este Caso de Uso le permite al Administrador y al Usuario poder agregar, listar o modificar alguna UPS en el Sistema. \\ \cline{1-2}
+\textbf{Resumen} & Este Caso de Uso se da cuando el Administrador o el Usuario desea agregar, modificar o listar UPS nuevas o ya existentes. \\ \cline{1-2}
+\textbf{Tipo}  & Primario y esencial \\ \cline{1-2}
+\textbf{Referencias Cruzadas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+1. El usuario accede a la opción de gestionar UPS.\newline \newline
+3. El usuario escoge una de las siguientes opciones:\newline
+(a) Agregar UPS: \textsl{Consulte la sección Agregar UPS.}\newline
+(b) Modificar UPS: \textsl{Consulte la sección Modificar UPS.}\newline
+(c) Listar UPS: \textsl{Consulte la sección Listar UPS.}& 
+~\newline
+2. El sistema entrega las opciones que posee el usuario. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\cline{1-2}
+\textbf{Sección Agregar UPS} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline   5. El usuario ingresa los datos de la UPS a agregar. & 4. El sistema presenta el formulario para Agregar una UPS. \newline \newline 6. El sistema guarda la nueva UPS.\\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\cline{1-2}
+\textbf{Sección Listar UPS} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+  & 4. El sistema Entrega un listado con las UPS existentes en el sistema. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\cline{1-2}
+\textbf{Sección Modificar UPS} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+~\newline  5. El usuario modifica los datos de la UPS y guarda la información. & 4. El sistema presenta el formulario de modificación de UPS. \newline \newline  6. El sistema almacena los datos nuevos de la UPS.\\ \cline{1-2}
+\textbf{Curso Alternativo(Usuario)} & \textbf{Curso Alternativo (Sistema)} \\ \cline{1-2}
+5. El usuario cancela la acción. & ~\newline 6. El sistema cancela la modificación y retorna a la página anterior. \\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{\textbf{Observación:}}\\ \cline{1-2}
+\multicolumn{2}{|p{12cm}|}{Para modificar, es necesario antes haber buscado alguna UPS a través de listar. ver sección \textsl{``Listar UPS"}}\\ \cline{1-2}
+\end{tabular}
+
+\newpage
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Nombre del Caso de Uso} & Gestionar Información \\ \cline{1-2}
+\textbf{Actores} & Administrador, Usuario \\ \cline{1-2}
+\textbf{Propósito} & Este Caso de Uso le permite al Administrador y al Usuario poder generar Estadísticas o Informes con la información Almacenada en el Sistema. \\ \cline{1-2}
+\textbf{Resumen} & Este Caso de Uso Empieza cuando el Administrador o el Usuario desea generar Estadísticas o Informes sobre la información almacenada en el Sistema. \\ \cline{1-2}
+\textbf{Tipo}  & Primario y esencial \\ \cline{1-2}
+\textbf{Referencias Cruzadas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+1. El usuario accede a la opción de gestionar Información.\newline \newline\newline 
+3. El usuario escoge una de las siguientes opciones:\newline
+(a) Generar Estadísticas: \textsl{Consulte la sección Generar Estadísticas.}\newline
+(b) Generar Informes: \textsl{Consulte la sección Generar Informes.}& 
+~\newline \newline 
+2. El sistema entrega las opciones que posee el usuario. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección generar Estadísticas} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+ ~\newline \newline \newline 5. El Usuario escoge una de las opciones otorgadas por el sistema. & 4. El sistema Entrega un listado con todas las opciones existentes en el sistema para generar Estadísticas.\newline \newline \newline 6. El Sistema Presenta las Estadísticas correspondiente a la opción escogida. \\ \cline{1-2}
+\end{tabular}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\cline{1-2}
+\textbf{Sección generar Informes} &  \\ \cline{1-2}
+\textbf{Curso Normal (Usuario)} & \textbf{Curso Normal (Sistema)} \\ \cline{1-2}
+ ~\newline \newline \newline 5. El Usuario escoge una de las opciones otorgadas por el sistema. & 4. El sistema Entrega un listado con todas las opciones existentes en el sistema para generar Informes.\newline \newline \newline 6. El Sistema Presenta el Informe correspondiente a la opción escogida. \\ \cline{1-2}
+\end{tabular}
+
+\newpage
+
+\subsubsection{Diagramas de Secuencia de Casos de Uso Extendidos}
+\label{sequence}
+
+\large{Diagrama de Secuencia de Gestionar Sesión.}
+\normalsize
+\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=16cm]{sequenceDiagram1.png}
+\caption{Diagrama de Secuencia Gestionar Sesión - Iniciar Sesión.}
+\label{img05}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=16cm]{sequenceDiagram2.png}
+\caption{Diagrama de Secuencia Gestionar Sesión - Ir a Perfil.}
+\label{img06}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=16cm]{sequenceDiagram3.png}
+\caption{Diagrama de Secuencia Gestionar Sesión - Modificar Datos.}
+\label{img07}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{sequenceDiagram4.png}
+\caption{Diagrama de Secuencia Gestionar Sesión - Cerrar Sesión.}
+\label{img08}
+\end{center}
+\end{figure}
+
+\newpage
+\large{Diagrama de Secuencia de Gestionar Usuario.}
+\normalsize
+\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{sequenceDiagram5.png}
+\caption{Diagrama de Secuencia Gestionar Usuario - Agregar Usuario.}
+\label{img09}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{sequenceDiagram6.png}
+\caption{Diagrama de Secuencia Gestionar Usuario - Buscar Usuario.}
+\label{img10}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram7.png}
+\caption{Diagrama de Secuencia Gestionar Usuario - Listar Usuario.}
+\label{img11}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram8.png}
+\caption{Diagrama de Secuencia Gestionar Usuario - Modificar Usuario.}
+\label{img12}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=16cm]{sequenceDiagram9.png}
+\caption{Diagrama de Secuencia Gestionar Usuario - Desactivar Usuario.}
+\label{img13}
+\end{center}
+\end{figure}
+
+\newpage
+
+\large{Diagrama de Secuencia de Recuperar Cuenta de Usuario.}
+\normalsize
+\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{sequenceDiagram10.png}
+\caption{Diagrama de Secuencia Recuperar Cuenta de Usuario- Reactivar Usuario.}
+\label{img14}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{sequenceDiagram11.png}
+\caption{Diagrama de Secuencia Recuperar Cuenta de Usuario- Recuperar Contraseña.}
+\label{img15}
+\end{center}
+\end{figure}
+
+\large{Diagrama de Secuencia de Gestionar Servidor.}
+\normalsize
+\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram12.png}
+\caption{Diagrama de Secuencia Gestionar Servidor - Agregar Registro.}
+\label{img16}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram14.png}
+\caption{Diagrama de Secuencia Gestionar Servidor - Listar Registros.}
+\label{img17}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram15.png}
+\caption{Diagrama de Secuencia Gestionar Servidor - Buscar registro.}
+\label{img18}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram16.png}
+\caption{Diagrama de Secuencia Gestionar Servidor - Modificar registro.}
+\label{img19}
+\end{center}
+\end{figure}
+
+\large{Diagrama de Secuencia de Gestionar Aplicación.}
+\normalsize
+\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram17.png}
+\caption{Diagrama de Secuencia Gestionar Aplicación - Agregar registro.}
+\label{img20}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram18.png}
+\caption{Diagrama de Secuencia Gestionar Aplicación - Listar registro.}
+\label{img21}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram19.png}
+\caption{Diagrama de Secuencia Gestionar Aplicación - Buscar registro.}
+\label{img22}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{sequenceDiagram20.png}
+\caption{Diagrama de Secuencia Gestionar Aplicación - Modificar registro.}
+\label{img23}
+\end{center}
+\end{figure}
+
+\large{Diagrama de Secuencia de Gestionar UPS.}
+\normalsize
+\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram21.png}
+\caption{Diagrama de Secuencia Gestionar UPS - Agregar UPS.}
+\label{img24}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram22.png}
+\caption{Diagrama de Secuencia Gestionar UPS - Listar UPS.}
+\label{img25}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=16cm]{sequenceDiagram23.png}
+\caption{Diagrama de Secuencia Gestionar UPS - Modificar UPS.}
+\label{img26}
+\end{center}
+\end{figure}
+
+\newpage
+\large{Diagrama de Secuencia de Gestionar Información.}
+\normalsize
+\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram24.png}
+\caption{Diagrama de Secuencia Gestionar Información - Generar Estadísticas.}
+\label{img27}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{sequenceDiagram25.png}
+\caption{Diagrama de Secuencia Gestionar Información - Generar Informes.}
+\label{img28}
+\end{center}
+\end{figure}
+
+\newpage
+\subsubsection{Diagramas de Estados de los Casos de Uso Extendidos}
+\label{Estados}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{StateMachineDiagram1.png}
+\caption{Diagrama de Estados Gestionar Sesión.}
+\label{img27}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{StateMachineDiagram2.png}
+\caption{Diagrama de Estados Gestionar Usuario.}
+\label{img28}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{StateMachineDiagram3.png}
+\caption{Diagrama de Estados Recuperar Cuenta de Usuario.}
+\label{img29}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{StateMachineDiagram4.png}
+\caption{Diagrama de Estados Gestionar Servidor.}
+\label{img30}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{StateMachineDiagram5.png}
+\caption{Diagrama de Estados Gestionar Aplicación.}
+\label{img31}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{StateMachineDiagram9.png}
+\caption{Diagrama de Estados Gestionar UPS.}
+\label{img32}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{StateMachineDiagram10.png}
+\caption{Diagrama de Estados Gestionar Información.}
+\label{img33}
+\end{center}
+\end{figure}
+
+\newpage
+\subsection{Modelo Conceptual del Sistema}
+\label{conceptual}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=16cm]{ModeloConceptual.png}
+\caption{Modelo Conceptual del Sistema.}
+\label{img33}
+\end{center}
+\end{figure}
+
+La figura \ref{img33} muestra el modelo conceptual del sistema de Inventarios para Aplicaciones y Servidores, donde se muestra una representación simplificada del funcionamiento de esta. Se hace énfasis en las entidades de mayor importancia que deben estar presentes al momento del diseño de la plataforma, ya sea los usuarios del sistema, como también la interoperabilidad del Sistema por ejemplo.
+
+\newpage
+
+\section{Diseño}
+\label{diseno}
+
+A continuación se procederá a describir las decisiones que se tomaron y los modelos que se realizaron para el sistema propuesto en la fase de diseño, presentando en cada uno de éstos una justificación y un resguardo de la trazabilidad y consistencia entre los modelos.\newline
+
+\subsection{Diseño Arquitectónico}
+\label{arq}
+
+El diseño de la arquitectura del sistema es una parte importante al momento de definir el funcionamiento del sistema, ya que define nociones de abstracción y múltiples vistas.\newline
+
+Por lo tanto entenderemos el concepto de arquitectura de un programa o sistema computacional como \textsl{``la estructura o estructuras del sistema, la cual comprende elementos de software, las propiedades de estos elementos visibles externamente y las relaciones entre ellos"}\cite{REF16}.\newline
+
+
+
+\bibliography{propuesta}
+\bibliographystyle{plain}
+\end{document} 

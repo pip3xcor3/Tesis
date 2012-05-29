@@ -1,0 +1,2178 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.3.30)  29 MAY 2012 14:40
+entering extended mode
+**D:/UNIVERSIDAD/TRABAJO*DE*TITULO/Diseño/Diseño*inicial/informe3.tex
+("D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/informe3.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+(D:\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(D:\MiKTeX\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (D:\MiKTeX\tex\latex\base\inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(D:\MiKTeX\tex\latex\base\latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+)) (D:\MiKTeX\tex\generic\babel\babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(D:\MiKTeX\tex\latex\00miktex\bblopts.cfg
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(D:\MiKTeX\tex\generic\babel\spanish.ldf
+Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+ (D:\MiKTeX\tex\generic\babel\babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\es@datefmt=\count88
+\es@quottoks=\toks16
+\es@quotdepth=\count89
+Package babel Info: Making " an active character on input line 492.
+Package babel Info: Making . an active character on input line 585.
+Package babel Info: Making < an active character on input line 630.
+Package babel Info: Making > an active character on input line 630.
+)) (D:\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(D:\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(D:\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(D:\MiKTeX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(D:\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(D:\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(D:\MiKTeX\tex\latex\graphics\epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen106
+\epsfysize=\dimen107
+)
+(D:\MiKTeX\tex\latex\rotating\rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+ (D:\MiKTeX\tex\latex\base\ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count91
+\rotFPtop=\skip43
+\rotFPbot=\skip44
+\rot@float@box=\box26
+\rot@mess@toks=\toks18
+) (D:\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen108
+)
+(D:\MiKTeX\tex\latex\tools\array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen109
+\extrarowheight=\dimen110
+\NC@list=\toks19
+\extratabsurround=\skip45
+\backup@length=\skip46
+) (D:\MiKTeX\tex\latex\tools\longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip47
+\LTright=\skip48
+\LTpre=\skip49
+\LTpost=\skip50
+\LTchunksize=\count92
+\LTcapwidth=\dimen111
+\LT@head=\box27
+\LT@firsthead=\box28
+\LT@foot=\box29
+\LT@lastfoot=\box30
+\LT@cols=\count93
+\LT@rows=\count94
+\c@LT@tables=\count95
+\c@LT@chunks=\count96
+\LT@p@ftn=\toks20
+) (D:\MiKTeX\tex\latex\base\fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+)
+(D:\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
+
+
+Package tocbibind Note: Using section or other style headings.
+
+) (D:\MiKTeX\tex\latex\ltxmisc\url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(D:\MiKTeX\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen112
+\lightrulewidth=\dimen113
+\cmidrulewidth=\dimen114
+\belowrulesep=\dimen115
+\belowbottomsep=\dimen116
+\aboverulesep=\dimen117
+\abovetopsep=\dimen118
+\cmidrulesep=\dimen119
+\cmidrulekern=\dimen120
+\defaultaddspace=\dimen121
+\@cmidla=\count97
+\@cmidlb=\count98
+\@aboverulesep=\dimen122
+\@belowrulesep=\dimen123
+\@thisruleclass=\count99
+\@lastruleclass=\count100
+\@thisrulewidth=\dimen124
+)
+(D:\MiKTeX\tex\latex\Tabbing\tabbing.sty
+
+LaTeX Warning: You have requested package `tabbing',
+               but the package provides `Tabbing'.
+
+Package: Tabbing 1997/12/18 v1.0 Tabbing environment (JPFD)
+) (D:\MiKTeX\tex\latex\float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count101
+\float@exts=\toks21
+\float@box=\box31
+\@float@everytoks=\toks22
+\@floatcapt=\box32
+)
+("D:\UNIVERSIDAD\TRABAJO DE TITULO\Diseño\Diseño inicial\informe3.aux"
+
+LaTeX Warning: Label `img27' multiply defined.
+
+
+LaTeX Warning: Label `img28' multiply defined.
+
+
+LaTeX Warning: Label `img33' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+ (D:\MiKTeX\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen125
+\scratchbox=\box33
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen126
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks24
+) <logoUV.png, id=1, 240.9pt x 113.42375pt>
+File: logoUV.png Graphic file (type png)
+ <use logoUV.png>
+Package pdftex.def Info: logoUV.png used on input line 41.
+(pdftex.def)             Requested size: 113.81102pt x 53.58607pt.
+ [1
+
+{C:/Users/Felipe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/UNIVERS
+IDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/logoUV.png>]
+("D:\UNIVERSIDAD\TRABAJO DE TITULO\Diseño\Diseño inicial\informe3.toc"
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+)
+\tf@toc=\write3
+
+[2] ("D:\UNIVERSIDAD\TRABAJO DE TITULO\Diseño\Diseño inicial\informe3.lot")
+\tf@lot=\write4
+
+("D:\UNIVERSIDAD\TRABAJO DE TITULO\Diseño\Diseño inicial\informe3.lof"
+[3])
+\tf@lof=\write5
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 79--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+[5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 118.
+
+ (D:\MiKTeX\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 118.
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+[10] [11] [12]
+Overfull \hbox (5.93596pt too wide) in paragraph at lines 247--248
+[]\OT1/cmr/bx/n/12 Servidor: \OT1/cmr/m/n/12 GNU/Linux (Ubun-tu, De-bian, Su-se
+, Red-Hat, Gen-too, Knop-
+ []
+
+
+Overfull \hbox (3.08733pt too wide) in paragraph at lines 248--249
+[]\OT1/cmr/bx/n/12 Agentes: \OT1/cmr/m/n/12 GNU/Linux (Ubun-tu, De-bian, Su-se,
+ Red-Hat, Gen-too, Knop-
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 294--311
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--318
+
+ []
+
+[15]
+Underfull \hbox (badness 2903) in paragraph at lines 323--323
+[]|\OT1/cmr/m/n/12 Belarc Ad-vi-
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 323--323
+[]|\OT1/cmr/m/n/12 Interfaz WEB sim-ple, po-see
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 324--324
+\OT1/cmr/m/n/12 cor-po-rar work-flows, re-ports,
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 325--325
+[]|\OT1/cmr/m/n/12 Posee una in-ter-faz web in-
+ []
+
+
+Underfull \hbox (badness 3557) in paragraph at lines 326--326
+[]|\OT1/cmr/m/n/12 Cualquier per-fil de usua-rio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+[]|\OT1/cmr/m/n/12 OCS In-ven-
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 327--327
+\OT1/cmr/m/n/12 for-ma re-mo-ta. In-te-gra-ble a
+ []
+
+
+Underfull \hbox (badness 2932) in paragraph at lines 328--328
+[]|\OT1/cmr/m/n/12 Gratuito. Facil de ins-ta-lar.
+ []
+
+
+Underfull \hbox (badness 2213) in paragraph at lines 328--328
+[]|\OT1/cmr/m/n/12 Funciona so-lo en Win-dows.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--329
+[]|\OT1/cmr/m/n/12 Facil ins-ta-la-cion. In-ter-faz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--329
+\OT1/cmr/m/n/12 in-tui-ti-va. Gran de-ta-lle de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--329
+\OT1/cmr/m/n/12 la in-for-ma-cion. Re-co-no-ce
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
+[16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--378
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+<EstadoActual.png, id=75, 539.01375pt x 420.06938pt>
+File: EstadoActual.png Graphic file (type png)
+ <use EstadoActual.png>
+Package pdftex.def Info: EstadoActual.png used on input line 407.
+(pdftex.def)             Requested size: 426.79134pt x 332.61394pt.
+
+[21 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/EstadoActual.png>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Overfull \hbox (3.99352pt too wide) in paragraph at lines 455--456
+[]\OT1/cmr/m/n/12 Ademas de las ca-rac-tersti-cas pre-sen-ta-das an-te-rior-
+men-te, el sis-te-ma con-tem-plara los
+ []
+
+[23] <Solucion.png, id=85, 501.37312pt x 460.72125pt>
+File: Solucion.png Graphic file (type png)
+ <use Solucion.png>
+Package pdftex.def Info: Solucion.png used on input line 469.
+(pdftex.def)             Requested size: 426.79134pt x 392.20543pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+[24 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/Solucion.png>]
+[25] <Actores.png, id=93, 411.03563pt x 294.34969pt>
+File: Actores.png Graphic file (type png)
+ <use Actores.png>
+Package pdftex.def Info: Actores.png used on input line 519.
+(pdftex.def)             Requested size: 426.79134pt x 305.63136pt.
+ [26 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/Actores.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 535--541
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--541
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 542--548
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--548
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 549--555
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--555
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 556--562
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--562
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--562
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 563--569
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--569
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--569
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 570--576
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--576
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--576
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 577--583
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--583
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--583
+
+ []
+
+[27]
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 584--590
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--590
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--590
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 591--597
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--597
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--597
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 598--604
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--604
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--604
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 605--611
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--611
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--611
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 612--618
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--618
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--618
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 619--625
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--625
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--625
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 626--632
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--632
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 633--639
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--639
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--639
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 640--646
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 640--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 640--646
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 647--653
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--653
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--653
+
+ []
+
+[28]
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 654--660
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 654--660
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 654--660
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 661--667
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--667
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 668--674
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--674
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--674
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 675--681
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--681
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 682--688
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 682--688
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 682--688
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 689--695
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--695
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--695
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 696--702
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--702
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--702
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 703--709
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--709
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--709
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 715--725
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--725
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 726--736
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--736
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 737--747
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 737--747
+
+ []
+
+[30]
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 748--758
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--758
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 759--769
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 759--769
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 770--780
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--780
+
+ []
+
+[31]
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 781--791
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 797--803
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--803
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--803
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 804--810
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--810
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--810
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 811--817
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 811--817
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 811--817
+
+ []
+
+[32]
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 818--824
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--824
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--824
+
+ []
+
+
+Overfull \hbox (5.71698pt too wide) in paragraph at lines 825--831
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 839--840
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 839--840
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 862--882
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 862--882
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 883--903
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 883--903
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 904--924
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 904--924
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 949--954
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 949--954
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 955--969
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 955--969
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 970--984
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 985--999
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1000--1012
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1023
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1026
+[]|\OT1/cmr/bx/n/12 Recuperar cuen-ta de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1034
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1049
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1049
+
+ []
+
+[38] <CasosDeUso.png, id=136, 936.49875pt x 740.7675pt>
+File: CasosDeUso.png Graphic file (type png)
+ <use CasosDeUso.png>
+Package pdftex.def Info: CasosDeUso.png used on input line 1060.
+(pdftex.def)             Requested size: 426.79134pt x 337.59229pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1066--1067
+
+ []
+
+[39 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/CasosDeUso.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 1074.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1087
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1087
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1087
+
+ []
+
+
+Underfull \hbox (badness 3364) in paragraph at lines 1083--1087
+\OT1/cmr/m/n/10.95 3. El usua-rio den-tro del sis-te-
+ []
+
+
+Underfull \hbox (badness 6876) in paragraph at lines 1083--1087
+\OT1/cmr/m/n/10.95 (c) Ce-rrar se-sion: \OT1/cmr/m/sl/10.95 Con-sul-te la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1088--1089
+
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 1088--1089
+\OT1/cmr/m/n/10.95 2. El sis-te-ma va-li-da si el usua-
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 1088--1089
+\OT1/cmr/m/n/10.95 rio y con-tra-se~na es co-rrec-to y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1098--1104
+
+ []
+
+
+Underfull \hbox (badness 5862) in paragraph at lines 1098--1104
+\OT1/cmr/m/n/10.95 5. El ad-mi-nis-tra-dor den-tro de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1098--1104
+\OT1/cmr/m/sl/10.95 Con-sul-te la sec-cion Re-cu-pe-rar
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 1111--1115
+
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1111--1115
+\OT1/cmr/m/n/10.95 5. El usua-rio den-tro de su per-
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 1111--1115
+\OT1/cmr/m/n/10.95 (d) Ges-tio-nar UPS: \OT1/cmr/m/sl/10.95 Con-sul-te la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1122--1122
+
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 1122--1122
+\OT1/cmr/m/n/10.95 5. El usua-rio mo-di-fi-ca los da-to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1122--1123
+
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 1122--1123
+\OT1/cmr/m/n/10.95 6. El Sis-te-ma al-ma-ce-na los da-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1148
+
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1142--1148
+\OT1/cmr/m/n/10.95 3. El usua-rio es-co-ge una de las
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 1142--1148
+\OT1/cmr/m/n/10.95 si-guien-tes op-cio-nes: (a) Agre-gar
+ []
+
+
+Underfull \hbox (badness 3557) in paragraph at lines 1142--1148
+\OT1/cmr/m/n/10.95 (c) Lis-tar Usua-rio: \OT1/cmr/m/sl/10.95 Con-sul-te la
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 1142--1148
+\OT1/cmr/m/n/10.95 (d) Bus-car Usua-rio: \OT1/cmr/m/sl/10.95 Con-sul-te la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1149--1150
+
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 1149--1150
+\OT1/cmr/m/n/10.95 2. El sis-te-ma en-tre-ga las op-cio-
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1157
+
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 1157--1157
+\OT1/cmr/m/n/10.95 5. El usua-rio com-ple-ta el for-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1157
+\OT1/cmr/m/n/10.95 mu-la-rio con las ca-rac-tersti-cas
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 1157--1157
+\OT1/cmr/m/n/10.95 del nue-vo usua-rio y guar-da la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1157--1157
+
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 1157--1157
+\OT1/cmr/m/n/10.95 6. El sis-te-ma al-ma-ce-na los da-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1171
+
+ []
+
+
+Underfull \hbox (badness 5260) in paragraph at lines 1171--1171
+\OT1/cmr/m/n/10.95 5. El usua-rio com-ple-ta la in-
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 1171--1171
+\OT1/cmr/m/n/10.95 for-ma-cion re-que-ri-da y enva los
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1171
+
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 1171--1171
+\OT1/cmr/m/n/10.95 6. El sis-te-ma en-tre-ga los re-sul-
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 1178--1178
+
+ []
+
+
+Underfull \hbox (badness 3612) in paragraph at lines 1178--1178
+\OT1/cmr/m/n/10.95 5. El usua-rio mo-di-fi-ca los da-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1178--1178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1178--1178
+
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 1178--1178
+\OT1/cmr/m/n/10.95 6. El sis-te-ma al-ma-ce-na los da-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1189--1189
+
+ []
+
+
+Underfull \hbox (badness 4403) in paragraph at lines 1189--1189
+\OT1/cmr/m/n/10.95 5. El usua-rio res-pon-de que si
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 1189--1189
+[]|\OT1/cmr/m/n/10.95 4. El sis-te-ma con-sul-ta si desea
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1189--1189
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1189--1189
+
+ []
+
+
+Underfull \hbox (badness 6575) in paragraph at lines 1189--1189
+\OT1/cmr/m/n/10.95 6. El sis-te-ma des-ac-ti-va a un
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1191
+
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 1191--1191
+\OT1/cmr/m/n/10.95 6. El sis-te-ma can-ce-la la des-ac-
+ []
+
+
+Underfull \hbox (badness 3179) in paragraph at lines 1191--1191
+\OT1/cmr/m/n/10.95 ti-va-cion y re-tor-na a la pagi-na
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1205--1208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1205--1208
+
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1205--1208
+\OT1/cmr/m/n/10.95 3. El usua-rio es-co-ge una de las
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1210
+
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 1209--1210
+\OT1/cmr/m/n/10.95 2. El sis-te-ma en-tre-ga las op-cio-
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 1217--1217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1217--1217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1217--1217
+
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 1217--1217
+\OT1/cmr/m/n/10.95 6. El sis-te-ma reac-ti-va un usua-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1224
+
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 1224--1224
+\OT1/cmr/m/n/10.95 5. El usua-rio in-gre-sa los da-tos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1224
+
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 1224--1224
+\OT1/cmr/m/n/10.95 6. El sis-te-ma ac-tua-li-za la con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1236--1241
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1236--1241
+
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1236--1241
+\OT1/cmr/m/n/10.95 3. El usua-rio es-co-ge una de las
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 1236--1241
+\OT1/cmr/m/n/10.95 (c) Lis-tar Re-gis-tro: \OT1/cmr/m/sl/10.95 Con-sul-te la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1243
+
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 1242--1243
+\OT1/cmr/m/n/10.95 2. El sis-te-ma en-tre-ga las op-cio-
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 1250--1250
+\OT1/cmr/m/n/10.95 5. El usua-rio in-gre-sa los da-tos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 1250--1250
+\OT1/cmr/m/n/10.95 6. El sis-te-ma al-ma-ce-na el nue-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1264--1264
+
+ []
+
+
+Underfull \hbox (badness 5260) in paragraph at lines 1264--1264
+\OT1/cmr/m/n/10.95 5. El usua-rio com-ple-ta la in-
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 1264--1264
+\OT1/cmr/m/n/10.95 for-ma-cion re-que-ri-da y enva los
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1264--1264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1264--1264
+
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 1264--1264
+\OT1/cmr/m/n/10.95 6. El sis-te-ma en-tre-ga los re-sul-
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1271
+
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 1271--1271
+\OT1/cmr/m/n/10.95 6. El sis-te-ma al-ma-ce-na los da-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1287--1292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1287--1292
+
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1287--1292
+\OT1/cmr/m/n/10.95 3. El usua-rio es-co-ge una de las
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 1287--1292
+\OT1/cmr/m/n/10.95 (c) Lis-tar Re-gis-tro: \OT1/cmr/m/sl/10.95 Con-sul-te la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 1293--1294
+\OT1/cmr/m/n/10.95 2. El sis-te-ma en-tre-ga las op-cio-
+ []
+
+[46]
+Underfull \hbox (badness 1648) in paragraph at lines 1306--1310
+[]|\OT1/cmr/m/n/10.95 1. El usua-rio ac-ce-de a la op-cion de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1306--1310
+
+ []
+
+
+Underfull \hbox (badness 2529) in paragraph at lines 1306--1310
+\OT1/cmr/m/n/10.95 3. El usua-rio es-co-ge una de las si-
+ []
+
+
+Underfull \hbox (badness 1048) in paragraph at lines 1306--1310
+\OT1/cmr/m/n/10.95 (a) Agre-gar UPS: \OT1/cmr/m/sl/10.95 Con-sul-te la sec-cio
+n
+ []
+
+
+Overfull \hbox (7.54337pt too wide) in paragraph at lines 1297--1314
+[][] 
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1319
+
+ []
+
+
+Overfull \hbox (7.54337pt too wide) in paragraph at lines 1315--1321
+[][] 
+ []
+
+
+Overfull \hbox (7.54337pt too wide) in paragraph at lines 1322--1328
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1333--1333
+
+ []
+
+
+Overfull \hbox (7.54337pt too wide) in paragraph at lines 1329--1339
+[][] 
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1354
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1354
+
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1351--1354
+\OT1/cmr/m/n/10.95 3. El usua-rio es-co-ge una de las
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1356
+
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 1355--1356
+\OT1/cmr/m/n/10.95 2. El sis-te-ma en-tre-ga las op-cio-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1363
+
+ []
+
+
+Underfull \hbox (badness 2503) in paragraph at lines 1363--1363
+\OT1/cmr/m/n/10.95 6. El Sis-te-ma Pre-sen-ta las Es-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1363
+\OT1/cmr/m/n/10.95 tadsti-cas co-rres-pon-dien-te a la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1370
+
+ []
+
+
+Underfull \hbox (badness 4886) in paragraph at lines 1370--1370
+\OT1/cmr/m/n/10.95 6. El Sis-te-ma Pre-sen-ta el In-
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 1378--1381
+
+ []
+
+<sequenceDiagram1.png, id=174, 439.6425pt x 221.32687pt>
+File: sequenceDiagram1.png Graphic file (type png)
+
+<use sequenceDiagram1.png>
+Package pdftex.def Info: sequenceDiagram1.png used on input line 1384.
+(pdftex.def)             Requested size: 455.24408pt x 229.18835pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 1384--1385
+ [] 
+ []
+
+<sequenceDiagram2.png, id=175, 477.28313pt x 221.32687pt>
+File: sequenceDiagram2.png Graphic file (type png)
+
+<use sequenceDiagram2.png>
+Package pdftex.def Info: sequenceDiagram2.png used on input line 1392.
+(pdftex.def)             Requested size: 455.24408pt x 211.10698pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 1392--1393
+ [] 
+ []
+
+<sequenceDiagram3.png, id=176, 469.755pt x 221.32687pt>
+File: sequenceDiagram3.png Graphic file (type png)
+
+<use sequenceDiagram3.png>
+Package pdftex.def Info: sequenceDiagram3.png used on input line 1400.
+(pdftex.def)             Requested size: 455.24408pt x 214.4909pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 1400--1401
+ [] 
+ []
+
+[50 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram1.
+png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram2
+.png>] <sequenceDiagram4.png, id=182, 243.91125pt x 153.57375pt>
+File: sequenceDiagram4.png Graphic file (type png)
+
+<use sequenceDiagram4.png>
+Package pdftex.def Info: sequenceDiagram4.png used on input line 1408.
+(pdftex.def)             Requested size: 284.52756pt x 179.1486pt.
+ [51 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram3
+.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram
+4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1415--1418
+
+ []
+
+<sequenceDiagram5.png, id=188, 439.6425pt x 281.55188pt>
+File: sequenceDiagram5.png Graphic file (type png)
+
+<use sequenceDiagram5.png>
+Package pdftex.def Info: sequenceDiagram5.png used on input line 1421.
+(pdftex.def)             Requested size: 369.88582pt x 236.88431pt.
+
+<sequenceDiagram6.png, id=189, 439.6425pt x 281.55188pt>
+File: sequenceDiagram6.png Graphic file (type png)
+
+<use sequenceDiagram6.png>
+Package pdftex.def Info: sequenceDiagram6.png used on input line 1429.
+(pdftex.def)             Requested size: 369.88582pt x 236.88431pt.
+
+<sequenceDiagram7.png, id=190, 469.755pt x 213.79875pt>
+File: sequenceDiagram7.png Graphic file (type png)
+
+<use sequenceDiagram7.png>
+Package pdftex.def Info: sequenceDiagram7.png used on input line 1437.
+(pdftex.def)             Requested size: 398.33858pt x 181.2959pt.
+ [52 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram5
+.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram
+6.png>]
+<sequenceDiagram8.png, id=196, 454.69875pt x 379.4175pt>
+File: sequenceDiagram8.png Graphic file (type png)
+
+<use sequenceDiagram8.png>
+Package pdftex.def Info: sequenceDiagram8.png used on input line 1445.
+(pdftex.def)             Requested size: 398.33858pt x 332.39474pt.
+
+<sequenceDiagram9.png, id=197, 454.69875pt x 386.94562pt>
+File: sequenceDiagram9.png Graphic file (type png)
+
+<use sequenceDiagram9.png>
+Package pdftex.def Info: sequenceDiagram9.png used on input line 1453.
+(pdftex.def)             Requested size: 455.24408pt x 387.417pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 1453--1454
+ [] 
+ []
+
+[53 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram7.
+png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram8
+.png>] [54 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDi
+agram9.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1464
+
+ []
+
+<sequenceDiagram10.png, id=207, 514.92375pt x 304.13625pt>
+File: sequenceDiagram10.png Graphic file (type png)
+
+<use sequenceDiagram10.png>
+Package pdftex.def Info: sequenceDiagram10.png used on input line 1467.
+(pdftex.def)             Requested size: 369.88582pt x 218.47672pt.
+
+<sequenceDiagram11.png, id=208, 514.92375pt x 356.83313pt>
+File: sequenceDiagram11.png Graphic file (type png)
+
+<use sequenceDiagram11.png>
+Package pdftex.def Info: sequenceDiagram11.png used on input line 1475.
+(pdftex.def)             Requested size: 369.88582pt x 256.3316pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1481--1484
+
+ []
+
+[55 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram10
+.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram
+11.png>] <sequenceDiagram12.png, id=215, 514.92375pt x 296.60812pt>
+File: sequenceDiagram12.png Graphic file (type png)
+
+<use sequenceDiagram12.png>
+Package pdftex.def Info: sequenceDiagram12.png used on input line 1487.
+(pdftex.def)             Requested size: 398.33858pt x 229.45706pt.
+
+<sequenceDiagram14.png, id=216, 529.98pt x 289.08pt>
+File: sequenceDiagram14.png Graphic file (type png)
+
+<use sequenceDiagram14.png>
+Package pdftex.def Info: sequenceDiagram14.png used on input line 1495.
+(pdftex.def)             Requested size: 398.33858pt x 217.27702pt.
+
+<sequenceDiagram15.png, id=217, 514.92375pt x 289.08pt>
+File: sequenceDiagram15.png Graphic file (type png)
+
+<use sequenceDiagram15.png>
+Package pdftex.def Info: sequenceDiagram15.png used on input line 1503.
+(pdftex.def)             Requested size: 398.33858pt x 223.63327pt.
+ [56 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram1
+2.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagra
+m14.png>]
+<sequenceDiagram16.png, id=223, 575.14874pt x 409.53pt>
+File: sequenceDiagram16.png Graphic file (type png)
+
+<use sequenceDiagram16.png>
+Package pdftex.def Info: sequenceDiagram16.png used on input line 1511.
+(pdftex.def)             Requested size: 398.33858pt x 283.64456pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1517--1520
+
+ []
+
+[57 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram15
+.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram
+16.png>] <sequenceDiagram17.png, id=229, 537.50812pt x 296.60812pt>
+File: sequenceDiagram17.png Graphic file (type png)
+
+<use sequenceDiagram17.png>
+Package pdftex.def Info: sequenceDiagram17.png used on input line 1523.
+(pdftex.def)             Requested size: 398.33858pt x 219.81242pt.
+
+<sequenceDiagram18.png, id=230, 529.98pt x 289.08pt>
+File: sequenceDiagram18.png Graphic file (type png)
+
+<use sequenceDiagram18.png>
+Package pdftex.def Info: sequenceDiagram18.png used on input line 1531.
+(pdftex.def)             Requested size: 398.33858pt x 217.27702pt.
+
+<sequenceDiagram19.png, id=231, 514.92375pt x 289.08pt>
+File: sequenceDiagram19.png Graphic file (type png)
+
+<use sequenceDiagram19.png>
+Package pdftex.def Info: sequenceDiagram19.png used on input line 1539.
+(pdftex.def)             Requested size: 398.33858pt x 223.63327pt.
+ [58 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram1
+7.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagra
+m18.png>]
+<sequenceDiagram20.png, id=237, 590.205pt x 409.53pt>
+File: sequenceDiagram20.png Graphic file (type png)
+
+<use sequenceDiagram20.png>
+Package pdftex.def Info: sequenceDiagram20.png used on input line 1547.
+(pdftex.def)             Requested size: 426.79134pt x 296.14864pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1553--1556
+
+ []
+
+[59 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram19
+.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram
+20.png>] <sequenceDiagram21.png, id=243, 514.92375pt x 296.60812pt>
+File: sequenceDiagram21.png Graphic file (type png)
+
+<use sequenceDiagram21.png>
+Package pdftex.def Info: sequenceDiagram21.png used on input line 1559.
+(pdftex.def)             Requested size: 398.33858pt x 229.45706pt.
+
+<sequenceDiagram22.png, id=244, 529.98pt x 289.08pt>
+File: sequenceDiagram22.png Graphic file (type png)
+
+<use sequenceDiagram22.png>
+Package pdftex.def Info: sequenceDiagram22.png used on input line 1567.
+(pdftex.def)             Requested size: 398.33858pt x 217.27702pt.
+
+<sequenceDiagram23.png, id=245, 575.14874pt x 364.36125pt>
+File: sequenceDiagram23.png Graphic file (type png)
+
+<use sequenceDiagram23.png>
+Package pdftex.def Info: sequenceDiagram23.png used on input line 1575.
+(pdftex.def)             Requested size: 455.24408pt x 288.40932pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 1575--1576
+ [] 
+ []
+
+[60 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram21
+.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram
+22.png>] [61 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequence
+Diagram23.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1582--1585
+
+ []
+
+<sequenceDiagram24.png, id=256, 522.45187pt x 304.13625pt>
+File: sequenceDiagram24.png Graphic file (type png)
+
+<use sequenceDiagram24.png>
+Package pdftex.def Info: sequenceDiagram24.png used on input line 1588.
+(pdftex.def)             Requested size: 398.33858pt x 231.88846pt.
+
+<sequenceDiagram25.png, id=257, 522.45187pt x 304.13625pt>
+File: sequenceDiagram25.png Graphic file (type png)
+
+<use sequenceDiagram25.png>
+Package pdftex.def Info: sequenceDiagram25.png used on input line 1596.
+(pdftex.def)             Requested size: 398.33858pt x 231.88846pt.
+ [62 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagram2
+4.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/sequenceDiagra
+m25.png>]
+<StateMachineDiagram1.png, id=263, 703.12688pt x 394.47375pt>
+File: StateMachineDiagram1.png Graphic file (type png)
+
+<use StateMachineDiagram1.png>
+Package pdftex.def Info: StateMachineDiagram1.png used on input line 1608.
+(pdftex.def)             Requested size: 398.33858pt x 223.47397pt.
+
+<StateMachineDiagram2.png, id=264, 825.0825pt x 469.755pt>
+File: StateMachineDiagram2.png Graphic file (type png)
+
+<use StateMachineDiagram2.png>
+Package pdftex.def Info: StateMachineDiagram2.png used on input line 1616.
+(pdftex.def)             Requested size: 398.33858pt x 226.79156pt.
+
+<StateMachineDiagram3.png, id=265, 457.71pt x 379.4175pt>
+File: StateMachineDiagram3.png Graphic file (type png)
+
+<use StateMachineDiagram3.png>
+Package pdftex.def Info: StateMachineDiagram3.png used on input line 1624.
+(pdftex.def)             Requested size: 398.33858pt x 330.21213pt.
+ [63 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/StateMachineDiag
+ram1.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/StateMachin
+eDiagram2.png>]
+<StateMachineDiagram4.png, id=271, 833.36343pt x 386.94562pt>
+File: StateMachineDiagram4.png Graphic file (type png)
+
+<use StateMachineDiagram4.png>
+Package pdftex.def Info: StateMachineDiagram4.png used on input line 1632.
+(pdftex.def)             Requested size: 398.33858pt x 184.95831pt.
+
+<StateMachineDiagram5.png, id=272, 833.36343pt x 386.94562pt>
+File: StateMachineDiagram5.png Graphic file (type png)
+
+<use StateMachineDiagram5.png>
+Package pdftex.def Info: StateMachineDiagram5.png used on input line 1640.
+(pdftex.def)             Requested size: 398.33858pt x 184.95831pt.
+ [64 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/StateMachineDiag
+ram3.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/StateMachin
+eDiagram4.png>]
+<StateMachineDiagram9.png, id=278, 749.04843pt x 395.22656pt>
+File: StateMachineDiagram9.png Graphic file (type png)
+
+<use StateMachineDiagram9.png>
+Package pdftex.def Info: StateMachineDiagram9.png used on input line 1648.
+(pdftex.def)             Requested size: 398.33858pt x 210.1807pt.
+
+<StateMachineDiagram10.png, id=279, 530.73282pt x 327.47343pt>
+File: StateMachineDiagram10.png Graphic file (type png)
+
+<use StateMachineDiagram10.png>
+Package pdftex.def Info: StateMachineDiagram10.png used on input line 1656.
+(pdftex.def)             Requested size: 398.33858pt x 245.78436pt.
+ [65 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/StateMachineDiag
+ram5.png> <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/StateMachin
+eDiagram9.png>] [66 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/S
+tateMachineDiagram10.png>]
+<ModeloConceptual.png, id=289, 1041.8925pt x 1072.005pt>
+File: ModeloConceptual.png Graphic file (type png)
+
+<use ModeloConceptual.png>
+Package pdftex.def Info: ModeloConceptual.png used on input line 1668.
+(pdftex.def)             Requested size: 455.24408pt x 468.39581pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 1668--1669
+ [] 
+ []
+
+[67 <D:/UNIVERSIDAD/TRABAJO DE TITULO/Diseño/Diseño inicial/ModeloConceptual.
+png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1681--1682
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1687
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1689
+
+ []
+
+("D:\UNIVERSIDAD\TRABAJO DE TITULO\Diseño\Diseño inicial\informe3.bbl"
+Underfull \hbox (badness 2057) in paragraph at lines 40--45
+[]\OT1/cmr/m/n/12 International Or-ga-ni-za-tion for Stan-dar-di-za-tion.  Iso/
+iec 19770.  $\OT1/cmtt/m/n/12 http :$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+$\OT1/cmtt/m/n/12 / / gestion-[]activos-[]software . wke . es / como-[]implemen
+tar-[]ISO-[]19770 . htm$\OT1/cmr/m/n/12 .
+ []
+
+[68]
+Underfull \hbox (badness 6927) in paragraph at lines 86--90
+[]\OT1/cmr/m/n/12 Softinventive Lab Inc.  Re-mo-te as-set trac-ker 1.7.  $\OT1/
+cmtt/m/n/12 http : / / www .$
+ []
+
+) [69] ("D:\UNIVERSIDAD\TRABAJO DE TITULO\Diseño\Diseño inicial\informe3.aux"
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2870 strings out of 494045
+ 36925 string characters out of 3155638
+ 106995 words of memory out of 3000000
+ 6088 multiletter control sequences out of 15000+200000
+ 10339 words of font info for 36 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 27i,15n,27p,1182b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsl10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pf
+b><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.p
+fb>
+Output written on informe3.pdf (69 pages, 1591294 bytes).
+PDF statistics:
+ 333 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+
