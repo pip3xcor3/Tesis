@@ -1,0 +1,18 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdftex 2012.4.11)  14 MAY 2012 15:57
+entering extended mode
+**D:/UNIVERSIDAD/TRABAJO*DE*TITULO/Marco*Conceptual/Plantilla*Marco*Conceptual/
+propuesta.bib
+
+("D:/UNIVERSIDAD/TRABAJO DE TITULO/Marco Conceptual/Plantilla Marco Conceptual/
+propuesta.bib"
+! Undefined control sequence.
+l.4   howpublished = "\url
+                          {http://buscon.rae.es/draeI/SrvltGUIBusUsual?LEMA=...
+
+? 
+! Emergency stop.
+l.4   howpublished = "\url
+                          {http://buscon.rae.es/draeI/SrvltGUIBusUsual?LEMA=...
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

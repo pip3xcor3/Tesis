@@ -1,0 +1,29 @@
+\select@language {spanish}
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagrama del proceso actual de registro de Activos}}{19}
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama de la Soluci\'on Propuesta}}{22}
+\contentsline {figure}{\numberline {3}{\ignorespaces Actores de la herramienta propuesta.}}{24}
+\contentsline {figure}{\numberline {4}{\ignorespaces Casos de Uso del Sistema.}}{36}
+\contentsline {figure}{\numberline {5}{\ignorespaces Diagrama de secuencia Gestionar Sesion - Iniciar Sesi\'on.}}{45}
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama de secuencia Gestionar Sesi\'on - Ir a Perfil.}}{45}
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de secuencia Gestionar Sesi\'on - Modificar Datos.}}{46}
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama de secuencia Gestionar Sesi\'on - Cerrar Sesi\'on.}}{46}
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de secuencia Gestionar Usuario - Agregar Usuario.}}{47}
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagrama de secuencia Gestionar Usuario - Buscar Usuario.}}{47}
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de secuencia Gestionar Usuario - Listar Usuarios.}}{48}
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagrama de secuencia Gestionar Usuario - Modificar Usuario.}}{48}
+\contentsline {figure}{\numberline {13}{\ignorespaces Diagrama de secuencia Gestionar Usuario - Desactivar Usuario.}}{49}
+\contentsline {figure}{\numberline {14}{\ignorespaces Diagrama de secuencia Recuperar Cuenta de Usuario - Reactivar Usuario.}}{50}
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagrama de secuencia Recuperar Cuenta de Usuario - Recuperar Contrase\~na.}}{50}
+\contentsline {figure}{\numberline {16}{\ignorespaces Diagrama de secuencia Gestionar Servidor - Agregar Registro.}}{51}
+\contentsline {figure}{\numberline {17}{\ignorespaces Diagrama de secuencia Gestionar Servidor - Listar Registros.}}{51}
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de secuencia Gestionar Servidor - Buscar Registro.}}{52}
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de secuencia Gestionar Servidor - Modificar Registro.}}{52}
+\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de secuencia Gestionar Aplicaci\'on - Agregar Registro.}}{53}
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de secuencia Gestionar Aplicaci\'on - Listar Registros.}}{53}
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de secuencia Gestionar Aplicaci\'on - Buscar Registro.}}{54}
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de secuencia Gestionar Aplicaci\'on - Modificar Registro.}}{54}
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de Estados Gestionar Sesi\'on.}}{55}
+\contentsline {figure}{\numberline {25}{\ignorespaces Diagrama de Estados Gestionar Usuario.}}{55}
+\contentsline {figure}{\numberline {26}{\ignorespaces Diagrama de Estados Recuperar cuenta de Usuario.}}{56}
+\contentsline {figure}{\numberline {27}{\ignorespaces Diagrama de Estados Gestionar Servidor.}}{56}
+\contentsline {figure}{\numberline {28}{\ignorespaces Diagrama de Estados Gestionar Aplicaci\'on.}}{57}

@@ -1,0 +1,37 @@
+\select@language {spanish}
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagrama del proceso actual de registro de Activos.}}{21}
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama de soluci\'on propuesta.}}{24}
+\contentsline {figure}{\numberline {3}{\ignorespaces Actores de la herramienta propuesta.}}{26}
+\contentsline {figure}{\numberline {4}{\ignorespaces Casos de Uso del Sistema.}}{39}
+\contentsline {figure}{\numberline {5}{\ignorespaces Diagrama de Secuencia Gestionar Sesi\'on - Iniciar Sesi\'on.}}{50}
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama de Secuencia Gestionar Sesi\'on - Ir a Perfil.}}{50}
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de Secuencia Gestionar Sesi\'on - Modificar Datos.}}{51}
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama de Secuencia Gestionar Sesi\'on - Cerrar Sesi\'on.}}{51}
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de Secuencia Gestionar Usuario - Agregar Usuario.}}{52}
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagrama de Secuencia Gestionar Usuario - Buscar Usuario.}}{52}
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de Secuencia Gestionar Usuario - Listar Usuario.}}{53}
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagrama de Secuencia Gestionar Usuario - Modificar Usuario.}}{53}
+\contentsline {figure}{\numberline {13}{\ignorespaces Diagrama de Secuencia Gestionar Usuario - Desactivar Usuario.}}{54}
+\contentsline {figure}{\numberline {14}{\ignorespaces Diagrama de Secuencia Recuperar Cuenta de Usuario- Reactivar Usuario.}}{55}
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagrama de Secuencia Recuperar Cuenta de Usuario- Recuperar Contrase\~na.}}{55}
+\contentsline {figure}{\numberline {16}{\ignorespaces Diagrama de Secuencia Gestionar Servidor - Agregar Registro.}}{56}
+\contentsline {figure}{\numberline {17}{\ignorespaces Diagrama de Secuencia Gestionar Servidor - Listar Registros.}}{56}
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de Secuencia Gestionar Servidor - Buscar registro.}}{57}
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de Secuencia Gestionar Servidor - Modificar registro.}}{57}
+\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de Secuencia Gestionar Aplicaci\'on - Agregar registro.}}{58}
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de Secuencia Gestionar Aplicaci\'on - Listar registro.}}{58}
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de Secuencia Gestionar Aplicaci\'on - Buscar registro.}}{59}
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de Secuencia Gestionar Aplicaci\'on - Modificar registro.}}{59}
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de Secuencia Gestionar UPS - Agregar UPS.}}{60}
+\contentsline {figure}{\numberline {25}{\ignorespaces Diagrama de Secuencia Gestionar UPS - Listar UPS.}}{60}
+\contentsline {figure}{\numberline {26}{\ignorespaces Diagrama de Secuencia Gestionar UPS - Modificar UPS.}}{61}
+\contentsline {figure}{\numberline {27}{\ignorespaces Diagrama de Secuencia Gestionar Informaci\'on - Generar Estad\IeC {\'\i }sticas.}}{62}
+\contentsline {figure}{\numberline {28}{\ignorespaces Diagrama de Secuencia Gestionar Informaci\'on - Generar Informes.}}{62}
+\contentsline {figure}{\numberline {29}{\ignorespaces Diagrama de Estados Gestionar Sesi\'on.}}{63}
+\contentsline {figure}{\numberline {30}{\ignorespaces Diagrama de Estados Gestionar Usuario.}}{63}
+\contentsline {figure}{\numberline {31}{\ignorespaces Diagrama de Estados Recuperar Cuenta de Usuario.}}{64}
+\contentsline {figure}{\numberline {32}{\ignorespaces Diagrama de Estados Gestionar Servidor.}}{64}
+\contentsline {figure}{\numberline {33}{\ignorespaces Diagrama de Estados Gestionar Aplicaci\'on.}}{65}
+\contentsline {figure}{\numberline {34}{\ignorespaces Diagrama de Estados Gestionar UPS.}}{65}
+\contentsline {figure}{\numberline {35}{\ignorespaces Diagrama de Estados Gestionar Informaci\'on.}}{66}
+\contentsline {figure}{\numberline {36}{\ignorespaces Modelo Conceptual del Sistema.}}{67}
