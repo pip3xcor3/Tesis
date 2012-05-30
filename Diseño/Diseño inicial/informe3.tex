@@ -1709,10 +1709,10 @@ actividades:
 
 La arquitectura seleccionada para la implementación del sistema es una arquitectura 
 de tipo Cliente-Servidor compuesta por 3 capas (capa de presentación, capa de 
-negocio y capa de datos) localizadas en una misma máquina, esto se debe a que el 
-sistema no posee una mayor complejidad como para distribuirlo en mas equipos. a 
-continuación se presentará un modelo que muestra como se estructura una 
-arquitectura Cliente-Servidor.
+negocio y capa de acceso a datos) localizadas en una misma máquina, esto se debe a 
+que el sistema no posee una mayor complejidad como para distribuirlo en mas 
+equipos. a continuación se presentará un modelo que muestra como se estructura 
+una arquitectura Cliente-Servidor.
 
 \begin{figure}[H]
 \begin{center}
@@ -1765,6 +1765,84 @@ clientes.}
 de bases de datos.}
 		\end{itemize}}
 \end{itemize}
+
+Los servidores web utilizan la arquitectura Cliente- Servidor añadiendo aspectos y 
+tecnologías nuevas y propias a la misma, detallando de esta manera tres 
+componentes principales: un servidor web, una conexión de red y uno o más 
+clientes (Browsers). En la imagen a continuación se presenta la forma en que se 
+relacionan dichos componentes en la arquitectura de un sitio web.\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm]{ArquitecturaWeb.png}
+\caption{Arquitectura de un sitio web.}
+\label{img35}
+\end{center}
+\end{figure}
+
+Ahora bien, una de las justificaciones de porqué se seleccionó esta arquitectura es 
+que presenta la capacidad de poder realizar el desarrollo de su funcionamiento en 
+niveles, en donde cada una de estas capas se desentiende de lo que ocurre en las 
+capas superiores y solo se dedica a trabajar en la finalidad que le corresponde 
+interactuándo con sus capas vecinas. También es necesario determinar que la 
+búsqueda de errores se simplifica, ya que al poseer el sistema dividido en capas 
+separadas, no es necesario indagar sobre código mezclado. En la figura que se 
+presenta a continuación se presenta la forma en que se definen las capas y como 
+estas interactúan, determinando así, la arquitectura del sistema.\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=5cm]{3capas.png}
+\caption{Arquitectura del sistema dividido en 3 capas.}
+\label{img36}
+\end{center}
+\end{figure}
+
+Se observa en la Figura \ref{img36} el sistema dividido en 3 capas: capa de 
+presentación, capa de negocios y capa de acceso a datos. A continuación se detallara 
+el enfoque tomado en ellas.\newline
+
+\begin{itemize}
+	\item{\textbf{Capa de Presentación:}\newline
+
+Esta capa, también conocida como capa de acceso o de usuario, es la que se encarga 
+de que el sistema interactúe con el usuario y viceversa, ya que muestra el sistema al 
+usuario, le presenta la información y obtiene información del usuario en un algún 
+proceso del sistema. En una aplicación corresponde a la interfaz gráfica y debe tener 
+la característica de ser entendible y fácil de usar para el usuario. Además esta capa 
+no se debe de ocupar para el procesamiento de la información, al menos que sean 
+validaciones de forma local. Esta capa se comunica únicamente con la capa 
+intermedia o de negocio.\newline}
+	\item{\textbf{Capa de Negocios:}\newline
+
+Esta capa, también conocida como capa de procesos o lógica del negocio, es donde 
+residen las funciones que se ejecutan en el sistema, se procesa la información y se 
+envían las respuestas tras el proceso. En esta capa es donde se estableces todas las 
+reglas que deben cumplirse. Esta capa se comunica con la capa de presentación, 
+para recibir las solicitudes de los usuarios y presentar los resultados de dichas 
+solicitudes, y con la capa de acceso a datos, para solicitar al gestor de base de datos 
+almacenar, modificar o recuperar datos de él.\newline}
+	\item{\textbf{Capa de Acceso a Datos:}\newline
+
+Esta capa, también conocida como Capa de Datos, es la encargada de almacenar los 
+datos del sistema y de los usuarios. La principal función de ésta es almacenar, 
+modificar y retornar datos a la capa de negocio, aunque para esto también es 
+necesario en algunos casos, que tenga procedimientos almacenados y funciones 
+dentro de la capa. En una arquitectura de tres capas es la única que puede acceder a 
+los datos. Está formada por uno o varios sistemas gestores de bases de datos 
+(DBMS), localizados en un mismo servidor o en varios. Solo se comunica con la capa 
+de negocios para enviar o recibir información.\newline}
+\end{itemize}
+
+Todas estas capas se encontrarán ubicadas de forma física en un único equipo 
+(servidor), debido a que la complejidad del sistema no es alta, aunque si en algún 
+momento el sistema aumentara en complejidad, la forma en que se encuentra 
+estructurado el sistema, permitirá situar alguna o todas las capas en distintos 
+equipos.
+
+\subsubsection{Modelado de Control}
+\label{control}
+
 
 
 \newpage
