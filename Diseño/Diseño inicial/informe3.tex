@@ -1607,7 +1607,7 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=14cm]{StateMachineDiagram1.png}
 \caption{Diagrama de Estados Gestionar Sesión.}
-\label{img27}
+\label{img29}
 \end{center}
 \end{figure}
 
@@ -1615,7 +1615,7 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=14cm]{StateMachineDiagram2.png}
 \caption{Diagrama de Estados Gestionar Usuario.}
-\label{img28}
+\label{img30}
 \end{center}
 \end{figure}
 
@@ -1623,7 +1623,7 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=14cm]{StateMachineDiagram3.png}
 \caption{Diagrama de Estados Recuperar Cuenta de Usuario.}
-\label{img29}
+\label{img31}
 \end{center}
 \end{figure}
 
@@ -1631,7 +1631,7 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=14cm]{StateMachineDiagram4.png}
 \caption{Diagrama de Estados Gestionar Servidor.}
-\label{img30}
+\label{img32}
 \end{center}
 \end{figure}
 
@@ -1639,7 +1639,7 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=14cm]{StateMachineDiagram5.png}
 \caption{Diagrama de Estados Gestionar Aplicación.}
-\label{img31}
+\label{img33}
 \end{center}
 \end{figure}
 
@@ -1647,7 +1647,7 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=14cm]{StateMachineDiagram9.png}
 \caption{Diagrama de Estados Gestionar UPS.}
-\label{img32}
+\label{img34}
 \end{center}
 \end{figure}
 
@@ -1655,7 +1655,7 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=14cm]{StateMachineDiagram10.png}
 \caption{Diagrama de Estados Gestionar Información.}
-\label{img33}
+\label{img35}
 \end{center}
 \end{figure}
 
@@ -1667,11 +1667,11 @@ Con el propósito de explicar el contenido que viene a continuación, es válido me
 \begin{center}
 \includegraphics[width=16cm]{ModeloConceptual.png}
 \caption{Modelo Conceptual del Sistema.}
-\label{img33}
+\label{img36}
 \end{center}
 \end{figure}
 
-La figura \ref{img33} muestra el modelo conceptual del sistema de Inventarios para Aplicaciones y Servidores, donde se muestra una representación simplificada del funcionamiento de esta. Se hace énfasis en las entidades de mayor importancia que deben estar presentes al momento del diseño de la plataforma, ya sea los usuarios del sistema, como también la interoperabilidad del Sistema por ejemplo.
+La figura \ref{img36} muestra el modelo conceptual del sistema de Inventarios para Aplicaciones y Servidores, donde se muestra una representación simplificada del funcionamiento de esta. Se hace énfasis en las entidades de mayor importancia que deben estar presentes al momento del diseño de la plataforma, ya sea los usuarios del sistema, como también la interoperabilidad del Sistema por ejemplo.
 
 \newpage
 
@@ -1711,14 +1711,14 @@ La arquitectura seleccionada para la implementación del sistema es una arquitect
 de tipo Cliente-Servidor compuesta por 3 capas (capa de presentación, capa de 
 negocio y capa de acceso a datos) localizadas en una misma máquina, esto se debe a 
 que el sistema no posee una mayor complejidad como para distribuirlo en mas 
-equipos. a continuación se presentará un modelo que muestra como se estructura 
+equipos. A continuación se presentará un modelo que muestra como se estructura 
 una arquitectura Cliente-Servidor.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=6cm]{ClienteServidor.png}
 \caption{Modelo Cliente-Servidor.}
-\label{img34}
+\label{img37}
 \end{center}
 \end{figure}
 
@@ -1766,8 +1766,7 @@ de bases de datos.}
 		\end{itemize}}
 \end{itemize}
 
-Los servidores web utilizan la arquitectura Cliente- Servidor añadiendo aspectos y 
-tecnologías nuevas y propias a la misma, detallando de esta manera tres 
+Los servidores web utilizan la arquitectura Cliente-Servidor adaptando los aspectos y tecnologías por nuevas y propias a la misma, detallando de esta manera tres 
 componentes principales: un servidor web, una conexión de red y uno o más 
 clientes (Browsers). En la imagen a continuación se presenta la forma en que se 
 relacionan dichos componentes en la arquitectura de un sitio web.\newline
@@ -1776,7 +1775,7 @@ relacionan dichos componentes en la arquitectura de un sitio web.\newline
 \begin{center}
 \includegraphics[width=12cm]{ArquitecturaWeb.png}
 \caption{Arquitectura de un sitio web.}
-\label{img35}
+\label{img38}
 \end{center}
 \end{figure}
 
@@ -1794,17 +1793,16 @@ estas interactúan, determinando así, la arquitectura del sistema.\newline
 \begin{center}
 \includegraphics[width=5cm]{3capas.png}
 \caption{Arquitectura del sistema dividido en 3 capas.}
-\label{img36}
+\label{img39}
 \end{center}
 \end{figure}
 
-Se observa en la Figura \ref{img36} el sistema dividido en 3 capas: capa de 
+Se observa en la Figura \ref{img39} el sistema dividido en 3 capas: capa de 
 presentación, capa de negocios y capa de acceso a datos. A continuación se detallara 
 el enfoque tomado en ellas.\newline
 
 \begin{itemize}
 	\item{\textbf{Capa de Presentación:}\newline
-
 Esta capa, también conocida como capa de acceso o de usuario, es la que se encarga 
 de que el sistema interactúe con el usuario y viceversa, ya que muestra el sistema al 
 usuario, le presenta la información y obtiene información del usuario en un algún 
@@ -1814,16 +1812,60 @@ no se debe de ocupar para el procesamiento de la información, al menos que sean
 validaciones de forma local. Esta capa se comunica únicamente con la capa 
 intermedia o de negocio.\newline}
 	\item{\textbf{Capa de Negocios:}\newline
-
 Esta capa, también conocida como capa de procesos o lógica del negocio, es donde 
 residen las funciones que se ejecutan en el sistema, se procesa la información y se 
 envían las respuestas tras el proceso. En esta capa es donde se estableces todas las 
 reglas que deben cumplirse. Esta capa se comunica con la capa de presentación, 
 para recibir las solicitudes de los usuarios y presentar los resultados de dichas 
 solicitudes, y con la capa de acceso a datos, para solicitar al gestor de base de datos 
-almacenar, modificar o recuperar datos de él.\newline}
-	\item{\textbf{Capa de Acceso a Datos:}\newline
+almacenar, modificar o recuperar datos de él.\newline
 
+Los módulos que componen ésta capa corresponden a los presentados en el 
+siguiente diagrama:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{CapaNegocio.png}
+\caption{Modelo perteneciente a la Capa de Negocios.}
+\label{img40}
+\end{center}
+\end{figure}
+
+Como se puede observar en la figura \ref{img40}, la \textsl{capa de Negocios} del 
+sistema se encuentra dividida en 6 módulos, los cuales se encuentran descritos a 
+continuación:
+\begin{itemize}
+	\item{\textbf{Identificación:} Éste módulo se encuentra encargado de la 
+verificación de los datos para el ingreso de los distintos usuario (administrador, 
+Encargado de Datacenter, Encargado de Área, Encargado de Servidor, Encargado 
+Aplicación) al sistema, además es posible iniciar o detener el sistema.\newline}
+	\item{\textbf{Administración Usuarios:} Éste módulo está enfocado a realizar la 
+administración de los usuarios que pertenecen al sistema, y otorga todas las 
+herramientas necesarias para la gestión de éstos.\newline}
+	\item{\textbf{Administración Servidores:} Éste módulo se encuentra destinado 
+para la administración de los servidores pertenecientes al sistema, además otorga 
+toda las herramientas que se necesitan para su gestión.\newline}
+	\item{\textbf{Administración Aplicaciones:} Éste módulo se encuentra 
+destinado para la administración de las Aplicaciones pertenecientes al sistema, 
+además otorga toda las herramientas que se necesitan para su gestión.\newline}
+	\item{\textbf{Administración UPS:} Éste módulo se encuentra destinado para la 
+administración de las UPS pertenecientes al sistema, además otorga toda las 
+herramientas que se necesitan para su gestión.\newline}
+	\item{\textbf{Gestión Información:} Éste módulo se encuentra enfocado en la 
+gestión de la información perteneciente al sistema, esto es, generación de 
+estadísticas e informes, entregando con esto las herramientas necesarias para su 
+gestión.\newline}
+	\item{\textbf{Conexiones:} Este módulo se encarga específicamente de las 
+conexiones a la base de datos del sistema. Es el interprete para la base de datos, ya 
+que se conecta directamente con la capa de Datos.}
+\end{itemize}
+
+Para acceder a los datos pertenecientes al Sistema, cada uno de los módulos 
+identificados anteriormente interactúan con el módulo de conexiones, que se 
+comunica con la capa de datos.\newline
+
+}
+	\item{\textbf{Capa de Acceso a Datos:}\newline
 Esta capa, también conocida como Capa de Datos, es la encargada de almacenar los 
 datos del sistema y de los usuarios. La principal función de ésta es almacenar, 
 modificar y retornar datos a la capa de negocio, aunque para esto también es 
@@ -1831,7 +1873,7 @@ necesario en algunos casos, que tenga procedimientos almacenados y funciones
 dentro de la capa. En una arquitectura de tres capas es la única que puede acceder a 
 los datos. Está formada por uno o varios sistemas gestores de bases de datos 
 (DBMS), localizados en un mismo servidor o en varios. Solo se comunica con la capa 
-de negocios para enviar o recibir información.\newline}
+de negocios para enviar o recibir información.}
 \end{itemize}
 
 Todas estas capas se encontrarán ubicadas de forma física en un único equipo 
@@ -1843,7 +1885,97 @@ equipos.
 \subsubsection{Modelado de Control}
 \label{control}
 
-Para que cada uno de los componentes que se establecen en el sistema trabajen en conjunto se debe de determinar un estilo de control, esto es para que los servicios que se proveen dentro del sistema sean entregados y respondidos en el lugar y tiempo correcto.\newline 
+Para que cada uno de los componentes que se integran en el sistema trabajen en 
+conjunto e interactúen con los usuarios, es que se debe de determinar un estilo de 
+control para que los servicios, que se proveen dentro del sistema, sean entregados y 
+respondidos en el lugar y tiempo correcto.\newline 
+
+Es por esto que se a decidido optar por un estilo de control basado en Eventos de 
+tipo invocación implícita (broadcast), ya que los modelos de control basado en 
+eventos se rigen por eventos generados de forma externa al sistema, esto es, el 
+timing del evento está fuera del control del componente que maneja ese evento.
+\newline
+
+Ahora cabe señalar que se escogió que fuera de tipo invocación implícita debido a 
+que cumple con las condiciones que el sistema requiere, ya que en el caso de que un 
+evento del sistema sea producido de forma externa por un usuario, se debe 
+transmitir a todos los componentes, por lo cual, cualquier componente que pueda 
+manejar ese evento debe poder hacerlo, situación que es satisfecha por este modelo.\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{ModeloControl.png}
+\caption{Modelo de control del sistema.}
+\label{img41}
+\end{center}
+\end{figure}
+
+En la figura \ref{img41} se identifican los módulos del sistema que interactúan con 
+los distintos usuarios pertenecientes al sistema, en la sección \ref{descmod} se 
+detallará la descomposición modular de cada uno de éstos. Además se puede 
+observar que cada uno de los módulos identificados pueden y deben responder los 
+eventos que son generados por el usuario de forma externa, entregando de la 
+misma manera un mensaje con la respuesta a dicho evento.\newline
+
+\subsubsection{Descomposición Modular}
+\label{descmod}
+
+En esta sección se procederá a descomponer cada uno de los módulos identificados 
+en la sección \ref{estruc} de la capa de Negocios. Se puede observar en la Figura 
+\ref{img43} la composición de dichos módulos, identificando como se relacionan los 
+componentes que les pertenecen y la implementación del patrón DAO (Módulo 
+Conexiones) para lograr orden en el diseño y la independencia de la capa de Datos 
+de la capa de negocios.\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{ComponentDiagram1.png}
+\caption{Descomposición modular del Sistema.}
+\label{img43}
+\end{center}
+\end{figure}
+
+En base al diagrama presentado en la Figura \ref{img43}, se realizará la 
+identificación y descripción (breve) de cada uno de los componentes pertenecientes a 
+cada módulo.
+
+\begin{itemize}
+	\item{\textbf{Identificación:}
+	\begin{itemize}
+		\item{}
+	\end{itemize}
+}
+	\item{\textbf{Administración Usuarios:}
+	\begin{itemize}
+		\item{}
+	\end{itemize}
+}
+	\item{\textbf{Administración Servidores:}
+	\begin{itemize}
+		\item{}
+	\end{itemize}
+}
+	\item{\textbf{Administración Aplicaciones:}
+	\begin{itemize}
+		\item{}
+	\end{itemize}
+}
+	\item{\textbf{Administración UPS:}
+	\begin{itemize}
+		\item{}
+	\end{itemize}
+}
+	\item{\textbf{Gestión Información:}
+	\begin{itemize}
+		\item{}
+	\end{itemize}
+}
+	\item{\textbf{Conexiones:}
+	\begin{itemize}
+		\item{}
+	\end{itemize}
+}
+\end{itemize}
 
 \subsection{Diseño de Plan de Pruebas}
 \label{pruebas}
