@@ -1922,7 +1922,7 @@ misma manera un mensaje con la respuesta a dicho evento.\newline
 
 En esta sección se procederá a descomponer cada uno de los módulos identificados 
 en la sección \ref{estruc} de la capa de Negocios. Se puede observar en la Figura 
-\ref{img43} la composición de dichos módulos, identificando como se relacionan los 
+\ref{img42} la composición de dichos módulos, identificando como se relacionan los 
 componentes que les pertenecen y la implementación del patrón DAO (Módulo 
 Conexiones) para lograr orden en el diseño y la independencia de la capa de Datos 
 de la capa de negocios.\newline
@@ -1931,50 +1931,110 @@ de la capa de negocios.\newline
 \begin{center}
 \includegraphics[width=15cm]{ComponentDiagram1.png}
 \caption{Descomposición modular del Sistema.}
-\label{img43}
+\label{img42}
 \end{center}
 \end{figure}
 
-En base al diagrama presentado en la Figura \ref{img43}, se realizará la 
+En base al diagrama presentado en la Figura \ref{img42}, se realizará la 
 identificación y descripción (breve) de cada uno de los componentes pertenecientes a 
 cada módulo.
 
 \begin{itemize}
 	\item{\textbf{Identificación:}
 	\begin{itemize}
-		\item{}
+		\item{Gestion Sesión: Componente encargado de gestionar la sesion del 
+usuario, ya sea para iniciar sesión dentro del sistema, como para cerrarla.}
+		\item{Validación Información: Componente encargado de validar la 
+información ingresada con la información del sistema. Se comunica con el 
+componente Interfaz Acceso Datos Cuenta para obtener los datos del sistema.}
+		\item{Interfaz Acceso Datos Cuenta: Componente que permite la conexión 
+del módulo Identificación con el módulo Conexión para obtener los datos de la base 
+de datos del sistema.}
 	\end{itemize}
 }
 	\item{\textbf{Administración Usuarios:}
 	\begin{itemize}
-		\item{}
+		\item{Modificar Usuario: Componente encargado de modificar los datos de 
+un Usuario perteneciente al sistema, el cual es obtenido del componente Buscar 
+Usuario.}
+		\item{Recuperar Cuentas: Componente encargado de Recuperar la cuentas 
+de Usuario que han sido desactivadas o han perdido su contraseña utilizando para 
+esto el componente Buscar Usuario.}
+		\item{Buscar Usuario: Componente encargado de Buscar usuarios en el 
+sistema, ya sea para listarlos todos o para encontrar a uno o varios en el sistema.}
+		\item{CRUD Usuario: Componente encargado de crear (C), leer (R), 
+modificar (U) y desactivar (D) usuarios en el sistema.}
+		\item{Interfaz Acceso Datos Usuario: Componente que permite la conexión 
+del módulo Administración Usuarios con el módulo Conexión para obtener los datos 
+de la base de Datos del Sistema.}
 	\end{itemize}
 }
 	\item{\textbf{Administración Servidores:}
 	\begin{itemize}
-		\item{}
+		\item{Modificar Servidor: Componente encargado de gestionar la 
+modificación de un servidor en el sistema.}
+		\item{Buscar Servidores: Componente encargado de Buscar usuarios en el 
+sistema, ya sea para listarlos todos o para encontrar a uno o varios en el sistema.}
+		\item{CRUD Servidores: Componente encargado de crear (C), leer (R), 
+modificar (U) y desactivar (D) Servidores en el sistema.}
+		\item{Interfaz Acceso Datos Servidor: Componente que permite la conexión 
+del módulo Administración Servidores con el módulo Conexión para obtener los 
+datos de la base de Datos del Sistema.}
 	\end{itemize}
 }
 	\item{\textbf{Administración Aplicaciones:}
 	\begin{itemize}
-		\item{}
+		\item{Modificar Aplicación: Componente encargado de gestionar la 
+modificación de una aplicación en el sistema.}
+		\item{Buscar Aplicaciones: Componente encargado de Buscar aplicaciones 
+en el sistema, ya sea para listarlas todas o para encontrar a una o varias en el 
+sistema.}
+		\item{CRUD Aplicaciones: Componente encargado de crear (C), leer (R), 
+modificar (U) y desactivar (D) Aplicaciones en el sistema.}
+		\item{Interfaz Acceso Datos Servidor: Componente que permite la conexión 
+del módulo Administración Aplicaciones con el módulo Conexión para obtener los 
+datos de la base de Datos del Sistema.}
 	\end{itemize}
 }
 	\item{\textbf{Administración UPS:}
 	\begin{itemize}
-		\item{}
+		\item{Modificar UPS: Componente encargado de gestionar la modificación 
+de una UPS en el sistema.}
+		\item{Buscar UPS: Componente encargado de Buscar UPS en el sistema, ya 
+sea para listarlas todas o para encontrar a una o varias en el sistema.}
+		\item{CRUD UPS: Componente encargado de crear (C), leer (R), modificar 
+(U) y desactivar (D) UPS en el sistema.}
+		\item{Interfaz Acceso Datos UPS: Componente que permite la conexión del 
+módulo Administración UPS con el módulo Conexión para obtener los datos de la 
+base de Datos del Sistema.}
 	\end{itemize}
 }
 	\item{\textbf{Gestión Información:}
 	\begin{itemize}
-		\item{}
+		\item{Generar Estadísticas: Componente encargado de generar las 
+estadísticas del sistema.}
+		\item{Generar Informe: Componente encargado de generar los informes 
+del sistema.}
+		\item{Interfaz Acceso Datos: Componente que permite la conexión del 
+módulo Gestión Información con el módulo Conexión para obtener los datos de la 
+base de Datos del Sistema.}
+
 	\end{itemize}
 }
 	\item{\textbf{Conexiones:}
 	\begin{itemize}
-		\item{}
+		\item{Interfaz Acceso BBDD: Componente encargado de realizar consultas y 
+operaciones en la base de datos del sistema, utilizando el lenguaje SQL de MySQL.}
 	\end{itemize}
+
 }
+	\item{\textbf{Bases de Datos:}
+	\begin{itemize}
+		\item{BBDD Sistema: Base de datos del sistema Administrada con MySQL.}
+	\end{itemize}
+
+}
+
 \end{itemize}
 
 \subsection{Diseño de Plan de Pruebas}
@@ -1982,17 +2042,22 @@ cada módulo.
 
 El objetivo de ésta sección es presentar en detalle el Diseño de Pruebas que se 
 ejecutarán para evaluar que tan defectuoso se encuentra el sistema luego de su 
-implementación. Las pruebas comprendidas en detalle serán las pruebas de 
-Requerimientos pruebas del sistema, las pruebas de integración, las pruebas 
-unitarias y las pruebas de Aceptación.\newline
+implementación. Las pruebas comprendidas en detalle serán las Pruebas de 
+Requerimientos, Pruebas de Diseño, Pruebas de Sistema, Pruebas de Integración, 
+Pruebas Unitarias y Pruebas de Aceptación.\newline
 
-En el diagrama que se presenta a continuación muestra las faces del Ciclo de vida del 
-proceso de pruebas y corrección de errores, que se deberá llevar a cabo o tomar en 
-cuenta, dependiendo del caso, al momento de ejecutar alguna de las pruebas en el 
-sistema.\newline
+En el diagrama que se presenta en la figura \ref{img43} se muestra las faces del 
+Ciclo de vida del proceso de Diseño de pruebas que se deberá llevar a cabo o tomar 
+en cuenta, dependiendo del caso, al momento de generar alguna de las pruebas en 
+el sistema.\newline
 
-
-
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{CicloPruebas.png}
+\caption{Diagrama de Ciclo de vida de Pruebas.}
+\label{img43}
+\end{center}
+\end{figure}
 
 \newpage
 
