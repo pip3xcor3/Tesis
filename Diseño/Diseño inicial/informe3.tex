@@ -26,6 +26,7 @@
 \usepackage{booktabs}
 \usepackage{tabbing}
 \usepackage{float}
+\usepackage{slashbox}
 
 \renewcommand*\thesection{\arabic{section}}
 
@@ -2037,19 +2038,21 @@ operaciones en la base de datos del sistema, utilizando el lenguaje SQL de MySQL
 
 \end{itemize}
 
+\newpage
+
 \subsection{Diseño de Plan de Pruebas}
 \label{pruebas}
 
 El objetivo de ésta sección es presentar en detalle el Diseño de Pruebas que se 
 ejecutarán para evaluar que tan defectuoso se encuentra el sistema luego de su 
 implementación. Las pruebas comprendidas en detalle serán las Pruebas de 
-Requerimientos, Pruebas de Diseño, Pruebas de Sistema, Pruebas de Integración, 
-Pruebas Unitarias y Pruebas de Aceptación.\newline
+Requerimientos, Pruebas de Diseño, Pruebas de Sistema, Pruebas de 
+Integración, Pruebas Unitarias y Pruebas de Aceptación.\newline
 
-En el diagrama que se presenta en la figura \ref{img43} se muestra las faces del 
-Ciclo de vida del proceso de Diseño de pruebas que se deberá llevar a cabo o tomar 
-en cuenta, dependiendo del caso, al momento de generar alguna de las pruebas en 
-el sistema.\newline
+En el diagrama que se presenta en la figura \ref{img43} se muestra las faces 
+del Ciclo de vida del proceso de Diseño de pruebas que se deberá llevar a cabo 
+o tomar en cuenta, dependiendo del caso, al momento de generar alguna de 
+las pruebas en el sistema.\newline
 
 \begin{figure}[H]
 \begin{center}
@@ -2058,6 +2061,78 @@ el sistema.\newline
 \label{img43}
 \end{center}
 \end{figure}
+
+Cabe destacar que en este diseño de puebas no se detallaran los casos de 
+prueba de forma específica (esto es dar el dato en duro, ej: rut: 
+12.345.678-9), esto debido a que como aun no se implementa el sistema ni 
+tampoco se cubren los requerimientos, ni se definen con certeza los datos que 
+manejará el sistema, no es posible realizar dicho nivel de detalle. Por lo tanto 
+en ésta sección se expondrá y determinará los casos de pruebas como modelos 
+a realizar al momento de probar más adelante.\newline
+
+\subsubsection{Pruebas de Diseño:}
+\label{prudis}
+
+El principal objetivo de esta prueba es el de satisfacer los requerimientos en el 
+diseño del sistema, por lo que se hace importante destacar que cada 
+requerimiento debe estar implementado en algún módulo del sistema en 
+específico, para poder lograr esto se hace un cruzamiento entre los 
+requerimientos y módulos del sistema de la sección \ref{descmod} para 
+asegurar de esta manera el cumplimiento de éstos en la arquitectura. La tabla 
+\ref{tab04}presentada a continuación presenta el formato de esta prueba, para 
+que sea utilizado al momento de realizar esta prueba. La persona encargada de 
+realizar esta tarea es el arquitecto de Software.\newline
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|r|r|r|r|r|r|}
+\cline{1-7}
+\multicolumn{7}{|c|}{\textbf{Prueba de Diseño}} \\ \cline{1-7}
+\backslashbox{Requerimiento}{Módulo} & $Mod_{1}$ & $Mod_{2}$ & $Mod_{3}$ & \multicolumn{1}{c|}{...} & $Mod_{n-1}$ & $Mod_{n}$\\ \cline{1-7}
+\multicolumn{1}{|c|}{$RF_{1}$} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} &  &  &  &  \\  \cline{1-7}
+\multicolumn{1}{|c|}{$RF_{2}$} &  &  & \multicolumn{1}{c|}{X} &  &  &  \\  \cline{1-7}
+\multicolumn{1}{|c|}{$RF_{3}$} & \multicolumn{1}{c|}{X} &  &  &  &  &  \\  \cline{1-7}
+\multicolumn{1}{|c|}{$RF_{4}$} & \multicolumn{1}{c|}{X} &  &  &  &  & \multicolumn{1}{c|}{X} \\  \cline{1-7}
+\multicolumn{1}{|c|}{...} &  &  &  & \multicolumn{1}{c|}{...} &  &  \\  \cline{1-7}
+\multicolumn{1}{|c|}{$RF_{n-1}$} &  &  &  &  & \multicolumn{1}{c|}{X} &  \\  \cline{1-7}
+\multicolumn{1}{|c|}{$RF_{n}$} &  &  &  &  &  & \multicolumn{1}{c|}{X} \\  \cline{1-7}
+\end{tabular}
+\caption{Planilla para prueba de Diseño.}
+\label{tab04}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|r|r|r|}
+\cline{1-3}
+\multicolumn{3}{|c|}{\textbf{Detalle de Módulos}} \\ \cline{1-3}
+\multicolumn{1}{|c|}{\textbf{Leyenda}} & \multicolumn{1}{c|}{\textbf{Nombre}} & \multicolumn{1}{c|}{\textbf{Descripción}} \\ \cline{1-3}
+\multicolumn{1}{|c|}{$ Mod_{1}$} &  &  \\  \cline{1-3}
+\multicolumn{1}{|c|}{$ Mod_{2}$} &  &  \\  \cline{1-3}
+\multicolumn{1}{|c|}{...} &  &  \\  \cline{1-3}
+\multicolumn{1}{|c|}{$ Mod_{n}$} &  &  \\  \cline{1-3}
+\end{tabular}
+\caption{Detalle de Módulos del Sistema según su leyenda}
+\label{tab05}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|r|r|}
+\cline{1-2}
+\multicolumn{2}{|c|}{\textbf{Detalle de Requerimientos}} \\ \cline{1-2}
+\multicolumn{1}{|c|}{\textbf{Leyenda}} & \multicolumn{1}{c|}{\textbf{Descripción}} \\ \cline{1-2}
+\multicolumn{1}{|c|}{$ RF_{1}$} &  \\  \cline{1-2}
+\multicolumn{1}{|c|}{$ RF_{2}$} &  \\  \cline{1-2}
+\multicolumn{1}{|c|}{...} &  \\  \cline{1-2}
+\multicolumn{1}{|c|}{$ RF_{n}$} &  \\  \cline{1-2}
+\end{tabular}
+\caption{Detalle de Módulos del Sistema según su leyenda}
+\label{tab05}
+\end{center}
+\end{table}
 
 \newpage
 
