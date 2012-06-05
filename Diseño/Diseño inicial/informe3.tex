@@ -27,12 +27,18 @@
 \usepackage{tabbing}
 \usepackage{float}
 \usepackage{slashbox}
+\usepackage{colortbl}
 
 \renewcommand*\thesection{\arabic{section}}
 
 \addto\captionsspanish{
-\def\listtablename{Índice de tablas}
+\def\listtablename{Índice de Tablas}
 \def\tablename{Tabla}
+}
+
+\addto\captionsspanish{
+\def\listfigurename{Índice de Figuras}
+\def\figurename{Figura}
 }
 
 \begin{document}
@@ -2046,8 +2052,8 @@ operaciones en la base de datos del sistema, utilizando el lenguaje SQL de MySQL
 El objetivo de ésta sección es presentar en detalle el Diseño de Pruebas que se 
 ejecutarán para evaluar que tan defectuoso se encuentra el sistema luego de su 
 implementación. Las pruebas comprendidas en detalle serán las Pruebas de 
-Requerimientos, Pruebas de Diseño, Pruebas de Sistema, Pruebas de 
-Integración, Pruebas Unitarias y Pruebas de Aceptación.\newline
+Diseño, Pruebas Unitarias, Pruebas de Integración, Pruebas de Sistema y 
+Pruebas de Aceptación.\newline
 
 En el diagrama que se presenta en la figura \ref{img43} se muestra las faces 
 del Ciclo de vida del proceso de Diseño de pruebas que se deberá llevar a cabo 
@@ -2129,7 +2135,43 @@ realizar esta tarea es el arquitecto de Software.\newline
 \multicolumn{1}{|c|}{...} &  \\  \cline{1-2}
 \multicolumn{1}{|c|}{$ RF_{n}$} &  \\  \cline{1-2}
 \end{tabular}
-\caption{Detalle de Módulos del Sistema según su leyenda}
+\caption{Detalle de Requerimientos del Sistema según su leyenda}
+\label{tab05}
+\end{center}
+\end{table}
+
+\subsubsection{Pruebas Unitarias:}
+\label{pruni}
+
+El objetivo principal de este tipo de pruebas es encontrar errores basándose en 
+la estructura o especificaciones. Es útil principalmente para verificar que cada 
+módulo del sistema funcione de manera correcta por separado. El formato del 
+detalle de la información de esta prueba debe de responder al presentado en la 
+Tabla \ref{img06}, el cual debe de ser ocupado al momento de ejecutar la 
+prueba. Los encargados de realizar estas pruebas son en un primer lugar el 
+programador y luego el tester, uno en la fase de programación y el otro en la 
+fase de testing, respectivamente. En el caso de este Sistema, dichos cargos 
+serán cubiertos por el creador de este trabajo de título.\newline
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|r|r|r|r|}
+\cline{1-4}
+\multicolumn{4}{|>{\columncolor[gray]{0.75}}c|}{\textbf{Datos Iniciales - Prueba Unitaria}} \\ \cline{1-4}
+\multicolumn{1}{|p{4cm}|}{\textbf{Fecha:}} & \multicolumn{2}{p{6cm}}{\textbf{N° Caso de Prueba:}} & \multicolumn{1}{|p{4cm}|}{\textbf{ID Prueba:}} \\ \cline{1-4}
+\multicolumn{2}{|p{7cm}|}{\textbf{Característica:}} & \multicolumn{2}{p{7cm}|}{\textbf{Subcaracterística:}} \\ \cline{1-4}
+\multicolumn{4}{|>{\columncolor[gray]{0.75}}c|}{\textbf{Módulo de Chequeo}} \\ \cline{1-4}
+\multicolumn{4}{|c|}{} \\ \cline{1-4}
+\multicolumn{4}{|>{\columncolor[gray]{0.75}}c|}{\textbf{Informe del Caso de Prueba}} \\ \cline{1-4}
+\multicolumn{2}{|p{7cm}|}{\textbf{Descripción:}\newline \newline} & \multicolumn{2}{p{7cm}|}{\textbf{Enfoque:}\newline \newline} \\ \cline{1-4}
+\multicolumn{2}{|p{7cm}|}{\textbf{Datos Entrada:}\newline \newline} & \multicolumn{2}{p{7cm}|}{\textbf{Datos Esperados:}\newline \newline} \\ \cline{1-4}
+\multicolumn{4}{|>{\columncolor[gray]{0.75}}c|}{\textbf{Procedimiento del Caso de Prueba}} \\ \cline{1-4}
+\multicolumn{4}{|p{14cm}|}{\textbf{1. Pasos a Seguir:}\newline} \\ \cline{1-4}
+\multicolumn{4}{|p{14cm}|}{\textbf{2. Condiciones Externas:}\newline} \\ \cline{1-4}
+\multicolumn{4}{|>{\columncolor[gray]{0.75}}c|}{\textbf{Resultados de Ejecución}} \\ \cline{1-4}
+
+\end{tabular}
+\caption{Detalle de Requerimientos del Sistema según su leyenda}
 \label{tab05}
 \end{center}
 \end{table}
