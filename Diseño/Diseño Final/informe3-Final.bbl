@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{REF16}
+{Len Bass, Paul Clements and Rick Kazman}.
+\newblock {\em Software Architecture in Practice}.
+\newblock Addison Wesley, 2003.
+\newblock Segunda Edici\'{o}n.
+
+\bibitem{REF01}
+{Real Academia Espa\~{n}ola}.
+\newblock Definici\'{o}n de inventario.
+\newblock
+  \url{http://buscon.rae.es/draeI/SrvltGUIBusUsual?LEMA=inventario&origen=RAE}.
+\newblock Última vez visitado, \today.
+
+\end{thebibliography}
