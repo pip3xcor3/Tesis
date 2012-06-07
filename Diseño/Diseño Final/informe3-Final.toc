@@ -1,0 +1,11 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\'on}{4}
+\contentsline {section}{\numberline {2}Dise\~no}{6}
+\contentsline {subsection}{\numberline {2.1}Dise\~no Arquitect\'onico}{6}
+\contentsline {subsubsection}{\numberline {2.1.1}Estructuraci\'on del Sistema}{6}
+\contentsline {subsubsection}{\numberline {2.1.2}Modelado de Control}{11}
+\contentsline {subsubsection}{\numberline {2.1.3}Descomposici\'on Modular}{12}
+\contentsline {subsection}{\numberline {2.2}Dise\~no de Plan de Pruebas}{15}
+\contentsline {subsubsection}{\numberline {2.2.1}Pruebas de Dise\~no:}{16}
+\contentsline {subsubsection}{\numberline {2.2.2}Pruebas Unitarias:}{17}
+\contentsline {section}{Bibliograf\'{\i }a}{18}
