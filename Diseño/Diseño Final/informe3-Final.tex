@@ -73,13 +73,13 @@ Este artículo presenta el desarrollo de la fase de Diseño para la implementación
 de un sistema de inventario para servidores y aplicaciones en DISICO de la 
 Universidad de Valparaíso, con la finalidad de complementar de mejor manera 
 el registro actual de inventario realizado a los servidores pertenecientes a dicha 
-dirección. El objetivo es entregar una herramienta que sea de fácil manipulación 
-para cada uno de los perfiles de Usuarios que interactúan con el proceso de 
-inventario de servidores y sus aplicaciones asociadas, con la finalidad de poseer 
-orden, claridad y registro de la información almacenada. La aplicación a diseñar, 
-a diferencia de las ya existentes, será de fácil manipulación y adecuada a las 
-necesidades planteadas por DISICO, mejorando de esta manera el proceso 
-actual de inventario.
+dirección. El objetivo es entregar una herramienta que sea de fácil 
+manipulación para cada uno de los perfiles de Usuarios que interactúan con el 
+proceso de inventario de servidores y sus aplicaciones asociadas, con la 
+finalidad de poseer orden, claridad y registro de la información almacenada. La 
+aplicación a diseñar, a diferencia de las ya existentes, será de fácil manipulación 
+y adecuada a las necesidades planteadas por DISICO, mejorando de esta 
+manera el proceso actual de inventario.
 \end{abstract}
 
 \newpage
@@ -94,28 +94,28 @@ actual de inventario.
 \section{Introducción}
 \label{intr}
 Hoy en día es muy importante para una empresa mantener un registro 
-ordenado y claro de los bienes y servicios que pertenecen a la empresa. Esto es 
-porque, al tener la posibilidad de conocer todo lo que se tiene como empresa, 
-se genera una ventaja al momento de tomar decisiones sobre la finalidad de sus 
-bienes. Por lo tanto es aconsejable que en una empresa exista algún proceso 
-que tenga por finalidad otorgar un inventariado de los bienes y servicios que 
-posea.\newline 
+ordenado y claro de los bienes y servicios que pertenecen a la empresa. Esto 
+es porque, al tener la posibilidad de conocer todo lo que se tiene como 
+empresa, se genera una ventaja al momento de tomar decisiones sobre la 
+finalidad de sus bienes. Por lo tanto es aconsejable que en una empresa exista 
+algún proceso que tenga por finalidad otorgar un inventariado de los bienes y 
+servicios que posea.\newline 
 
 Según la rae, se define inventario como\textsl{ ''Asiento de los bienes y demás 
 cosas pertenecientes a una persona o comunidad, hecho con orden y 
 precisión"}\cite{REF01}. Por lo tanto, además de poseer la información de mis 
-bienes, es necesario que dicha información sea presentada de forma ordenada y 
-con lujo detalle, para que en el caso de que la empresa desee realizar alguna 
-decisión sobre los bienes que posee, esta información sea la justificación de una 
-buena decisión. Por lo tanto, podríamos decir que\textsl{ "Saber que es lo que 
-tengo determina que es lo que soy y ayuda de gran manera a decir que es lo 
-que puedo ser y hacer"}.\newline
+bienes, es necesario que dicha información sea presentada de forma ordenada 
+y con lujo detalle, para que en el caso de que la empresa desee realizar alguna 
+decisión sobre los bienes que posee, esta información sea la justificación de 
+una buena decisión. Por lo tanto, podríamos decir que\textsl{ "Saber que es lo 
+que tengo determina que es lo que soy y ayuda de gran manera a decir que es 
+lo que puedo ser y hacer"}.\newline
 
 Ahora bien, la tarea de realizar un proceso de inventario no es para nada 
 sencillo, inclusive, al momento de disponer de muchos bienes y servicios se 
 hace complicado obtener un registro de todo de manera clara, ordenada y 
-precisa, y casi imposible asegurar además la disponibilidad y confiabilidad de la 
-información. Por lo mismo, a medida que avanza el tiempo, las empresas 
+precisa, y casi imposible asegurar además la disponibilidad y confiabilidad de 
+la información. Por lo mismo, a medida que avanza el tiempo, las empresas 
 sienten la necesidad de adquirir tecnología para el mejoramiento de sus 
 sistemas y de sus procedimientos, con el fin de garantizar un eficaz 
 funcionamiento.\newline
@@ -123,12 +123,12 @@ funcionamiento.\newline
 Controlar la información de los diferentes bienes y servicios a través de un 
 sistema computarizado, puede asegurar la disponibilidad, la confiabilidad, el 
 orden y la claridad que se requiera en un momento determinado. Es por esto 
-que se ha pensado en el diseño de un sistema computarizado para el inventario 
-de aplicaciones y servidores para la Dirección de Servicios de Información y 
-Comunicación (DISICO) de la Universidad de Valparaíso, la cual permitirá 
-controlar de manera eficiente dicho proceso, estableciendo la mayor calidad de 
-las actividades relacionadas con el inventariado de los servidores y sus 
-aplicaciones instaladas, evitando de esta manera problemas como la 
+que se ha pensado en el diseño de un sistema computarizado para el 
+inventario de aplicaciones y servidores para la Dirección de Servicios de 
+Información y Comunicación (DISICO) de la Universidad de Valparaíso, la cual 
+permitirá controlar de manera eficiente dicho proceso, estableciendo la mayor 
+calidad de las actividades relacionadas con el inventariado de los servidores y 
+sus aplicaciones instaladas, evitando de esta manera problemas como la 
 redundancia de la información o falta de información.\newline
 
 Es por esto que se a planificado realizar distintas fases en el ciclo de vida del 
@@ -136,17 +136,17 @@ desarrollo de este sistema, primero la fase de Definición de Requerimientos y
 análisis, luego la fase de Diseño de la solución propuesta, posteriormente la 
 implementación y finalmente la fase de pruebas e implantación del sistema.\newline
 
-Para poder llevar acabo dicha planificación, es que se optó por trabajar con una 
-metodología incremental, determinando con esto, la forma de ejecutar dichas 
-fases del ciclo de vida de este sistema. Con respecto a la fase que se completará 
-en el documento a continuación, se encuentra la fase de Diseño, detallando con 
-esto, un bosquejo de como será el funcionamiento del sistema, para luego 
-tomar esto como la base de la implementación del sistema.\newline
+Para poder llevar acabo dicha planificación, es que se optó por trabajar con 
+una metodología incremental, determinando con esto, la forma de ejecutar 
+dichas fases del ciclo de vida de este sistema. Con respecto a la fase que se 
+completará en el documento a continuación, se encuentra la fase de Diseño, 
+detallando con esto, un bosquejo de como será el funcionamiento del sistema, 
+para luego tomar esto como la base de la implementación del sistema.\newline
 
 Para exponer las temáticas que se definen en este documento, es que se a 
-decidido estructurarlo en 2 capítulos que se definirán a continuación y el detalle 
-de la Bibliografía utilizada para el trabajo. Por lo tanto la estructura se compone 
-de la manera siguiente:
+decidido estructurarlo en 2 capítulos que se definirán a continuación y el 
+detalle de la Bibliografía utilizada para el trabajo. Por lo tanto la estructura se 
+compone de la manera siguiente:
 
 \begin{itemize}
 	\item{Introducción.}
@@ -166,19 +166,19 @@ de la manera siguiente:
 A continuación se procederá a describir las decisiones que se tomaron y los 
 modelos  que se realizaron para el sistema propuesto en la fase de diseño, 
 presentando en  cada uno de éstos una justificación y un resguardo de la 
-trazabilidad y consistencia entre dichos modelos, agregando además los diseños
-de Interfaz y de plan de pruebas.
+trazabilidad y consistencia entre dichos modelos, agregando además los 
+diseños de Interfaz y de plan de pruebas.
 
 \subsection{Diseño Arquitectónico}
 \label{arq}
 
-El diseño de la arquitectura del sistema es una parte importante al momento de
- definir el funcionamiento del sistema, ya que define nociones de abstracción y
- múltiples vistas.\newline
+El diseño de la arquitectura del sistema es una parte importante al momento 
+de definir el funcionamiento del sistema, ya que define nociones de abstracción 
+y múltiples vistas.\newline
 
 Es por esto que entenderemos el concepto de arquitectura de un programa o 
-sistema computacional como \textsl{``la estructura o estructuras del sistema, la 
-cual comprende elementos de software, las propiedades de estos elementos 
+sistema computacional como \textsl{``la estructura o estructuras del sistema, 
+la cual comprende elementos de software, las propiedades de estos elementos 
 visibles externamente y las relaciones entre ellos"}\cite{REF16}.\newline
 
 Para definir el diseño arquitectónico del sistema se realizarán las siguientes 
@@ -198,8 +198,8 @@ arquitectura de tipo Cliente-Servidor compuesta por 3 capas (capa de
 presentación, capa de negocio y capa de acceso a datos) localizadas en una 
 misma máquina, esto se debe a que el sistema no posee una mayor 
 complejidad como para distribuirlo en mas equipos. A continuación se 
-presentará un modelo que muestra como se estructura una arquitectura Cliente-
-Servidor.
+presentará un modelo que muestra como se estructura una arquitectura 
+Cliente-Servidor.
 
 \begin{figure}[H]
 \begin{center}
@@ -212,8 +212,9 @@ Servidor.
 La arquitectura cliente-servidor es un modelo de aplicación distribuida, en la 
 cual, las tareas se reparten entre los proveedores de recursos o servicios, 
 determinados como servidores, y los demandantes, establecidos como clientes. 
-En otras palabras, un cliente solicita un servicio y un servidor se lo proporciona. 
-La definición otorgada por IBM sobre Cliente-Servidor es la siguiente:\newline
+En otras palabras, un cliente solicita un servicio y un servidor se lo 
+proporciona. La definición otorgada por IBM sobre Cliente-Servidor es la 
+siguiente:\newline
 
 \textsl{``Es la tecnología que proporciona al usuario final el acceso 
 transparente a las aplicaciones, datos, servicios de cómputo o cualquier otro 
@@ -227,11 +228,11 @@ Ahora bien, los componentes de la arquitectura cliente-servidor los
 entenderemos como se presenta a continuación:\newline
 
 \begin{itemize}
-	\item{\textbf{Cliente:} Es el componente encargado de solicitar servicios de 
-internet o intranet. Una aplicación consta de una parte determinada como 
+	\item{\textbf{Cliente:} Es el componente encargado de solicitar servicios 
+de internet o intranet. Una aplicación consta de una parte determinada como 
 cliente, los cuales pueden ser ejecutados en diferentes sistemas. Los usuarios 
-finales invocan la parte cliente de la aplicación, que construye una solicitud, y se 
-la envía al servidor.\newline
+finales invocan la parte cliente de la aplicación, que construye una solicitud, y 
+se la envía al servidor.\newline
 
 Las funciones que lleva a cabo el cliente se resumen en lo siguiente:
 		\begin{itemize}
@@ -242,10 +243,10 @@ Las funciones que lleva a cabo el cliente se resumen en lo siguiente:
 			\item{validar datos a nivel local.}
 		\end{itemize}}
 	\item{\textbf{Servidor:} Es el componente que ofrece los servicios 
-solicitados por los clientes. El servidor es un programa que recibe una solicitud, 
-realiza la acción requerida y devuelve los resultados en forma de una respuesta. 
-Generalmente un servidor puede tratar múltiples peticiones (múltiples clientes) 
-al mismo tiempo.\newline
+solicitados por los clientes. El servidor es un programa que recibe una 
+solicitud, realiza la acción requerida y devuelve los resultados en forma de una 
+respuesta. Generalmente un servidor puede tratar múltiples peticiones 
+(múltiples clientes) al mismo tiempo.\newline
 
 Las funciones que lleva a cabo el servidor se resumen en lo siguiente:
 		\begin{itemize}
@@ -274,14 +275,14 @@ web.\newline
 
 Ahora bien, una de las justificaciones de porqué se seleccionó esta arquitectura 
 es que presenta la capacidad de poder realizar el desarrollo de su 
-funcionamiento en niveles, en donde cada una de estas capas se desentiende de 
-lo que ocurre en las capas superiores y solo se dedica a trabajar en la finalidad 
-que le corresponde interactuándo con sus capas vecinas. También es necesario 
-determinar que la búsqueda de errores se simplifica, ya que al poseer el sistema 
-dividido en capas separadas, no es necesario indagar sobre código mezclado. En 
-la figura que se presenta a continuación se presenta la forma en que se definen 
-las capas y como estas interactúan, determinando así, la arquitectura del 
-sistema.\newline
+funcionamiento en niveles, en donde cada una de estas capas se desentiende 
+de lo que ocurre en las capas superiores y solo se dedica a trabajar en la 
+finalidad que le corresponde interactuándo con sus capas vecinas. También es 
+necesario determinar que la búsqueda de errores se simplifica, ya que al 
+poseer el sistema dividido en capas separadas, no es necesario indagar sobre 
+código mezclado. En la figura que se presenta a continuación se presenta la 
+forma en que se definen las capas y como estas interactúan, determinando así, 
+la arquitectura del sistema.\newline
 
 \begin{figure}[H]
 \begin{center}
@@ -298,21 +299,22 @@ detallara el enfoque tomado en ellas.\newline
 \begin{itemize}
 	\item{\textbf{Capa de Presentación:}\newline
 Esta capa, también conocida como capa de acceso o de usuario, es la que se 
-encarga de que el sistema interactúe con el usuario y viceversa, ya que muestra 
-el sistema al usuario, le presenta la información y obtiene información del 
-usuario en un algún proceso del sistema. En una aplicación corresponde a la 
-interfaz gráfica y debe tener la característica de ser entendible y fácil de usar 
+encarga de que el sistema interactúe con el usuario y viceversa, ya que 
+muestra el sistema al usuario, le presenta la información y obtiene información 
+del usuario en un algún proceso del sistema. En una aplicación corresponde a 
+la interfaz gráfica y debe tener la característica de ser entendible y fácil de usar 
 para el usuario. Además esta capa no se debe de ocupar para el procesamiento 
 de la información, al menos que sean validaciones de forma local. Esta capa se 
 comunica únicamente con la capa intermedia o de negocio.\newline}
 	\item{\textbf{Capa de Negocios:}\newline
 Esta capa, también conocida como capa de procesos o lógica del negocio, es 
 donde residen las funciones que se ejecutan en el sistema, se procesa la 
-información y se envían las respuestas tras el proceso. En esta capa es donde se 
-estableces todas las reglas que deben cumplirse. Esta capa se comunica con la 
-capa de presentación, para recibir las solicitudes de los usuarios y presentar los 
-resultados de dichas solicitudes, y con la capa de acceso a datos, para solicitar al 
-gestor de base de datos almacenar, modificar o recuperar datos de él.\newline
+información y se envían las respuestas tras el proceso. En esta capa es donde 
+se estableces todas las reglas que deben cumplirse. Esta capa se comunica con 
+la capa de presentación, para recibir las solicitudes de los usuarios y presentar 
+los resultados de dichas solicitudes, y con la capa de acceso a datos, para 
+solicitar al gestor de base de datos almacenar, modificar o recuperar datos de 
+él.\newline
 
 Los módulos que componen ésta capa corresponden a los presentados en el 
 siguiente diagrama:
@@ -325,12 +327,15 @@ siguiente diagrama:
 \end{center}
 \end{figure}
 
-Como se puede observar en la figura \ref{img04}, la \textsl{capa de Negocios} del sistema se encuentra dividida en 6 módulos, los cuales se encuentran descritos a continuación:
+Como se puede observar en la figura \ref{img04}, la \textsl{capa de 
+Negocios} del sistema se encuentra dividida en 6 módulos, los cuales se 
+encuentran descritos a continuación:
 \begin{itemize}
 	\item{\textbf{Identificación:} Éste módulo se encuentra encargado de la 
 verificación de los datos para el ingreso de los distintos usuario (administrador, 
-Encargado de Datacenter, Encargado de Área, Encargado de Servidor, Encargado 
-Aplicación) al sistema, además es posible iniciar o detener el sistema.\newline}
+Encargado de Datacenter, Encargado de Área, Encargado de Servidor, 
+Encargado Aplicación) al sistema, además es posible iniciar o detener el 
+sistema.\newline}
 	\item{\textbf{Administración Usuarios:} Éste módulo está enfocado a 
 realizar la administración de los usuarios que pertenecen al sistema, y otorga 
 todas las herramientas necesarias para la gestión de éstos.\newline}
@@ -341,14 +346,14 @@ además otorga toda las herramientas que se necesitan para su gestión.\newline}
 destinado para la administración de las Aplicaciones pertenecientes al sistema, 
 además otorga toda las herramientas que se necesitan para su gestión.\newline}
 	\item{\textbf{Administración UPS:} Éste módulo se encuentra destinado 
-para la administración de las UPS pertenecientes al sistema, además otorga toda 
-las herramientas que se necesitan para su gestión.\newline}
-	\item{\textbf{Gestión Información:} Éste módulo se encuentra enfocado en 
-la gestión de la información perteneciente al sistema, esto es, generación de 
-estadísticas e informes, entregando con esto las herramientas necesarias para su 
-gestión.\newline}
-	\item{\textbf{Conexiones:} Este módulo se encarga específicamente de las 
-conexiones a la base de datos del sistema. Es el interprete para la base de 
+para la administración de las UPS pertenecientes al sistema, además otorga 
+toda las herramientas que se necesitan para su gestión.\newline}
+	\item{\textbf{Gestión Información:} Éste módulo se encuentra enfocado 
+en la gestión de la información perteneciente al sistema, esto es, generación de 
+estadísticas e informes, entregando con esto las herramientas necesarias para 
+su gestión.\newline}
+	\item{\textbf{Conexiones:} Este módulo se encarga específicamente de 
+las conexiones a la base de datos del sistema. Es el interprete para la base de 
 datos, ya que se conecta directamente con la capa de Datos.}
 \end{itemize}
 
@@ -358,14 +363,15 @@ comunica con la capa de datos.\newline
 
 }
 	\item{\textbf{Capa de Acceso a Datos:}\newline
-Esta capa, también conocida como Capa de Datos, es la encargada de almacenar 
-los datos del sistema y de los usuarios. La principal función de ésta es 
-almacenar, modificar y retornar datos a la capa de negocio, aunque para esto 
-también es necesario en algunos casos, que tenga procedimientos almacenados 
-y funciones dentro de la capa. En una arquitectura de tres capas es la única que 
-puede acceder a los datos. Está formada por uno o varios sistemas gestores de 
-bases de datos (DBMS), localizados en un mismo servidor o en varios. Solo se 
-comunica con la capa de negocios para enviar o recibir información.}
+Esta capa, también conocida como Capa de Datos, es la encargada de 
+almacenar los datos del sistema y de los usuarios. La principal función de ésta 
+es almacenar, modificar y retornar datos a la capa de negocio, aunque para 
+esto también es necesario en algunos casos, que tenga procedimientos 
+almacenados y funciones dentro de la capa. En una arquitectura de tres capas 
+es la única que puede acceder a los datos. Está formada por uno o varios 
+sistemas gestores de bases de datos (DBMS), localizados en un mismo servidor 
+o en varios. Solo se comunica con la capa de negocios para enviar o recibir 
+información.}
 \end{itemize}
 
 Todas estas capas se encontrarán ubicadas de forma física en un único equipo 
@@ -379,22 +385,22 @@ distintos equipos.
 
 Para que cada uno de los componentes que se integran en el sistema trabajen 
 en conjunto e interactúen con los usuarios, es que se debe de determinar un 
-estilo de control para que los servicios, que se proveen dentro del sistema, sean 
-entregados y respondidos en el lugar y tiempo correcto.\newline 
+estilo de control para que los servicios, que se proveen dentro del sistema, 
+sean entregados y respondidos en el lugar y tiempo correcto.\newline 
 
 Es por esto que se a decidido optar por un estilo de control basado en Eventos 
 de tipo invocación implícita (broadcast), ya que los modelos de control basado 
-en eventos se rigen por eventos generados de forma externa al sistema, esto es, 
-el timing del evento está fuera del control del componente que maneja ese 
+en eventos se rigen por eventos generados de forma externa al sistema, esto 
+es, el timing del evento está fuera del control del componente que maneja ese 
 evento.
 \newline
 
-Ahora cabe señalar que se escogió que fuera de tipo invocación implícita debido 
-a que cumple con las condiciones que el sistema requiere, ya que en el caso de 
-que un evento del sistema sea producido de forma externa por un usuario, se 
-debe transmitir a todos los componentes, por lo cual, cualquier componente 
-que pueda manejar ese evento debe poder hacerlo, situación que es satisfecha 
-por este modelo.\newline
+Ahora cabe señalar que se escogió que fuera de tipo invocación implícita 
+debido a que cumple con las condiciones que el sistema requiere, ya que en el 
+caso de que un evento del sistema sea producido de forma externa por un 
+usuario, se debe transmitir a todos los componentes, por lo cual, cualquier 
+componente que pueda manejar ese evento debe poder hacerlo, situación que 
+es satisfecha por este modelo.\newline
 
 \begin{figure}[H]
 \begin{center}
@@ -405,11 +411,12 @@ por este modelo.\newline
 \end{figure}
 
 En la figura \ref{img05} se identifican los módulos del sistema que interactúan 
-con los distintos usuarios pertenecientes al sistema, en la sección \ref{descmod} 
-se detallará la descomposición modular de cada uno de éstos. Además se puede 
-observar que cada uno de los módulos identificados pueden y deben responder 
-los eventos que son generados por el usuario de forma externa, entregando de 
-la misma manera un mensaje con la respuesta a dicho evento.\newline
+con los distintos usuarios pertenecientes al sistema, en la sección 
+\ref{descmod} se detallará la descomposición modular de cada uno de éstos. 
+Además se puede observar que cada uno de los módulos identificados pueden 
+y deben responder los eventos que son generados por el usuario de forma 
+externa, entregando de la misma manera un mensaje con la respuesta a dicho 
+evento.\newline
 
 \subsubsection{Descomposición Modular}
 \label{descmod}
@@ -454,8 +461,8 @@ componente Buscar Usuario.}
 		\item{Recuperar Cuentas: Componente encargado de Recuperar la 
 cuentas de Usuario que han sido desactivadas o han perdido su contraseña 
 utilizando para esto el componente Buscar Usuario.}
-		\item{Buscar Usuario: Componente encargado de Buscar usuarios en el 
-sistema, ya sea para listarlos todos o para encontrar a uno o varios en el 
+		\item{Buscar Usuario: Componente encargado de Buscar usuarios en 
+el sistema, ya sea para listarlos todos o para encontrar a uno o varios en el 
 sistema.}
 		\item{CRUD Usuario: Componente encargado de crear (C), leer (R), 
 modificar (U) y desactivar (D) usuarios en el sistema.}
@@ -471,8 +478,8 @@ modificación de un servidor en el sistema.}
 		\item{Buscar Servidores: Componente encargado de Buscar usuarios 
 en el sistema, ya sea para listarlos todos o para encontrar a uno o varios en el 
 sistema.}
-		\item{CRUD Servidores: Componente encargado de crear (C), leer (R), 
-modificar (U) y desactivar (D) Servidores en el sistema.}
+		\item{CRUD Servidores: Componente encargado de crear (C), leer 
+(R), modificar (U) y desactivar (D) Servidores en el sistema.}
 		\item{Interfaz Acceso Datos Servidor: Componente que permite la 
 conexión del módulo Administración Servidores con el módulo Conexión para 
 obtener los datos de la base de Datos del Sistema.}
@@ -488,8 +495,8 @@ varias en el sistema.}
 		\item{CRUD Aplicaciones: Componente encargado de crear (C), leer 
 (R), modificar (U) y desactivar (D) Aplicaciones en el sistema.}
 		\item{Interfaz Acceso Datos Servidor: Componente que permite la 
-conexión del módulo Administración Aplicaciones con el módulo Conexión para 
-obtener los datos de la base de Datos del Sistema.}
+conexión del módulo Administración Aplicaciones con el módulo Conexión 
+para obtener los datos de la base de Datos del Sistema.}
 	\end{itemize}
 }
 	\item{\textbf{Administración UPS:}
@@ -502,8 +509,8 @@ sistema.}
 		\item{CRUD UPS: Componente encargado de crear (C), leer (R), 
 modificar (U) y desactivar (D) UPS en el sistema.}
 		\item{Interfaz Acceso Datos UPS: Componente que permite la 
-conexión del módulo Administración UPS con el módulo Conexión para obtener 
-los datos de la base de Datos del Sistema.}
+conexión del módulo Administración UPS con el módulo Conexión para 
+obtener los datos de la base de Datos del Sistema.}
 	\end{itemize}
 }
 	\item{\textbf{Gestión Información:}
@@ -512,9 +519,9 @@ los datos de la base de Datos del Sistema.}
 estadísticas del sistema.}
 		\item{Generar Informe: Componente encargado de generar los 
 informes del sistema.}
-		\item{Interfaz Acceso Datos: Componente que permite la conexión del 
-módulo Gestión Información con el módulo Conexión para obtener los datos de 
-la base de Datos del Sistema.}
+		\item{Interfaz Acceso Datos: Componente que permite la conexión 
+del módulo Gestión Información con el módulo Conexión para obtener los 
+datos de la base de Datos del Sistema.}
 
 	\end{itemize}
 }
@@ -535,6 +542,35 @@ MySQL.}
 }
 
 \end{itemize}
+
+\newpage
+
+\subsection{Diseño de Interfaz}
+\label{interfaz}
+
+En esta sección se detallará la especificación del estilo y diseño del sistema que 
+se le presentará al usuario final. Para lograr este objetivo se definirán 
+conceptos importantes con respecto a la interfaz del Sistema, los cuales 
+comprenderán el estilo de interacción, los Objetivos de facilidad de Uso, 
+Pautas de Estilo, 8 reglas doradas, Esquemas de Navegación y Bosquejos de 
+las interfaces.
+
+\subsubsection{Estilos de Interacción}
+\label{estilo}
+
+Para entender en que consisten los estilos de interacción tomaremos la definición otorgada por Preece\cite{REF18}, en la cual se determina que \textsl{``Es un término genérico que agrupa las diferentes maneras en que los usuarios se comunican o interaccionan con el ordenador"}, por lo que con esto definiremos de que forma se comunicará un usuario con el sistema.\newline
+
+Con respecto a esto existen diversos estilos de interacción, de los cuales se destacan o predominan:
+
+\begin{itemize}
+	\item{Interfaz por línea de órdenes.}
+	\item{Menús y Navegación.}
+	\item{Lenguaje Natural.}
+	\item{Manipulación Directa.}
+	\item{Interacción Asistida.}
+\end{itemize}
+
+
 
 \newpage
 
@@ -578,10 +614,10 @@ requerimiento debe estar implementado en algún módulo del sistema en
 específico, para poder lograr esto se hace un cruzamiento entre los 
 requerimientos y módulos del sistema de la sección \ref{descmod} para 
 asegurar de esta manera el cumplimiento de éstos en la arquitectura. La tabla 
-\ref{tab01} presentada a continuación presenta el formato de esta prueba, para 
-que sea utilizado al momento de realizar esta prueba. La persona encargada de 
-realizar esta tarea es el arquitecto de Software, responsabilidad que será tomada 
-por el autor de este trabajo.\newline
+\ref{tab01} presentada a continuación presenta el formato de esta prueba, 
+para que sea utilizado al momento de realizar esta prueba. La persona 
+encargada de realizar esta tarea es el arquitecto de Software, responsabilidad 
+que será tomada por el autor de este trabajo.\newline
 
 \begin{table}[H]
 \begin{center}
@@ -681,10 +717,10 @@ serán cubiertos por el creador de este trabajo de título.\newline
 \subsubsection{Pruebas de Integración:}
 \label{print}
 
-La necesidad de realizar pruebas de integración viene dada por el hecho de que 
-por mucho que un módulo funcione correctamente de manera individual, no 
-necesariamente funcionará de forma correcta en conjunto con el resto de los 
-módulos, es más, se sabe que es más probable que estos fallen. Por ello 
+La necesidad de realizar pruebas de integración viene dada por el hecho de 
+que por mucho que un módulo funcione correctamente de manera individual, 
+no necesariamente funcionará de forma correcta en conjunto con el resto de 
+los módulos, es más, se sabe que es más probable que estos fallen. Por ello 
 realizaremos este tipo de pruebas, asegurándonos que los módulos que están 
 relacionados puedan ser ejecutados correctamente.\newline
 
@@ -692,18 +728,18 @@ Con el uso de estas pruebas conseguimos ir formando el programa global a
 medida que se comprueba como los distintos componentes interaccionan y se 
 comunican, libres de errores.\newline
 
-Es por esto que para la realización de la integración del sistema se ha tomado la 
-decisión de llevar a cabo la estrategia bottom-up, es decir, comenzaremos con 
-los módulos generados a la fecha y a medida que avanza el proyecto, se irán 
-incorporando los que se vayan implementando. Recordemos que la metodología 
-implementada en este proyecto es iterativa incremental, por lo que se realizarán 
-distintas iteraciones de forma aditiva, para luego terminar los incrementos del 
-desarrollo con el programa completo.\newline
+Es por esto que para la realización de la integración del sistema se ha tomado 
+la decisión de llevar a cabo la estrategia bottom-up, es decir, comenzaremos 
+con los módulos generados a la fecha y a medida que avanza el proyecto, se 
+irán incorporando los que se vayan implementando. Recordemos que la 
+metodología implementada en este proyecto es iterativa incremental, por lo 
+que se realizarán distintas iteraciones de forma aditiva, para luego terminar los 
+incrementos del desarrollo con el programa completo.\newline
 
-Para llevar a cabo estas pruebas supondremos que las pruebas unitarias de cada 
-uno de los módulos han sido evaluadas correctamente y por tanto no serán 
-tomadas en cuenta por esta fase. El flujo normal de esta prueba se visualiza en 
-el diagrama de la Figura \ref{img08} presentado a continuación:
+Para llevar a cabo estas pruebas supondremos que las pruebas unitarias de 
+cada uno de los módulos han sido evaluadas correctamente y por tanto no 
+serán tomadas en cuenta por esta fase. El flujo normal de esta prueba se 
+visualiza en el diagrama de la Figura \ref{img08} presentado a continuación:
 
 \begin{figure}[H]
 \begin{center}
@@ -826,7 +862,9 @@ desarrollada con las encuestas que se presentan a continuación. Además se
 debe de tomar en consideración las instrucciones presentadas a continuación:
 
 \begin{itemize}
-	\item{\textbf{Instrucciones:} Por favor, responda la siguiente encuesta ingresando valores de 1 a 5 según corresponda, donde N (No Aplica), 1 (Malo), 2 (Insuficiente), 3 (Regular), 4 (Bueno) y 5 (Excelente).}
+	\item{\textbf{Instrucciones:} Por favor, responda la siguiente encuesta
+ ingresando valores de 1 a 5 según corresponda, donde N (No Aplica), 1
+ (Malo), 2 (Insuficiente), 3 (Regular), 4 (Bueno) y 5 (Excelente).}
 \end{itemize}
 
 \begin{table}[H]
