@@ -56,7 +56,7 @@ Escuela de Ingeniería Civil en Informática \\
 Ingeniería Civil Informática\\
 \vspace{1cm}
 \Large
-\textbf{Sistema de Inventarios de Aplicaciones y Servidores } \\
+\textbf{Implementación de un Sistema de Inventarios para Aplicaciones y Servidores } \\
 \large
 Informe 3\\
 Felipe Guillermo Aguayo Cortés\\
@@ -154,6 +154,8 @@ compone de la manera siguiente:
 	\begin{itemize}
 		\item{Diseño Arquitectónico.}
 		\item{Diseño de Interfaz.}
+		\item{Diseño Lógico.}
+		\item{Diseño de Datos.}
 		\item{Diseño de Pruebas.}
 	\end{itemize}
 	\item{Bibliografía.}
@@ -732,6 +734,497 @@ En el esquema de navegación mostrado en la figura de a continuación se muestra l
 \includegraphics[width=15cm]{NavAdmin.png}
 \caption{Modelo de Navegación Perfil del Datacenter.}
 \label{img15}
+\end{center}
+\end{figure}
+
+\newpage
+
+\subsection{Diseño Lógico}
+\label{logico}
+
+Esta sección se encuentra orientada a diseñar la lógica de negocio del sistema, la cual 
+es orientada a objetos (OO), este paradigma de la programación nos presenta la 
+ventaja de poder usar variadas técnicas de implementación en donde destacan la 
+herencia, abstracción, polimorfismo, encapsulamiento y composición. Por lo cual es 
+el paradigma indicado para desarrollar este sistema, ya que permite la programación 
+por módulos y reutilización de código.\newline
+
+Es casi intuitivo seleccionar UML (Unified Modeling Lenguage)\cite{REF19} como la 
+herramienta de modelado de software para este paradigma, ya que es un lenguaje 
+gráfico que permite modelar, visualizar, especificar, construir y documentar un 
+sistema. A continuación se mostrará el \textbf{diagrama de clases del sistema} 
+desarrollado en UML, en donde se encuentran las entidades del sistema que 
+interactúan para dar funcionalidad al sistema, el cual será presentado en dos partes, 
+en donde se presentan las entidades del sistema y luego el diseño del patrón DAO. 
+
+\subsubsection{Diagrama de Clases del Sistema}
+\label{clases}
+
+En el diagrama de la figura \ref{img16} se puede visualizar las clases que componen 
+el sistema, además se incluyen clases de tipo EJB (Enterprise JavaBean) las cuales 
+son una de las API que forman parte del estándar de construcción de aplicaciones 
+empresariales J2EE (ahora JEE 6.0) de la empresa Oracle Corporation\cite{REF20}. 
+Su funcionamiento se encuentra destinado a proporcionar modelos de componentes 
+distribuidos en el lado del servidor, dotando de esta manera al programador un 
+modelo que le permite abstraerse de los problemas generales de una aplicación 
+empresarial, para que de esta manera pueda centrarse en el desarrollo de la lógica 
+de negocio en sí. El hecho de estar basado en componentes permite que éstos sean 
+flexibles y sobre todo reutilizables, conceptos importantes al momento de 
+implementar un sistema.\newline
+
+Por lo tanto el diagrama presentado a continuación refleja la lógica de negocio que 
+utilizará el sistema a implementar, incluyendo las entidades pertenecientes al sistema 
+y los EJB que interactúan con ellas.
+
+\newpage
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=21cm, angle=90]{Clases.png}
+\caption{Diagrama de Clases del Sistema.}
+\label{img16}
+\end{center}
+\end{figure}
+
+\subsubsection{Diagrama de Clases del Patrón DAO}
+\label{dao}
+
+Para la implementación del sistema se a optado por utilizar el patrón DAO, el cual es 
+un patrón de diseño que presenta una solución al problema de conexión con las 
+bases de datos. El patrón DAO (Data Access Object)\cite{REF21} utiliza un Objeto 
+de Acceso a Datos para abstraer y encapsular el acceso a los datos. Por lo que se 
+optó por implementar este patrón de diseño para que de esta manera sea posible 
+abstraerse del tipo de DBMS que se utilice, además como posible solución a temas 
+futuros de adaptación del sistema. A continuación se presenta el diagrama del patrón 
+DAO implementado para este sistema:\newline
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{ClasesDAO.png}
+\caption{Diagrama de Clases del Patrón DAO.}
+\label{img17}
+\end{center}
+\end{figure}
+
+\subsubsection{Descripción de Clases}
+\label{descclases}
+
+Para poder dar un mejor entendimiento a lo presentado anteriormente, se procederá 
+a explicar cada una de las entidades identificadas en los diagramas de las secciones 
+\ref{clases} y \ref{dao}.
+
+\begin{itemize}
+	\item{\textbf{Persona:} Clase que representa a una persona en el sistema. A continuación se presentan sus atributos.\newline
+	\begin{itemize}
+		\item{rutPersona: Determina el rut sin dígito verificador de una persona.}
+		\item{dv: Determina el dígito verificador del rut de una persona.}
+		\item{nombres: Determina el nombre de una persona.}
+		\item{apellidoPaterno: Determina el apellido paterno de una persona.}
+		\item{apellidoMaterno: Determina el apellido materno de una persona.}
+		\item{email: Determina la dirección de correo electrónico de una persona.}
+		\item{telefono: Determina el teléfono de red fija de una persona.}
+		\item{celular: Determina el teléfono celular de una persona.}
+		\item{sexo: Determina el sexo de una persona identificado como H (Hombre) y M (Mujer).}
+	\end{itemize}}
+	\item{\textbf{EJBPersona:} Clase de tipo EJB que realiza acciones en el sistema con respecto a la clase Persona. A continuación sus métodos:\newline
+	\begin{itemize}
+		\item{AgregarPersona: Método que permite la agregación de una persona al sistema.}
+		\item{editarPersona: Método que permite la modificación de los datos de una persona en el sistema.}
+		\item{BuscarPersona: Método que permite encontrar a través de una búsqueda a una persona.}
+		\item{ListarPersonas: Método que permite realizar un listado de todas las personas que pertenecen al sistema.}
+	\end{itemize}}
+	\item{\textbf{Usuario:} Clase que representa a un usuario en el sistema. Sus atributos son los siguientes:\newline
+	\begin{itemize}
+		\item{usuario: Determina el nombre de usuario que poseerá una persona en el sistema.}
+		\item{password: Determina la contraseña que le permitirá a un usuario acceder al sistema.}
+		\item{rut: Determina el rut sin dígito verificador de la persona que posee un usuario.}
+		\item{fechRegistro: Determina la fecha en que se registró el usuario en el sistema.}
+		\item{usuarioActivo: Determina si el usuario se encuentra activo o no en el sistema.}
+	\end{itemize}}
+	\item{\textbf{EJBUsuario:} Clase de tipo EJB que realiza acciones en el sistema con respecto a la clase Usuario. A continuación sus métodos:\newline
+	\begin{itemize}
+		\item{AgregarUsuario: Método que permite la agregación de un Usuario en el sistema.}
+		\item{editarUsuario: Método que permite la modificación de los datos de un usuario en el sistema.}
+		\item{BuscarUsuario: Método que permite encontrar a través de una búsqueda a un usuario.}
+		\item{ListarUsuario: Método que permite realizar un listado con todos los usuarios que pertenecen al sistema.}
+		\item{DesactivarUsuario: Método que permite desactivar a un usuario en el sistema}
+	\end{itemize}}
+	\item{\textbf{Rol:} Clase que identifica los roles que puede poseer un usuario en el sistema. Sus atributos son los siguientes:\newline
+	\begin{itemize}
+		\item{idRol: Determina el identificador de un rol en específico.}
+		\item{nombreRol: Determina el nombre de un rol en el sistema.}
+		\item{descripcionRol: Determina una descripción de un rol en el sistema.}
+	\end{itemize}}
+	\item{\textbf{Area:} Clase que identifica las áreas de disico (ej. desarrollo) y de la universidad (ej. Extensión) que existen en el sistema.\newline
+	\begin{itemize}
+		\item{idArea: Determina el identificador de un área en el sistema.}
+		\item{nombre: Determina el nombre de un área en el sistema.}
+	\end{itemize}}
+	\item{\textbf{Servidor:} Clase que identifica a un Servidor en el sistema. Posee los siguientes atributos:\newline
+	\begin{itemize}
+		\item{idServidor: Determina el identificador de un Servidor en el sistema.}
+		\item{nombre: Determina el nombre o apodo que posea un Servidor en el sistema.}
+		\item{hostname: Determina el hostname que posee un Servidor en el sistema.}
+		\item{dominio: Determina el dominio de un Servidor.}
+		\item{direccionIP: Determina la dirección IP asociada al Servidor.}
+		\item{encendido: Determina si el Servidor se encuentra encendido o apagado.}
+		\item{en\_uso: Determina si el Servidor se encuentra en uso o inutilizado.}
+	\end{itemize}}
+	\item{\textbf{EJBServidor:} Clase de tipo EJB que realiza acciones en el sistema con respecto a la clase Servidor. Sus métodos son los siguientes:\newline
+	\begin{itemize}
+		\item{AgregarServidor: Método que permite la agregación de un Servidor al sistema.}
+		\item{editarServidor: Método que permite la modificación de un Servidor en el Sistema.}
+		\item{BuscarServidor: Método que permite encontrar a través de una búsqueda un Servidor en el sistema.}
+		\item{ListarServidor: Método que permite realizar un listado de Servidores en el sistema.}
+		\item{AgregarActividad: Método que permite agregar una actividad al Servidor en el sistema.}
+		\item{AgregarIncidencia: Método que permite agregar una incidencia que ocurrió en el Servidor en el sistema.}
+		\item{ListarIncidencias: Método que permite realizar un listado de todas las incidencias de un Servidor.}
+		\item{ListarActividades: Método que permite realizar un listado de todas las actividades pertenecientes a un Servidor.}
+		\item{AgregarInterOperabilidad: Método que permite identificar una relación de interoperabilidad del servidor con algún otro o con una aplicación.}
+		\item{ListarInterOperabilidad: Método que permite realizar un listado de todas las relaciones de interoperabilidad que posee un Servidor.}
+		\item{ModificarInterOperabilidad: Método que permite modificar una relacion de inter-operabilidad del servidor.}
+		\item{GenerarInforme: Método que permite generar un informe con la información del servidor.}
+	\end{itemize}}
+	\item{\textbf{Rack:} Clase que identifica a un Rack en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{idRack: Determina el identificador de un Rack en el sistema.}
+		\item{capacidad: Determina la capacidad que posee un Rack en el sistema.}
+		\item{desocupado: Determina si el Rack aun posee espacio o no en el sistema.}
+	\end{itemize}}
+	\item{\textbf{Incidencia:} Clase que identifica una incidencia en un Servidor. Sus atributos son:\newline
+	\begin{itemize}
+		\item{idIncidencia: Determina el identificador de una incidencia en el sistema.}
+		\item{fecha: Determina la fecha en que ocurrió la incidencia.}
+		\item{descripcion: Determina una descripción de la incidencia ocurrida.}
+		\item{nivel\_incidencia: Determina el nivel de la incidencia, esto es, si es muy grave, grave o leve.}
+	\end{itemize}}
+	\item{\textbf{MaquinaVirtual:} Clase que identifica a una maquina virtual en un servidor. Sus atributos son los siguientes:\newline
+	\begin{itemize}
+		\item{idMV: Determina el identificador de una máquina virtual.}
+		\item{nombre: Determina el nombre que posee la máquina virtual.}
+		\item{hostname: Determina el hostname que posee la máquina virtual.}
+		\item{direccionIP: Determina la dirección IP asociada a la máquina virtual.}
+	\end{itemize}}
+	\item{\textbf{EJBMaquinaVirtual:} Clase de tipo EJB que realiza acciones con respecto a una maquina virtual en el sistema. Sus métodos son los siguientes:\newline
+	\begin{itemize}
+		\item{AgregarMV: Método que permite la agregación de una máquina virtual a un servidor.}
+		\item{editarMV: Método que permite la modificación de una máquina virtual.}
+		\item{BuscarMV: Método que permite buscar una máquina virtual en el sistema.}
+		\item{ListarMV: Método que permite realizar un listado de las máquinas virtuales de un servidor.}
+	\end{itemize}}
+	\item{\textbf{Actividad:} Clase que identifica una actividad sobre un servidor o una aplicación. Sus atributos son los siguientes:\newline
+	\begin{itemize}
+		\item{idActividad: Determina el identificador de una Actividad.}
+		\item{fecha: Determina la fecha en que se creó la actividad.}
+		\item{descripcion: Determina una descripción de una actividad.}
+		\item{tipo: Determina el tipo de una actividad, esto es, si es de tipo Servidor o de tipo Aplicación.}
+	\end{itemize}}
+	\item{\textbf{Aplicacion:} Clase que identifica una aplicación en el sistema. sus atributos son los siguientes:\newline
+	\begin{itemize}
+		\item{idAplicacion: Determina el identificador de una Aplicación.}
+		\item{nombre: Determina el nombre de una aplicación en el sistema.}
+		\item{descripción: Determina una descripción de la aplicación.}
+	\end{itemize}}
+	\item{\textbf{EJBAplicacion:} Clase de tipo EJB que realiza acciones en el sistema con respecto a las aplicaciones que existen en el. Sus métodos son:\newline
+	\begin{itemize}
+		\item{AgregarAplicacion: Método que permite la agregación de una aplicación al sistema.}
+		\item{editarAplicacion: Método que permite la modificación de una aplicación en el sistema.}
+		\item{BuscarAplicacion: Método que permite encontrar una aplicación en el sistema a través de una búsqueda.}
+		\item{ListarAplicacion: Método que permite realizar un listado de las aplicaciones en el sistema.}
+		\item{AgregarActividad: Método que permite agregar una actividad a la Aplicación en el sistema.}
+		\item{ListarActividades: Método que permite realizar un listado de todas las actividades pertenecientes a una Aplicación.}
+		\item{AgregarInterOperabilidad: Método que permite identificar una relación de interoperabilidad de la Aplicación con alguna otra o con un Servidor.}
+		\item{ListarInterOperabilidad: Método que permite realizar un listado de todas las relaciones de interoperabilidad que posee una Aplicación.}
+		\item{ModificarInterOperabilidad: Método que permite modificar una relacion de inter-operabilidad de la Aplicación.}
+		\item{GenerarInforme: Método que permite generar un informe con la información de la Aplicación.}
+	\end{itemize}}
+	\item{\textbf{InterOperabilidad:} Clase que determina la relación de interoperabilidad que existe entre servidor-servidor, aplicación-aplicación y servidor-aplicación. sus atributos son:\newline
+	\begin{itemize}
+		\item{idEntidad1: Determina el identificador de la primera entidad en relación.}
+		\item{idEntidad2: Determina el identificador de la segunda entidad en relación.}
+		\item{nivel\_relacion: Determina el nivel de relación que existe entre las entidades.}
+		\item{descripcion: Determina una descripción de la relación de interoperabilidad que existe entre las entidades involucradas.}
+	\end{itemize}}
+	\item{\textbf{UPS:} Clase que identifica a una UPS en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{idUPS: Determina el identificador de una UPS en el sistema.}
+		\item{nombre: Determina el nombre de una UPS en el Sistema.}
+	\end{itemize}}
+	\item{\textbf{Aplicacion:} Clase que identifica una aplicación en el sistema. sus atributos son los siguientes:\newline
+	\begin{itemize}
+		\item{idAplicacion: Determina el identificador de una Aplicación.}
+		\item{nombre: Determina el nombre de una aplicación en el sistema.}
+		\item{descripción: Determina una descripción de la aplicación.}
+	\end{itemize}}
+	\item{\textbf{EJBUPS:} Clase de tipo EJB que realiza acciones en el sistema con respecto a las UPS que existen en el. Sus métodos son:\newline
+	\begin{itemize}
+		\item{AgregarUPS: Método que permite la agregación de una UPS al sistema.}
+		\item{editarAplicacion: Método que permite la modificación de una UPS en el sistema.}
+		\item{BuscarAplicacion: Método que permite encontrar una UPS en el sistema a través de una búsqueda.}
+		\item{ListarAplicacion: Método que permite realizar un listado de las UPS en el sistema.}
+	\end{itemize}}
+	\item{\textbf{Información:} Clase que identifica a la información que pertenece a un Servidor, una Aplicación o una UPS en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{idInformacion: Determina el identificador de una información en el sistema.}
+		\item{fecha\_generacion: Determina la fecha en que se agregó la información al sistema.}
+		\item{ultima\_modificacion: Determina la fecha en que fue modificada la información.}
+	\end{itemize}}
+	\item{\textbf{EJBInformación:} Clase de tipo EJB que realiza acciones en el sistema con respecto a la información de algún registro del sistema. Sus métodos son:\newline
+	\begin{itemize}
+		\item{ObtenerInformacionADBien: Método que permite obtener la información administrativa de un bien.}
+		\item{ObtenerInformacionADSW: Método que permite obtener la información administrativa de una aplicación.}
+		\item{ObtenerInformacionTecHW: Método que permite obtener la información técnica de un Servidor.}
+		\item{ObtenerInformacionTecSW: Método que permite obtener la información técnica de una Aplicación.}
+		\item{ObtenerInformacionAdjunta: Método que permite obtener la información adjunta de un Servidor o Aplicación.}
+		\item{AgregarInformacion: Método que permite la agregación de una nueva información al sistema.}
+		\item{EditarInformacion: Método que permite la modificación de una información en el sistema.}
+	\end{itemize}}
+	\item{\textbf{Estadísticas:} Clase que identifica a las Estadísticas de la información que pertenece a un Servidor, una Aplicación o una UPS en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{totalServidores: Determina el número total de servidores que existen en el sistema.}
+		\item{totalUPS: Determina el número total de UPS que existen en el sistema.}
+		\item{totalAplicaciones: Determina el número total de Aplicaciones en el sistema.}
+		\item{canUsuarios: Determina el número total de Usuarios en el sistema.}
+		\item{promedioIncidencias: Determina un promedio de las incidencias ocurridas.}
+	\end{itemize}}
+	\item{\textbf{EJBEstadisticas:} Clase de tipo EJB que realiza acciones en el sistema con respecto a las estadísticas de la información. Sus métodos son:\newline
+	\begin{itemize}
+		\item{CalcularEstadisticasServidor: Método que permite calcular estadísticas con respecto a los servidores.}
+		\item{CalcularEstadisticasAplicacion: Método que permite calcular estadísticas con respecto a las Aplicaciones.}
+		\item{CalcularEstadisticasUPS: Método que permite calcular estadísticas con respecto a las UPS}
+		\item{CalcularEstadisticasUsuario: Método que permite calcular estadísticas con respecto a los Usuarios.}
+	\end{itemize}}
+	\item{\textbf{Administrativa\_bien:} Clase que identifica a la información Administrativa de un bien que pertenece a un Servidor o una UPS en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{num\_serie: Determina el número de serie de un bien en el sistema.}
+		\item{fecha\_compra: Determina la fecha de compra de un bien.}
+		\item{fecha\_recepción: Determina la fecha de recepción de un bien.}
+		\item{proveedor: Determina el proveedor de un bien.}
+		\item{num\_factura: Determina el número de factura de un bien.}
+		\item{orden\_compra: Determina el número de orden de compra de un bien.}
+		\item{num\_alta\_inventario: Determina el número de alta de inventario de un bien.}
+		\item{num\_orden\_uv: Determina el número de orden de la universidad de un bien.}
+	\end{itemize}}
+	\item{\textbf{AdministrativaSW:} Clase que identifica a la información Administrativa que pertenece a una Aplicación en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{proveedor: Determina el proveedor de la Aplicación.}
+		\item{fecha\_implementación: Determina la fecha en que se implementó la aplicación.}
+		\item{fecha\_alta: Determina la fecha en que fue puesta en producción la aplicación.}
+	\end{itemize}}
+	\item{\textbf{TecnicaHW:} Clase que identifica a la información técnica que pertenece a un Servidor en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{funcion: Determina la función de un Servidor.}
+		\item{hdd: Determina el Disco duro que posee el Servidor.}
+		\item{cant\_hdd: Determina la cantidad de Disco duro que posee el Servidor.}
+		\item{procesador: Determina el procesador que posee el Servidor.}
+		\item{cant\_procesador: Determina la cantidad de procesador que posee le Servidor.}
+		\item{ram: Determina la ram que posee el servidor.}
+		\item{cant\_ram: Determina la cantidad de ram que posee el servidor.}
+	\end{itemize}}
+	\item{\textbf{TecnicaSW:} Clase que identifica a la información técnica que pertenece a una Aplicación en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{funcion: Determina la función que posee una aplicación.}
+	\end{itemize}}
+	\item{\textbf{Adjunta:} Clase que identifica a la información Adjunta que pertenece a un Servidor, una Aplicación o una UPS en el sistema. Sus atributos son:\newline
+	\begin{itemize}
+		\item{idAdjunta: Determina el identificador de una información Adjunta.}
+		\item{nombre: Determina el nombre de la información Adjunta.}
+		\item{ubicacion: Determina la ubicación donde se encuentra disponible la información Adjunta.}
+		\item{descripcion: Determina una descripción de la información adjunta.}
+	\end{itemize}}
+	\item{\textbf{DAOFactory:} Interface que encapsula el funcionamiento del patrón DAO del sistema. Sus métodos son:\newline
+	\begin{itemize}
+		\item{getDAOFactory: Método que permite obtener una instancia de la clase que implementa la funcionalidades del sistmea para cierto DBMS en este caso MySQL.}
+	\end{itemize}}
+	\item{\textbf{MySQLFactory:} Clase que implementa de forma abstracta las funcionalidades de acceso de datos del sistema para el caso de MySQL . Sus métodos son:\newline
+	\begin{itemize}
+		\item{getUsuarioDAO: Método que permite obtener una instancia de la Clase MySQLUsuarioDAO.}
+		\item{getPersonaDAO: Método que permite obtener una instancia de la Clase MySQLPersonaDAO.}
+		\item{getServidorDAO: Método que permite obtener una instancia de la Clase MySQLServidorDAO.}
+		\item{getAplicacionDAO: Método que permite obtener una instancia de la Clase MySQLAplicacionDAO.}
+		\item{getUPSDAO: Método que permite obtener una instancia de la Clase MySQLUPSDAO.}
+		\item{getMaquinaVirtualDAO: Método que permite obtener una instancia de la Clase MySQLMaquinaVirtualDAO.}
+		\item{getInformacionDAO: Método que permite obtener una instancia de la Clase MySQLInformacionDAO.}
+	\end{itemize}}
+	\item{\textbf{MySQLUsuarioDAO:} Clase que implementa las funcionalidades de acceso de datos del sistema para el caso de MySQL con respecto a los Usuarios del Sistema. Sus métodos son:
+	\begin{itemize}
+		\item{CrearUsuario: Método que permite crear en la base de datos a un usuario.}
+		\item{ModificarUsuario: Método que permite modificar en la base de datos a un usuario.}
+		\item{BuscarUsuario: Método que permite Buscar en la base de datos a un usuario.}
+		\item{DesactivarUsuario: Método que permite Desactivar en la base de datos a un usuario.}
+		\item{loadRoles: Método que permite cargar los roles que posee el usuario en el sistema.}
+	\end{itemize}}
+	\item{\textbf{MySQLPersonaDAO:} Clase que implementa las funcionalidades de acceso de datos del sistema para el caso de MySQL con respecto a las Personas del Sistema. Sus métodos son:
+	\begin{itemize}
+		\item{CrearPersona: Método que permite crear en la base de datos a una Persona.}
+		\item{ModificarPersona: Método que permite modificar en la base de datos a una Persona.}
+		\item{BuscarPersona: Método que permite Buscar en la base de datos a una Persona.}
+		\item{ListarPersona: Método que permite Listar desde la Base de datos a las Personas.}
+		\item{loadArea: Método que permite obtener la Area en que pertenece el usuario en el sistema.}
+	\end{itemize}}
+	\item{\textbf{MySQLServidorDAO:} Clase que implementa las funcionalidades de acceso de datos del sistema para el caso de MySQL con respecto a los Servidores del Sistema. Sus métodos son:
+	\begin{itemize}
+		\item{CrearServidor: Método que permite crear en la base de datos a un Servidor.}
+		\item{ModificarServidor: Método que permite modificar en la base de datos a un Servidor.}
+		\item{BuscarServidor: Método que permite Buscar en la base de datos a un Servidor.}
+		\item{ListarServidor: Método que permite Listar desde la Base de datos a los Servidores.}
+		\item{AgregarActividad: Método que permite agregar una actividad a un servidor.}
+		\item{AgregarIncidencia: Método que permite agregar una Incidencia a un servidor.}
+		\item{ListarActividad: Método que permite realizar un listado de las actividades de un servidor.}
+		\item{ListarIncidencia: Método que permite realizar un listado de las incidencias en un servidor.}
+		\item{AgregarInterOperabilidad: Método que permite agregar una relacion de InterOperabilidad.}
+		\item{ListarInterOperabilidad: Método que permite realizar un listado de las InterOperabilidades del servidor.}
+		\item{ModificarInterOperabilidad: Método que permite modificar una relacion de InterOperabilidad.}
+		\item{loadRack: Método que permite obtener el Rack en que pertenece un servidor.}
+	\end{itemize}}
+	\item{\textbf{MySQLAplicacionDAO:} Clase que implementa las funcionalidades de acceso de datos del sistema para el caso de MySQL con respecto a las Aplicaciones del Sistema. Sus métodos son:
+	\begin{itemize}
+		\item{CrearAplicacion: Método que permite crear en la base de datos a una Aplicación.}
+		\item{ModificarAplicacion: Método que permite modificar en la base de datos a una Aplicación.}
+		\item{BuscarAplicacion: Método que permite Buscar en la base de datos a una Aplicación.}
+		\item{ListarAplicacion: Método que permite Listar desde la Base de datos a las Aplicaciones.}
+		\item{AgregarActividad: Método que permite agregar una actividad a una Aplicación.}
+		\item{ListarActividad: Método que permite realizar un listado de las actividades de una Aplicación.}
+		\item{AgregarInterOperabilidad: Método que permite agregar una relacion de InterOperabilidad.}
+		\item{ListarInterOperabilidad: Método que permite realizar un listado de las InterOperabilidades de la Aplicación.}
+		\item{ModificarInterOperabilidad: Método que permite modificar una relacion de InterOperabilidad.}
+	\end{itemize}}
+	\item{\textbf{MySQLUPSDAO:} Clase que implementa las funcionalidades de acceso de datos del sistema para el caso de MySQL con respecto a las UPS del Sistema. Sus métodos son:
+	\begin{itemize}
+		\item{CrearUPS: Método que permite crear en la base de datos a una UPS.}
+		\item{ModificarUPS: Método que permite modificar en la base de datos a una UPS.}
+		\item{BuscarUPS: Método que permite Buscar en la base de datos a una UPS.}
+		\item{ListarUPS: Método que permite Listar desde la Base de datos a las UPS.}
+		\item{loadRack: Método que permite obtener el Rack en que pertenece una UPS.}
+	\end{itemize}}
+	\item{\textbf{MySQLMaquinaVirtualDAO:} Clase que implementa las funcionalidades de acceso de datos del sistema para el caso de MySQL con respecto a las Maquinas Virtuales del Sistema. Sus métodos son:
+	\begin{itemize}
+		\item{CrearMaquinaVirtual: Método que permite crear en la base de datos a una Maquina Virtual.}
+		\item{ModificarMaquinaVirtual: Método que permite modificar en la base de datos a una Maquina Virtual.}
+		\item{BuscarMaquinaVirtual: Método que permite Buscar en la base de datos a una Maquina Virtual.}
+		\item{ListarMaquinaVirtual: Método que permite Listar desde la Base de datos a las Maquina Virtual.}
+	\end{itemize}}
+	\item{\textbf{MySQLInformacionDAO:} Clase que implementa las funcionalidades de acceso de datos del sistema para el caso de MySQL con respecto a las Informaciones de los Registros del Sistema. Sus métodos son:
+	\begin{itemize}
+		\item{ObtenerInformacionADBien: Método que permite obtener la información administrativa de un bien.}
+		\item{ObtenerInformacionADSW: Método que permite obtener la información administrativa de una aplicación.}
+		\item{ObtenerInformacionTecHW: Método que permite obtener la información técnica de un Servidor.}
+		\item{ObtenerInformacionTecSW: Método que permite obtener la información técnica de una Aplicación.}
+		\item{ObtenerInformacionAdjunta: Método que permite obtener la información adjunta de un Servidor o Aplicación.}
+		\item{AgregarInformacion: Método que permite la agregación de una nueva información al sistema.}
+		\item{EditarInformacion: Método que permite la modificación de una información en el sistema.}
+		\item{CalcularEstadisticasServidor: Método que permite calcular estadísticas con respecto a los servidores.}
+		\item{CalcularEstadisticasAplicacion: Método que permite calcular estadísticas con respecto a las Aplicaciones.}
+		\item{CalcularEstadisticasUPS: Método que permite calcular estadísticas con respecto a las UPS}
+		\item{CalcularEstadisticasUsuario: Método que permite calcular estadísticas con respecto a los Usuarios.}
+	\end{itemize}}
+	\item{\textbf{InterfaceUsuarioDAO:} Interface que encapsula la implementación de las funcionalidades de acceso de datos del sistema con respecto a los Usuarios del Sistema. Sus métodos abstractos son:
+	\begin{itemize}
+		\item{CrearUsuario: Método que permite crear en la base de datos a un usuario.}
+		\item{ModificarUsuario: Método que permite modificar en la base de datos a un usuario.}
+		\item{BuscarUsuario: Método que permite Buscar en la base de datos a un usuario.}
+		\item{DesactivarUsuario: Método que permite Desactivar en la base de datos a un usuario.}
+		\item{loadRoles: Método que permite cargar los roles que posee el usuario en el sistema.}
+	\end{itemize}}
+	\item{\textbf{InterfacePersonaDAO:} Interface que encapsula la implementación de las funcionalidades de acceso de datos del sistema con respecto a las Personas del Sistema. Sus métodos abstractos son:
+	\begin{itemize}
+		\item{CrearPersona: Método que permite crear en la base de datos a una Persona.}
+		\item{ModificarPersona: Método que permite modificar en la base de datos a una Persona.}
+		\item{BuscarPersona: Método que permite Buscar en la base de datos a una Persona.}
+		\item{ListarPersona: Método que permite Listar desde la Base de datos a las Personas.}
+		\item{loadArea: Método que permite cargar la Area en que pertenece el usuario en el sistema.}
+	\end{itemize}}
+	\item{\textbf{InterfaceServidorDAO:} Interface que encapsula la implementación de las funcionalidades de acceso de datos del sistema con respecto a los Servidores del Sistema. Sus métodos abstractos son:
+	\begin{itemize}
+		\item{CrearServidor: Método que permite crear en la base de datos a un Servidor.}
+		\item{ModificarServidor: Método que permite modificar en la base de datos a un Servidor.}
+		\item{BuscarServidor: Método que permite Buscar en la base de datos a un Servidor.}
+		\item{ListarServidor: Método que permite Listar desde la Base de datos a los Servidores.}
+		\item{AgregarActividad: Método que permite agregar una actividad a un servidor.}
+		\item{AgregarIncidencia: Método que permite agregar una Incidencia a un servidor.}
+		\item{ListarActividad: Método que permite realizar un listado de las actividades de un servidor.}
+		\item{ListarIncidencia: Método que permite realizar un listado de las incidencias en un servidor.}
+		\item{AgregarInterOperabilidad: Método que permite agregar una relacion de InterOperabilidad.}
+		\item{ListarInterOperabilidad: Método que permite realizar un listado de las InterOperabilidades del servidor.}
+		\item{ModificarInterOperabilidad: Método que permite modificar una relacion de InterOperabilidad.}
+		\item{loadRack: Método que permite obtener el Rack en que pertenece un servidor.}
+	\end{itemize}}
+	\item{\textbf{InterfaceAplicacionDAO:} Interface que encapsula la implementación de las funcionalidades de acceso de datos del sistema con respecto a las Aplicaciones del Sistema. Sus métodos abstractos son:
+	\begin{itemize}
+		\item{CrearAplicacion: Método que permite crear en la base de datos a una Aplicación.}
+		\item{ModificarAplicacion: Método que permite modificar en la base de datos a una Aplicación.}
+		\item{BuscarAplicacion: Método que permite Buscar en la base de datos a una Aplicación.}
+		\item{ListarAplicacion: Método que permite Listar desde la Base de datos a las Aplicaciones.}
+		\item{AgregarActividad: Método que permite agregar una actividad a una Aplicación.}
+		\item{ListarActividad: Método que permite realizar un listado de las actividades de una Aplicación.}
+		\item{AgregarInterOperabilidad: Método que permite agregar una relacion de InterOperabilidad.}
+		\item{ListarInterOperabilidad: Método que permite realizar un listado de las InterOperabilidades de la Aplicación.}
+		\item{ModificarInterOperabilidad: Método que permite modificar una relacion de InterOperabilidad.}
+	\end{itemize}}
+	\item{\textbf{InterfaceUPSDAO:} Interface que encapsula la implementación de las funcionalidades de acceso de datos del sistema con respecto a las UPS del Sistema. Sus métodos abstractos son:
+	\begin{itemize}
+		\item{CrearUPS: Método que permite crear en la base de datos a una UPS.}
+		\item{ModificarUPS: Método que permite modificar en la base de datos a una UPS.}
+		\item{BuscarUPS: Método que permite Buscar en la base de datos a una UPS.}
+		\item{ListarUPS: Método que permite Listar desde la Base de datos a las UPS.}
+		\item{loadRack: Método que permite obtener el Rack en que pertenece una UPS.}
+	\end{itemize}}
+	\item{\textbf{InterfaceMaquinaVirtualDAO:} Interface que encapsula la implementación de las funcionalidades de acceso de datos del sistema con respecto a las Maquinas Virtuales del Sistema. Sus métodos abstractos son:
+	\begin{itemize}
+		\item{CrearMaquinaVirtual: Método que permite crear en la base de datos a una Maquina Virtual.}
+		\item{ModificarMaquinaVirtual: Método que permite modificar en la base de datos a una Maquina Virtual.}
+		\item{BuscarMaquinaVirtual: Método que permite Buscar en la base de datos a una Maquina Virtual.}
+		\item{ListarMaquinaVirtual: Método que permite Listar desde la Base de datos a las Maquina Virtual.}
+	\item{\textbf{InterfaceInformacionDAO:} Interface que encapsula la implementación de las funcionalidades de acceso de datos del sistema con respecto a las Informaciones de los Registros del Sistema. Sus métodos abstractos son:
+	\begin{itemize}
+		\item{ObtenerInformacionADBien: Método que permite obtener la información administrativa de un bien.}
+		\item{ObtenerInformacionADSW: Método que permite obtener la información administrativa de una aplicación.}
+		\item{ObtenerInformacionTecHW: Método que permite obtener la información técnica de un Servidor.}
+		\item{ObtenerInformacionTecSW: Método que permite obtener la información técnica de una Aplicación.}
+		\item{ObtenerInformacionAdjunta: Método que permite obtener la información adjunta de un Servidor o Aplicación.}
+		\item{AgregarInformacion: Método que permite la agregación de una nueva información al sistema.}
+		\item{EditarInformacion: Método que permite la modificación de una información en el sistema.}
+		\item{CalcularEstadisticasServidor: Método que permite calcular estadísticas con respecto a los servidores.}
+		\item{CalcularEstadisticasAplicacion: Método que permite calcular estadísticas con respecto a las Aplicaciones.}
+		\item{CalcularEstadisticasUPS: Método que permite calcular estadísticas con respecto a las UPS}
+		\item{CalcularEstadisticasUsuario: Método que permite calcular estadísticas con respecto a los Usuarios.}
+	\end{itemize}}
+	\end{itemize}}
+	\item{\textbf{Conexion:} Clase que identifica a la acción de conectarse a una base de datos. Sus Atributos y métodos son:
+	\begin{itemize}
+		\item{Atributos:
+		\begin{itemize}
+			\item{conexion: Describe la conección que se establece con un DBMS con respecto a sus Drivers.}
+			\item{statement: Describe la comunicación con el DBMS en una conexión.}
+			\item{resultset: Describe el resultado de una comunicación con el DBMS en una conexión.}
+			\item{MySQL: Describe el identificador que pertenece a MySQL (en este caso valor 1).}
+			\item{HOST: Describe el host que posee el servidor donde se encuentra ubicado el DBMS.}
+			\item{ACCOUNT: Describe la cuenta de usuario con que se conecta el sistema al DBMS.}
+			\item{PASSWORD: Describe la contraseña del usuario que se utiliza para conectarse al DBMS.}
+			\item{Driver: Describe el driver utilizado del DBMS para poder realizar la conexión.}
+		\end{itemize}}
+		\item{Métodos:
+		\begin{itemize}
+			\item{iniciarConexion: Método que permite realizar la conexión con el DBMS.}
+			\item{cerrarConexion: Método que permite cerrar la conexión que existe con el DBMS.}
+		\end{itemize}}
+	\end{itemize}}
+\end{itemize}
+
+\newpage
+
+\subsection{Diseño de Datos}
+\label{datos}
+
+En ésta sección se presentará el diseño de los datos que serán procesados y 
+almacenados por el sistema, representado por el diagrama de E-R presentado a 
+continuación:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14cm]{uAsset-BD.png}
+\caption{Diagrama de E-R del Sistema.}
+\label{img18}
 \end{center}
 \end{figure}
 
