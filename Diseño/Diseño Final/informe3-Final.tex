@@ -1228,6 +1228,491 @@ continuación:
 \end{center}
 \end{figure}
 
+\subsubsection{Detalle de los Datos}
+\label{detalledatos}
+
+Para un mejor entendimiento del diseño E-R se explicarán cada una de las entidades identificadas.
+
+\begin{itemize}
+	\item{\textbf{PERSONA:} Entidad destinada a almacenar los datos pertenecientes a una persona en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{rut\_persona: Clave Primaria que identifica el rut de una persona.}
+		\item{dv: Atributo que determina el dígito verificador del rut de una persona.}
+		\item{nombres: Atributo que determina el nombre de una persona.}
+		\item{paterno: Atributo que determina el apellido paterno de una persona.}
+		\item{materno: Atributo que determina el apellido materno de una persona.}
+		\item{email: Atributo que determina el correo electrónico de una persona.}
+		\item{telefono: Atributo que determina el telefono de red fija de una persona.}
+		\item{celular: Atributo que determina el telefono celular de una persona.}
+		\item{sexo: Atributo que determina el sexo de una persona.}
+	\end{itemize}}
+	\item{\textbf{USUARIO:} Entidad destinada a almacenar los datos pertenecientes a un usuario en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{rut\_persona: Clave Primaria que identifica el rut del usuario.}
+		\item{usuario: Atributo que determina el nombre de usuario de la persona en el sistema.}
+		\item{password: Atributo que determina la contraseña de usuario de la persona en el sistema.}
+		\item{fecha\_registro: Atributo que determina la fecha en que se registró el usuario.}
+	\end{itemize}}
+	\item{\textbf{ROL\_USUARIO:} Entidad destinada a almacenar los datos pertenecientes a la relación que existe entre los roles y los usuarios en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idUSUARIO: Clave Primaria que identifica a un usuario.}
+		\item{idROL: Clave Primaria que que identifica a un rol.}
+		\item{rol\_activo: Atributo que determina si el rol se encuentra activo.}
+	\end{itemize}}
+	\item{\textbf{ROL:} Entidad destinada a almacenar los datos pertenecientes a los roles que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idROL: Clave Primaria que que identifica a un rol.}
+		\item{rol: Atributo que determina el nombre del rol.}
+		\item{descripcion: Atributo que determina una descripción de un rol.}
+	\end{itemize}}
+	\item{\textbf{AREA\_PERSONA:} Entidad destinada a almacenar los datos pertenecientes a la relación que existe entre las Áreas y las Personas en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idAREA: Clave Primaria que identifica a un área.}
+		\item{rut\_persona: Clave Primaria que identifica el rut de la persona.}
+		\item{relación: Atributo que determina el tipo de relación entre una Persona y un Área.}
+	\end{itemize}}
+	\item{\textbf{AREA:} Entidad destinada a almacenar los datos pertenecientes a las Áreas que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idAREA: Clave Primaria que identifica a un área.}
+		\item{nombre: Atributo que determina el nombre de un Área.}
+	\end{itemize}}
+	\item{\textbf{SERVIDOR:} Entidad destinada a almacenar los datos pertenecientes a los Servidores que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idSERVIDOR: Clave Primaria que identifica a un Servidor.}
+		\item{nombre: Atributo que determina el nombre de un Servidor.}
+		\item{hostname: Atributo que determina el hostname de un Servidor.}
+		\item{dominio: Atributo que determina el dominio de un Servidor.}
+		\item{direccionIP: Atributo que determina la dirección IP de un Servidor.}
+		\item{encendido: Atributo que determina si el Servidor se encuentra encendido o no.}
+		\item{en\_uso: Atributo que determina si el Servidor se encuentra en uso o no.}
+		\item{rut\_persona: Clave foránea que identifica el rut de una persona.}
+		\item{idIFORMACION: Clave foránea que identifica la información de un Servidor.}
+	\end{itemize}}
+	\item{\textbf{INCIDENCIA:} Entidad destinada a almacenar los datos pertenecientes a las Incidencias de los Servidores que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idINCIDENCIA: Clave Primaria que identifica a una incidencia.}
+		\item{idSERVIDOR: Clave foránea que identifica a un Servidor.}
+		\item{fecha: Atributo que determina la fecha en que ocurrió la incidencia.}
+		\item{descripcion: Atributo que determina una descripción de una incidencia.}
+		\item{nivel\_incidencia: Atributo que determina el nivel de la incidencia.}
+	\end{itemize}}
+	\item{\textbf{ACTIVIDAD:} Entidad destinada a almacenar los datos pertenecientes a las Actividades de los Servidores que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idACTIVIDAD: Clave Primaria que identifica a una incidencia.}
+		\item{idSERVIDOR: Clave foránea que identifica a un Servidor.}
+		\item{idAPLICACION: Clave foránea que identifica a un Aplicación.}
+		\item{fecha: Atributo que determina la fecha en que se agregó la Actividad.}
+		\item{descripcion: Atributo que determina una descripción de una Actividad.}
+		\item{tipo: Atributo que determina el tipo de la Actividad.}
+	\end{itemize}}
+	\item{\textbf{SERVIDOR\_RACK:} Entidad destinada a almacenar los datos pertenecientes a la relación que existe entre los Racks y los Servidores en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idRACK: Clave Primaria que identifica a un Rack.}
+		\item{idSERVIDOR: Clave Primaria que identifica a un Servidor.}
+		\item{posición: Atributo que determina la posición de un Servidor en un Rack.}
+	\end{itemize}}
+	\item{\textbf{RACK:} Entidad destinada a almacenar los datos pertenecientes a los Racks que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idRACK: Clave Primaria que identifica a un Rack.}
+		\item{capacidad: Atributo que determina la capacidad que posee un rack.}
+		\item{desocupado: Atributo que determina si un Rack se encuentra desocupado o no.}
+	\end{itemize}}
+	\item{\textbf{MAQUINAVIRTUAL:} Entidad destinada a almacenar los datos pertenecientes a las Máquinas Virtuales que existen en los servidores de la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idMAQUINAVIRTUAL: Clave Primaria que identifica a una Máquina Virtual.}
+		\item{nombre: Atributo que determina el nombre de una Máquina Virtual.}
+		\item{hostname: Atributo que determina el hostname de una Máquina Virtual.}
+		\item{direccionIP: Atributo que determina la dirección IP de una Máquina Virtual.}
+		\item{idSERVIDOR: Clave foránea que identifica a un Servidor.}
+	\end{itemize}}
+	\item{\textbf{INTEROPERABILIDAD\_SERVIDOR:} Entidad destinada a almacenar los datos pertenecientes a la relación de interoperabilidad que existe entre los Servidores en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idSERVIDOR1: Clave Primaria que identifica a un Servidor.}
+		\item{idSERVIDOR2: Clave Primaria que identifica a otro Servidor.}
+		\item{nivel\_relacion: Atributo que determina el nivel de relación entre servidores.}
+		\item{descripcion: Atributo que determina una descripción sobre la relación.}
+	\end{itemize}}
+	\item{\textbf{SERVIDOR\_APLICACION:} Entidad destinada a almacenar los datos pertenecientes a la relación de que existe entre los Servidores y las Aplicaciones en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idSERVIDOR: Clave Primaria que identifica a un Servidor.}
+		\item{idAPLICACION: Clave Primaria que identifica a una Aplicación.}
+		\item{nivel\_relacion: Atributo que determina el nivel de relación entre aplicación y servidor.}
+		\item{descripcion: Atributo que determina una descripción sobre la relación.}
+	\end{itemize}}
+	\item{\textbf{MV\_APLICACION:} Entidad destinada a almacenar los datos pertenecientes a la relación de que existe entre las Máquinas Virtuales y las Aplicaciones en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idMAQUINAVIRTUAL: Clave Primaria que identifica a una Máquina Virtual.}
+		\item{idAPLICACION: Clave Primaria que identifica a una Aplicación.}
+		\item{nivel\_relacion: Atributo que determina el nivel de relación entre aplicación y Máquina Virtual.}
+		\item{descripcion: Atributo que determina una descripción sobre la relación.}
+	\end{itemize}}
+	\item{\textbf{APLICACION:} Entidad destinada a almacenar los datos pertenecientes a las Aplicaciones que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idAPLICACION: Clave Primaria que identifica a una Apliación.}
+		\item{rut\_persona: Clave foránea que identifica el rut de una persona.}
+		\item{idIFORMACION: Clave foránea que identifica la información de una Aplicación.} 
+		\item{nombre: Atributo que determina el nombre de una Aplicación.}
+		\item{descripcion: Atributo que determina una descripción sobre la Aplicación.}
+	\end{itemize}}
+	\item{\textbf{INTEROPERABILIDAD\_APLICACION:} Entidad destinada a almacenar los datos pertenecientes a la relación de interoperabilidad que existe entre las Aplicaciones en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idAPLICACION1: Clave Primaria que identifica a una Aplicación.}
+		\item{idAPLICACION2: Clave Primaria que identifica a otra Aplicación.}
+		\item{nivel\_relacion: Atributo que determina el nivel de relación entre Aplicaciones.}
+		\item{descripcion: Atributo que determina una descripción sobre la relación.}
+	\end{itemize}}
+	\item{\textbf{UPS:} Entidad destinada a almacenar los datos pertenecientes a las UPS que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idUPS: Clave Primaria que identifica a una UPS.}
+		\item{rut\_persona: Clave foránea que identifica el rut de una persona.}
+		\item{idIFORMACION: Clave foránea que identifica la información de una UPS.} 
+		\item{nombre: Atributo que determina el nombre de una UPS.}
+	\end{itemize}}
+	\item{\textbf{UPS\_RACK:} Entidad destinada a almacenar los datos pertenecientes a la relación que existe entre los Racks y las UPS en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idRACK: Clave Primaria que identifica a un Rack.}
+		\item{idUPS: Clave Primaria que identifica a una UPS.}
+		\item{posición: Atributo que determina la posición de una UPS en un Rack.}
+	\end{itemize}}
+	\item{\textbf{INFORMACION:} Entidad destinada a almacenar los datos pertenecientes a la Información de los registros que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idIFORMACION: Clave Primaria que identifica la información de un registro.} 
+		\item{fecha\_generacion: Atributo que determina la fecha en que fue generada la información.}
+		\item{ultima\_modificacion: Atributo que determina la fecha en que fue modificada la información.}
+		\item{idAREA: Clave foránea que identifica a un área en en la información.}
+	\end{itemize}}
+	\item{\textbf{ADMINISTRATIVA\_BIEN:} Entidad destinada a almacenar los datos pertenecientes a la Información Administrativa de los bienes que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idIFORMACION: Clave Primaria que identifica la información de un registro.} 
+		\item{num\_serie: Atributo que determina el número de serie de un bien en el sistema.}
+		\item{fecha\_compra: Atributo que determina la fecha de compra de un bien.}
+		\item{fecha\_recepción: Atributo que determina la fecha de recepción de un bien.}
+		\item{proveedor: Atributo que determina el proveedor de un bien.}
+		\item{num\_factura: Atributo que determina el número de factura de un bien.}
+		\item{orden\_compra: Atributo que determina el número de orden de compra de un bien.}
+		\item{num\_alta\_inventario: Atributo que determina el número de alta de inventario de un bien.}
+		\item{num\_orden\_uv: Atributo que determina el número de orden de la universidad de un bien.}
+	\end{itemize}}
+	\item{\textbf{ADMINISTRATIVA\_SW:} Entidad destinada a almacenar los datos pertenecientes a la Información Administrativa de las Aplicaciones que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idIFORMACION: Clave Primaria que identifica la información de un registro.} 
+		\item{proveedor: Atributo que determina el proveedor de la Aplicación.}
+		\item{fecha\_implementación: Atributo que determina la fecha en que se implementó la aplicación.}
+		\item{fecha\_alta: Atributo que determina la fecha en que fue puesta en producción la aplicación.}
+	\end{itemize}}
+	\item{\textbf{TECNICA\_SW:} Entidad destinada a almacenar los datos pertenecientes a la Información Técnica de las Aplicaciones que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idIFORMACION: Clave Primaria que identifica la información de un registro.} 
+		\item{funcion: Atributo que determina la función que cumple una aplicación.}
+	\end{itemize}}
+	\item{\textbf{TECNICA\_HW:} Entidad destinada a almacenar los datos pertenecientes a la Información Técnica de los Servidores que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idIFORMACION: Clave Primaria que identifica la información de un registro.} 
+		\item{funcion: Atributo que determina la función que cumple un Servidor.}
+		\item{hdd: Atributo que determina el Disco duro que posee el Servidor.}
+		\item{cant\_hdd: Atributo que determina la cantidad de Disco duro que posee el Servidor.}
+		\item{procesador: Atributo que determina el procesador que posee el Servidor.}
+		\item{cant\_procesador: Atributo que determina la cantidad de procesador que posee le Servidor.}
+		\item{ram: Atributo que determina la ram que posee el servidor.}
+		\item{cant\_ram: Atributo que determina la cantidad de ram que posee el servidor.}
+	\end{itemize}}
+	\item{\textbf{ADJUNTA:} Entidad destinada a almacenar los datos pertenecientes a la Información Adjunta de los registros que existen en la Base de datos del sistema. Sus atributos son los siguientes:
+	\begin{itemize}
+		\item{idADJUNTA: Clave Primaria que identifica la información adjunta de un registro.} 
+		\item{idIFORMACION: Clave foránea que identifica la información de un registro.} 
+		\item{nombre: Atributo que determina el nombre de la información Adjunta.}
+		\item{ubicacion: Atributo que determina la ubicación donde se encuentra disponible la información Adjunta.}
+		\item{descripcion: Atributo que determina una descripción de la información adjunta.}
+	\end{itemize}}
+\end{itemize}
+
+\subsubsection{Diccionario de Datos}
+\label{dicdatos}
+
+Luego de explicar cada una de las entidades y sus atributos asociados en la sección \ref{detalledatos}, a continuación se procederá a presentar el diccionario de datos de la base de datos, presentando de esta manera la entidad a la cual pertenece, el nombre del atributo, el tipo, el largo y las restricciones.\newline
+
+La tabla presentada a continuación detalla el diccionario de datos con todos los tributos utilizados en la base de datos:\newline
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{l l l l l}
+\cline{1-5}
+
+\multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Entidad} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Atributos} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{Tipo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{Largo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Restricciones} \\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{9}{*}{\textbf{PERSONA:}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{rut\_persona} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{8} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{dv} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{CHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{1}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{nombres} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{120}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{paterno} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{materno} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{email} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{150}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{telefono} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{12}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{celular} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{12}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{sexo} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{CHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{1}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{4}{*}{\textbf{USUARIO:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{rut\_persona} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{8} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{usuario} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{password} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{32}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{fecha\_registro} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{ROL\_USUARIO:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idUSUARIO} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{8} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idROL} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{rol\_activo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{BOOLEAN}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{ROL:}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idROL} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{rol} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{AREA\_PERSONA:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idAREA} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{rut\_persona} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{8}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{relacion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{2}{*}{\textbf{AREA:}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idAREA} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key -  Not null - Auto Increment} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{nombre} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{60}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{4}{*}{\textbf{UPS:}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idUPS} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key -  Not null - Auto Increment} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{nombre} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{rut\_persona} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{8}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Foreing Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Foreing Key - Not null}\\ \cline{1-5}
+\end{tabular}
+\caption{Diccionario de datos parte1.}
+\label{tab12}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3.6cm} l l l l}
+\cline{1-5}
+
+\multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Entidad} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Atributos} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{Tipo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{Largo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Restricciones} \\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{UPS\_RACK:}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idUPS} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idRACK} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{posicion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{3}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{RACK:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idRACK} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null - Auto Increment} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{capacidad} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{3}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{desocupado} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{BOOLEAN}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{3.6cm}{\textbf{SERVIDOR\_}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idSERVIDOR} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{RACK:}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idRACK} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{posicion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{3}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{SERVIDOR:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idSERVIDOR} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null - Auto Increment} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{nombre} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{60}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{hostname} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{dominio} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{direccionIP} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{15}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{encendido} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{BOOLEAN}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{en\_uso} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{BOOLEAN}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{rut\_persona} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{8}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Foreing Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Foreing Key - Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{3.6cm}{\textbf{INCIDENCIA}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idIncidencia} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key -  Auto Increment - Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idServidor} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{ForeingKey-Notnull}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{fecha} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{nivel\_incidencia} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{INFORMACION:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{PrimaryKey-Notnull} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{fecha\_generacion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{ultima\_modificacion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idAREA} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{ForeingKey-Notnull}\\ \cline{1-5}
+
+\end{tabular}
+\caption{Diccionario de datos parte2.}
+\label{tab13}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3.6cm} l l l l}
+\cline{1-5}
+\multicolumn{1}{|>{\columncolor[gray]{0.65}}p{3.6cm}|}{Entidad} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Atributos} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{Tipo} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{Largo} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Restricciones} \\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{INTEROPERA-}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idSERVIDOR1} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{BILIDAD\_SERVI-}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idSERVIDOR2} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{DOR:}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{nivel\_relacion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{MAQUINA-}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idMAQUINAVIR-\newline TUAL} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{VIRTUAL:}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{nombre} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{60}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{hostname} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{direccionIP} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{15}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idSERVIDOR} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{3.6cm}{\textbf{MV\_APLICACI-}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idMAQUINAVIR-\newline TUAL} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{ON}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idAPLICACION} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{nivel\_relacion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{3.6cm}{\textbf{ACTIVIDAD}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idACTIVIDAD} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idSERVIDOR} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Foreing Key}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idAPLICACION} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Foreing Key}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{fecha} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{tipo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{3.6cm}{\textbf{SERVIDOR\_}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idSERVIDOR} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{APLICACION}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{nivel\_relacion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idAPLICACION} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{3.6cm}{\textbf{APLICACION}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idAPLICACION} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{rut\_persona} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Foreing Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{nombre} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+\end{tabular}
+\caption{Diccionario de datos parte3.}
+\label{tab14}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3.6cm} l l l l}
+\cline{1-5}
+\multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Entidad} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Atributos} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{Tipo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{Largo} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Restricciones} \\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{INTEROPERA-}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idSERVIDOR1} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{BILIDAD\_APLI-}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idSERVIDOR2} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{CACION:}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{nivel\_relacion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{ADMINISTRATI-}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{VA\_SW:}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{proveedor} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{fecha\_implementacion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{fecha\_alta} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{ADMINISTRATI-}}} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Primary Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\textbf{VA\_BIEN:}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{num\_serie} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{120} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{fecha\_compra} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{fecha\_recepcion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{DATE}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{proveedor} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{num\_factura} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{orden\_compra} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{num\_alta\_inventario } & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{num\_orden\_uv} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{45}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{TECNICA\_SW:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{funcion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{TECNICA\_HW:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{funcion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{hdd} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{120}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{cant\_hdd} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{procesador} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{120}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{cant\_procesador} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{ram} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{120}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{cant\_ram} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+\multicolumn{1}{|p{3.6cm}|}{\multirow{3}{*}{\textbf{ADJUNTA:}}} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{idADJUNTA} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{INT} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{11} & \multicolumn{1}{|>{\columncolor[gray]{0.75}}p{3.6cm}|}{Primary Key -  Not null} \\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{idINFORMACION} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{INT}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{11}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Foreing Key - Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{nombre} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{60}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{ubicacion} & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{2cm}|}{VARCHAR}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{1cm}|}{120}  & \multicolumn{1}{>{\columncolor[gray]{0.65}}p{3.6cm}|}{Not null}\\ \cline{2-5}
+
+\multicolumn{1}{|p{3.6cm}|}{} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{descripcion} & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{2cm}|}{TEXT}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{1cm}|}{-}  & \multicolumn{1}{>{\columncolor[gray]{0.75}}p{3.6cm}|}{Not null}\\ \cline{1-5}
+
+
+\end{tabular}
+\caption{Diccionario de datos parte4.}
+\label{tab15}
+\end{center}
+\end{table}
+
 \newpage
 
 \subsection{Diseño de Plan de Pruebas}
